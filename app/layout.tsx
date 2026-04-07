@@ -2,14 +2,34 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
-import { SITE } from '@/lib/config';
+import AnalyticsScripts from '@/components/analytics/analytics-scripts';
+import { COMPANY, SITE } from '@/lib/config';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
   title: {
     default: SITE.defaultTitle,
     template: `%s${SITE.titleSuffix}`,
   },
   description: SITE.defaultDescription,
+  openGraph: {
+    type: 'website',
+    locale: 'ru_RU',
+    siteName: COMPANY.name,
+    title: SITE.defaultTitle,
+    description: SITE.defaultDescription,
+  },
+  twitter: {
+    card: 'summary',
+    title: SITE.defaultTitle,
+    description: SITE.defaultDescription,
+  },
+  icons: {
+    icon: '/favicon.svg',
+  },
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function RootLayout({
@@ -28,6 +48,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased bg-white text-gray-900">
+        <AnalyticsScripts />
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

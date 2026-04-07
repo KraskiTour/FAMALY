@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getCitiesByRegion, getToursByCity } from '@/data/mock-tours';
+import { getCitiesByRegion, getDirectTourCountByCity, getToursByCity } from '@/data/mock-tours';
 import { pluralTours } from '@/lib/utils';
 
 export default function DepartureCities() {
@@ -29,7 +29,9 @@ export default function DepartureCities() {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 lg:gap-4">
                 {cities.map((city) => {
-                  const tourCount = getToursByCity(city.slug).length;
+                  const directCount = getDirectTourCountByCity(city.slug);
+                  const totalCount = getToursByCity(city.slug).length;
+                  const selfArrivalCount = totalCount - directCount;
                   return (
                     <Link
                       key={city.slug}
@@ -40,8 +42,13 @@ export default function DepartureCities() {
                         <span className="text-base font-semibold text-gray-900 group-hover:text-brand-600 transition-colors">
                           {city.name}
                         </span>
-                        {tourCount > 0 && (
-                          <p className="text-xs text-gray-400 mt-0.5">{pluralTours(tourCount)}</p>
+                        {directCount > 0 && (
+                          <p className="text-xs text-gray-400 mt-0.5">
+                            {pluralTours(directCount)} с выездом
+                            {selfArrivalCount > 0 && (
+                              <span className="text-gray-300"> + ещё {selfArrivalCount}</span>
+                            )}
+                          </p>
                         )}
                       </div>
                       <svg

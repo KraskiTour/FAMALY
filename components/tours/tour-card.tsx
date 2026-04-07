@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Tour, BADGE_LABELS, BADGE_COLORS } from '@/lib/types';
-import { formatPrice, pluralDays, formatDate } from '@/lib/utils';
+import { formatPrice, pluralDays, formatDate, getProductLabel } from '@/lib/utils';
 
 interface TourCardProps {
   tour: Tour;
@@ -13,12 +13,19 @@ export default function TourCard({ tour }: TourCardProps) {
   return (
     <Link
       href={`/tours/${tour.slug}`}
-      className="group bg-white rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] overflow-hidden hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col border border-gray-100/60"
+      className="group bg-white rounded-2xl shadow-card overflow-hidden hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300 flex flex-col border border-gray-100"
     >
       <div className="relative aspect-[16/10] bg-gradient-to-br from-brand-50 via-teal-50 to-sky-50 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/5 to-transparent z-10" />
         {tour.gallery[0] && (tour.gallery[0].startsWith('/images/') || tour.gallery[0].startsWith('http')) ? (
-          <Image src={tour.gallery[0]} alt={tour.title} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
+          <Image
+            src={tour.gallery[0]}
+            alt={tour.title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            unoptimized={tour.gallery[0].startsWith('https://')}
+          />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
             <svg className="w-12 h-12 text-brand-200/80" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor">
@@ -32,7 +39,7 @@ export default function TourCard({ tour }: TourCardProps) {
             {tour.badges.slice(0, 3).map((badge) => (
               <span
                 key={badge}
-                className={`${BADGE_COLORS[badge]} text-white text-[11px] font-semibold px-2.5 py-1 rounded-full`}
+                className={`${BADGE_COLORS[badge]} text-white text-[11px] font-bold px-2.5 py-1 rounded-full tracking-wide`}
               >
                 {BADGE_LABELS[badge]}
               </span>
@@ -40,7 +47,7 @@ export default function TourCard({ tour }: TourCardProps) {
           </div>
         )}
 
-        {nextDate && nextDate.seatsLeft <= 5 && (
+        {nextDate && nextDate.seatsLeft != null && nextDate.seatsLeft <= 5 && (
           <div className="absolute bottom-3 right-3 z-20 bg-rose-500/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
             Осталось {nextDate.seatsLeft} мест
           </div>
@@ -48,13 +55,21 @@ export default function TourCard({ tour }: TourCardProps) {
       </div>
 
       <div className="p-5 flex flex-col flex-1">
-        <div className="flex items-center gap-2 text-xs font-medium text-gray-400 mb-2">
-          <span className="text-brand-600 font-semibold">{tour.destination}</span>
+        <div className="flex items-center gap-2 text-xs font-medium text-gray-400 mb-2.5 flex-wrap">
+          {(() => {
+            const label = getProductLabel(tour);
+            return label ? (
+              <span className={`${label.cls} text-[10px] font-bold px-1.5 py-0.5 rounded`}>
+                {label.text}
+              </span>
+            ) : null;
+          })()}
+          <span className="text-brand-600 font-semibold">{(tour.destinations ?? [tour.destination]).join(' · ')}</span>
           <span className="text-gray-200">·</span>
           <span>{pluralDays(tour.durationDays)}</span>
         </div>
 
-        <h3 className="text-[17px] font-bold text-gray-900 group-hover:text-brand-700 transition-colors leading-snug line-clamp-2">
+        <h3 className="text-base font-bold text-gray-900 group-hover:text-brand-700 transition-colors leading-snug line-clamp-2">
           {tour.title}
         </h3>
 
@@ -68,13 +83,13 @@ export default function TourCard({ tour }: TourCardProps) {
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
           </svg>
           <span className="truncate">
-            {tour.departureCities.length === 0
-              ? 'Самостоятельный приезд · любой город'
-              : tour.departureCities.map((c) => c.city).join(', ')}
+            {tour.departureCities.length > 0
+              ? tour.departureCities.map((c) => c.city).join(', ')
+              : 'Старт по месту программы'}
           </span>
         </div>
 
-        <div className="mt-auto pt-4 mt-4 border-t border-gray-100/80 flex items-end justify-between">
+        <div className="mt-auto pt-4 mt-4 border-t border-gray-100 flex items-end justify-between">
           <div>
             {tour.oldPrice && (
               <span className="text-[11px] text-gray-400 line-through block mb-0.5">
@@ -82,15 +97,15 @@ export default function TourCard({ tour }: TourCardProps) {
               </span>
             )}
             <div className="flex items-baseline gap-1">
-              <span className="text-[11px] font-medium text-gray-400">от</span>
-              <span className="text-xl font-extrabold text-gray-900">
+              <span className="text-xs font-medium text-gray-400">от</span>
+              <span className="text-2xl font-extrabold text-gray-900 tracking-tight">
                 {formatPrice(tour.priceFrom)}
               </span>
             </div>
           </div>
           {nextDate && (
             <div className="text-right">
-              <div className="inline-flex items-center gap-1.5 bg-brand-50 text-brand-700 text-xs font-semibold px-2.5 py-1 rounded-lg">
+              <div className="inline-flex items-center gap-1.5 bg-brand-50 text-brand-700 text-xs font-bold px-3 py-1.5 rounded-lg">
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
                 </svg>

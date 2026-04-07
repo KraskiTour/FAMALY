@@ -1,3 +1,31 @@
+import type { Tour } from './types';
+
+export const FOREIGN_REGIONS = new Set([
+  'Грузия', 'Турция', 'Узбекистан', 'Абхазия', 'Беларусь',
+]);
+
+export const FOREIGN_DEST_NAMES = new Set([
+  'Грузия', 'Стамбул', 'Узбекистан', 'Армения', 'Абхазия', 'Беларусь',
+]);
+
+export function getProductLabel(tour: Tour): { text: string; cls: string } | null {
+  if (FOREIGN_REGIONS.has(tour.region)) {
+    return { text: 'За рубеж', cls: 'text-amber-700 bg-amber-50' };
+  }
+  if (
+    tour.durationDays <= 1 &&
+    tour.badges.includes('city') &&
+    !tour.badges.includes('bus') &&
+    !tour.badges.includes('train')
+  ) {
+    return { text: 'Экскурсия', cls: 'text-orange-700 bg-orange-50' };
+  }
+  if (tour.departureCities.length === 0 && tour.durationDays >= 2) {
+    return { text: 'Старт по месту', cls: 'text-sky-700 bg-sky-50' };
+  }
+  return null;
+}
+
 export function formatPrice(price: number): string {
   return price.toLocaleString('ru-RU') + ' ₽';
 }

@@ -13,7 +13,7 @@ export interface TourDate {
   start: string;
   end: string;
   price: number;
-  seatsLeft: number;
+  seatsLeft: number | null;
   status?: TourDateStatus;
 }
 
@@ -40,6 +40,7 @@ export interface Tour {
   fullDescription: string;
   departureCities: DepartureCity[];
   destination: string;
+  destinations?: string[];
   region: string;
   durationDays: number;
   seasonMonths: number[];

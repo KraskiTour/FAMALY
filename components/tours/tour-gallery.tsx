@@ -28,6 +28,7 @@ export default function TourGallery({ images, title }: TourGalleryProps) {
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 66vw"
             priority={activeIndex === 0}
+            unoptimized={activeImage.startsWith('https://')}
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
@@ -52,7 +53,14 @@ export default function TourGallery({ images, title }: TourGalleryProps) {
               }`}
             >
               {isRealImage(img) ? (
-                <Image src={img} alt={`${title} — ${index + 1}`} width={80} height={56} className="w-full h-full object-cover" />
+                <Image
+                  src={img}
+                  alt={`${title} — ${index + 1}`}
+                  width={80}
+                  height={56}
+                  className="w-full h-full object-cover"
+                  unoptimized={img.startsWith('https://')}
+                />
               ) : (
                 <div className="w-full h-full bg-gradient-to-br from-brand-50 to-teal-50/50 flex items-center justify-center">
                   <span className="text-xs font-medium text-brand-400">{index + 1}</span>

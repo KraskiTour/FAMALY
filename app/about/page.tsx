@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { COMPANY, CONTACTS } from '@/lib/config';
+import { getPublishedTours, destinations, reviews } from '@/data/mock-tours';
 
 export const metadata: Metadata = {
   title: 'О бренде KRASKI.TRAVEL — семейные туры и поездки по России',
   description:
     'KRASKI.TRAVEL — бренд готовых путешествий для семей, взрослых и сборных групп. Автобусные, железнодорожные и комбинированные туры по России с понятной организацией.',
+  alternates: { canonical: '/about' },
 };
 
 const audiences = [
@@ -32,11 +34,36 @@ const values = [
   { title: 'Поддержка и координация', text: 'Остаёмся на связи на этапе бронирования и подготовки к поездке.' },
 ];
 
+function TrustStats() {
+  const tourCount = getPublishedTours().length;
+  const destCount = destinations.length;
+  const stats = [
+    { value: `${tourCount}+`, label: 'маршрутов в каталоге' },
+    { value: `${destCount}`, label: 'направлений' },
+    { value: '15+', label: 'городов выезда' },
+    { value: `с ${COMPANY.foundedYear}`, label: 'года работаем' },
+  ];
+  return (
+    <section className="-mt-10 relative z-10 mb-6">
+      <div className="bg-white rounded-2xl shadow-elevated border border-gray-100 p-6 sm:p-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+          {stats.map((s) => (
+            <div key={s.label}>
+              <p className="text-2xl sm:text-3xl font-extrabold text-brand-600 tracking-tight">{s.value}</p>
+              <p className="mt-1 text-sm text-gray-500">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function AboutPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-brand-800 via-brand-900 to-stone-950 text-white py-16 lg:py-24 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-brand-800 via-brand-900 to-stone-950 text-white py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="brand-blob brand-blob-teal w-[500px] h-[450px] -top-10 -right-20 opacity-90" />
           <div className="brand-blob brand-blob-warm w-[400px] h-[350px] bottom-0 -left-10 opacity-60" />
@@ -57,6 +84,9 @@ export default function AboutPage() {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Trust stats */}
+        <TrustStats />
 
         {/* Что такое KRASKI.TRAVEL */}
         <section className="py-16 lg:py-20 border-b border-gray-100">
@@ -87,7 +117,7 @@ export default function AboutPage() {
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-10">
             Кому подойдут наши туры и поездки
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {audiences.map((item) => (
               <div key={item.title} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
                 <h3 className="text-base font-bold text-gray-900 mb-2">{item.title}</h3>
@@ -98,16 +128,16 @@ export default function AboutPage() {
         </section>
 
         {/* Форматы */}
-        <section className="py-16 lg:py-20 border-b border-gray-100">
+        <section className="py-16 lg:py-20 border-b border-gray-100 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 bg-gray-50/40">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-4">
             Форматы путешествий
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl leading-relaxed mb-10">
             На KRASKI.TRAVEL собраны разные форматы организованных поездок — от коротких туров выходного дня до насыщенных многодневных маршрутов.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {formats.map((item) => (
-              <div key={item.title} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+              <div key={item.title} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card">
                 <h3 className="text-base font-bold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed">{item.text}</p>
               </div>
@@ -115,8 +145,33 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Отличие от KRASKI.DETI */}
+        {/* Как мы помогаем */}
         <section className="py-16 lg:py-20 border-b border-gray-100">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-4">
+            Как мы помогаем
+          </h2>
+          <p className="text-lg text-gray-500 max-w-2xl leading-relaxed mb-10">
+            KRASKI.TRAVEL — это не просто каталог. За сайтом стоит живая команда, которая помогает на каждом шаге.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { icon: '🎯', text: 'Подберём маршрут под ваши даты, бюджет и формат отдыха' },
+              { icon: '🔄', text: 'Поможем сравнить варианты, если не можете выбрать' },
+              { icon: '📅', text: 'Подскажем по датам и наличию мест' },
+              { icon: '🚂', text: 'Поможем с билетами и логистикой до старта тура' },
+              { icon: '💬', text: 'Остаёмся на связи до самой поездки' },
+              { icon: '⚡', text: 'Обычно отвечаем в течение 15 минут' },
+            ].map((item) => (
+              <div key={item.text} className="flex gap-3.5 p-5 bg-brand-50/40 rounded-xl border border-brand-100/30">
+                <span className="text-xl shrink-0">{item.icon}</span>
+                <p className="text-sm text-gray-700 leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Отличие от KRASKI.DETI */}
+        <section className="py-16 lg:py-20 border-b border-gray-100 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 bg-gray-50/40">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-10">
             Чем KRASKI.TRAVEL отличается от KRASKI.DETI
           </h2>
@@ -151,9 +206,9 @@ export default function AboutPage() {
             KRASKI.TRAVEL — это не витрина случайных предложений. Каждый маршрут на сайте подготовлен
             с понятным форматом, датами и условиями.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {values.map((item) => (
-              <div key={item.title} className="flex gap-4 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+              <div key={item.title} className="flex gap-4 p-5 bg-white rounded-2xl border border-gray-100 shadow-card">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-50 to-brand-100/60 flex items-center justify-center shrink-0 mt-0.5">
                   <svg className="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -163,6 +218,58 @@ export default function AboutPage() {
                   <h3 className="text-base font-bold text-gray-900 mb-1">{item.title}</h3>
                   <p className="text-sm text-gray-500 leading-relaxed">{item.text}</p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Почему нам доверяют */}
+        <section className="py-16 lg:py-20 border-b border-gray-100">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-10">
+            Почему нам доверяют
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              { title: 'Понятная коммуникация', text: 'Отвечаем в мессенджерах и по телефону — без роботов, IVR и длинных ожиданий. Вы всегда знаете, с кем разговариваете.' },
+              { title: 'Помощь с выбором', text: 'Не просто показываем каталог — помогаем сравнить, подобрать даты и формат поездки под ваши условия.' },
+              { title: 'Единая точка контакта', text: 'Один менеджер ведёт вашу поездку от заявки до старта. Не нужно повторять детали разным людям.' },
+              { title: 'Поддержка до старта', text: 'Напоминаем о поездке, помогаем с билетами и логистикой, отвечаем на вопросы до самого выезда.' },
+            ].map((item) => (
+              <div key={item.title} className="flex gap-4 p-5 bg-white rounded-2xl border border-gray-100 shadow-card">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-50 to-brand-100/60 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg className="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-base font-bold text-gray-900 mb-1">{item.title}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">{item.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Отзывы */}
+        <section className="py-16 lg:py-20 border-b border-gray-100">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-4">
+            Что говорят о поездках
+          </h2>
+          <p className="text-lg text-gray-500 max-w-2xl leading-relaxed mb-10">
+            Отзывы участников наших туров.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {reviews.slice(0, 3).map((r) => (
+              <div key={r.id} className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
+                <div className="flex items-center gap-1 mb-3">
+                  {Array.from({ length: r.rating }).map((_, i) => (
+                    <svg key={i} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                  ))}
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed mb-4">{r.text}</p>
+                <p className="text-xs text-gray-400">
+                  <span className="font-semibold text-gray-700">{r.author}</span> · {r.city}
+                </p>
               </div>
             ))}
           </div>

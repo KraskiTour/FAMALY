@@ -1,4 +1,7 @@
+'use client';
+
 import { CONTACTS } from '@/lib/config';
+import { trackEvent } from '@/lib/analytics';
 
 export default function CTAMessengers() {
   return (
@@ -20,6 +23,7 @@ export default function CTAMessengers() {
             href={CONTACTS.whatsapp.url}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent('click_whatsapp', { source: 'cta_block' })}
             className="inline-flex items-center justify-center gap-3 bg-white text-brand-900 px-8 py-4 rounded-2xl text-base font-bold hover:bg-brand-50 transition-all shadow-xl shadow-brand-950/30 w-full sm:w-auto"
           >
             <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 24 24">
@@ -31,6 +35,7 @@ export default function CTAMessengers() {
             href={CONTACTS.telegram.url}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent('click_telegram', { source: 'cta_block' })}
             className="inline-flex items-center justify-center gap-3 border border-white/15 bg-white/[0.04] backdrop-blur-md text-white px-8 py-4 rounded-2xl text-base font-semibold hover:bg-white/[0.08] hover:border-white/25 transition-all w-full sm:w-auto"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -42,6 +47,7 @@ export default function CTAMessengers() {
             href={CONTACTS.max.url}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent('click_max', { source: 'cta_block' })}
             className="inline-flex items-center justify-center gap-3 border border-white/15 bg-white/[0.04] backdrop-blur-md text-white px-8 py-4 rounded-2xl text-base font-semibold hover:bg-white/[0.08] hover:border-white/25 transition-all w-full sm:w-auto"
           >
             MAX
@@ -50,6 +56,7 @@ export default function CTAMessengers() {
         <div className="mt-6">
           <a
             href={`tel:${CONTACTS.phoneRaw}`}
+            onClick={() => trackEvent('click_call', { source: 'cta_block' })}
             className="inline-flex items-center justify-center gap-3 border border-white/15 bg-white/[0.04] backdrop-blur-md text-white px-8 py-4 rounded-xl text-base font-semibold hover:bg-white/[0.08] transition-all"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">

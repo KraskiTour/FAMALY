@@ -9,6 +9,7 @@ const navigation = [
   { name: 'Все поездки', href: '/tours' },
   { name: 'Из Краснодара', href: '/from/krasnodar' },
   { name: 'Из Ростова', href: '/from/rostov-na-donu' },
+  { name: 'О нас', href: '/about' },
 ];
 
 const messengerLinks = [
@@ -23,7 +24,7 @@ export default function Header() {
   return (
     <header className="bg-white/95 backdrop-blur-md border-b border-gray-100/80 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-[72px]">
+        <div className="flex items-center justify-between h-16 lg:h-[76px]">
           <Link href="/" className="flex items-center gap-2.5">
             <div className="w-8 h-8 bg-gradient-to-br from-brand-500 to-brand-700 rounded-lg flex items-center justify-center shadow-sm">
               <svg className="w-4.5 h-4.5 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
@@ -40,7 +41,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-[14px] font-medium text-gray-600 hover:text-brand-600 transition-colors"
+                className="text-[14px] font-medium text-gray-600 hover:text-brand-600 transition-colors tracking-[-0.01em]"
               >
                 {item.name}
               </Link>
@@ -61,7 +62,7 @@ export default function Header() {
             ))}
             <Link
               href="/tours"
-              className="bg-gradient-to-r from-brand-600 to-brand-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:from-brand-700 hover:to-brand-800 transition-all shadow-sm shadow-brand-600/20"
+              className="bg-gradient-to-r from-brand-600 to-brand-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:from-brand-700 hover:to-brand-800 hover:shadow-md transition-all duration-200 shadow-sm shadow-brand-600/20"
             >
               Подобрать поездку
             </Link>

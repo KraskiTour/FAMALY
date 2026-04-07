@@ -5,11 +5,11 @@ const footerNav = [
   {
     title: 'Направления',
     links: [
-      { name: 'Семейные поездки', href: '/tours' },
-      { name: 'Туры выходного дня', href: '/tours' },
-      { name: 'Многодневные путешествия', href: '/tours' },
-      { name: 'Экскурсионные маршруты', href: '/tours' },
-      { name: 'Горные направления', href: '/tours' },
+      { name: 'Крым', href: '/tours/krym' },
+      { name: 'Петербург', href: '/tours/saint-petersburg' },
+      { name: 'Беларусь', href: '/tours/belarus' },
+      { name: 'Адыгея', href: '/tours/adygeya' },
+      { name: 'Все поездки', href: '/tours' },
     ],
   },
   {
@@ -25,6 +25,7 @@ const footerNav = [
   {
     title: 'Информация',
     links: [
+      { name: 'Все поездки', href: '/tours' },
       { name: 'О бренде', href: '/about' },
       { name: 'Как забронировать', href: '/#kak-bronirovat' },
       { name: 'Контакты', href: '/about#kontakty' },
@@ -41,7 +42,7 @@ const messengerButtons = [
 export default function Footer() {
   return (
     <footer className="bg-gray-950 text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2.5">
@@ -86,7 +87,7 @@ export default function Footer() {
               <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
                 {section.title}
               </h3>
-              <ul className="mt-4 space-y-3">
+              <ul className="mt-4 space-y-3.5">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     <Link
@@ -102,7 +103,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="border-t border-gray-800/50 mt-14 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-gray-500">
             © {new Date().getFullYear()} {COMPANY.name}. Все права защищены. {COMPANY.fullName} ИНН {COMPANY.inn} КПП {COMPANY.kpp} ОГРН {COMPANY.ogrn}
           </p>

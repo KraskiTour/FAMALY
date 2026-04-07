@@ -9,26 +9,26 @@ export default function Hero() {
         <div className="brand-blob brand-blob-sky w-[350px] h-[300px] top-1/3 right-1/4 opacity-50" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-40">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-44">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 bg-white/[0.07] backdrop-blur-md border border-white/[0.08] rounded-full px-4 py-1.5 mb-8">
             <div className="w-2 h-2 bg-brand-400 rounded-full" />
-            <span className="text-brand-200/90 text-sm font-medium">Бронирование открыто на лето 2026</span>
+            <span className="text-brand-200/90 text-sm font-medium">Бронирование открыто — выбирайте даты</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-extrabold text-white leading-[1.08] tracking-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.08] tracking-tight">
             Путешествия, которые
             <br />
             <span className="bg-gradient-to-r from-brand-300 to-teal-300 bg-clip-text text-transparent">легко выбрать и приятно вспоминать</span>
           </h1>
-          <p className="mt-6 text-lg sm:text-xl text-gray-400 leading-relaxed max-w-2xl">
+          <p className="mt-6 text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl">
             Семейные, взрослые и сборные поездки по России — автобусом, поездом
             и в других удобных форматах. Выбирайте маршрут и&nbsp;бронируйте без лишней суеты.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Link
               href="/tours"
-              className="group/cta inline-flex items-center justify-center gap-2.5 bg-white text-brand-900 px-8 py-4 rounded-2xl text-base font-bold hover:bg-brand-50 transition-all shadow-xl shadow-brand-950/30"
+              className="group/cta inline-flex items-center justify-center gap-2.5 bg-white text-brand-900 px-9 py-4.5 rounded-2xl text-base font-bold hover:bg-brand-50 hover:scale-[1.02] transition-all duration-200 shadow-xl shadow-brand-950/30"
             >
               Подобрать поездку
               <svg className="w-4 h-4 transition-transform group-hover/cta:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
@@ -59,6 +59,8 @@ export default function Hero() {
           ))}
         </div>
       </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
     </section>
   );
 }

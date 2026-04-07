@@ -1,18 +1,38 @@
 import Link from 'next/link';
 import { destinations } from '@/data/mock-tours';
 
-const popularDestinations = destinations.slice(0, 8);
+const curatedSlugs = [
+  'krym',
+  'gruziya',
+  'dagestan',
+  'saint-petersburg',
+  'zolotoe-kolco',
+  'kareliya',
+  'belarus',
+  'abrau-dyurso',
+  'lago-naki',
+  'arhyz',
+  'kalmykiya',
+  'kaliningrad',
+];
+
+const popularDestinations = curatedSlugs
+  .map((slug) => destinations.find((d) => d.slug === slug))
+  .filter(Boolean) as typeof destinations;
 
 const destColors: Record<string, string> = {
-  arhyz: 'from-teal-500 to-brand-700',
-  dombay: 'from-sky-500 to-blue-700',
-  prielbrusie: 'from-slate-400 to-slate-700',
-  dagestan: 'from-amber-500 to-warm-600',
-  chechnya: 'from-brand-600 to-brand-800',
   krym: 'from-sky-400 to-sky-700',
-  abhazia: 'from-teal-500 to-teal-800',
-  'lago-naki': 'from-brand-500 to-brand-700',
-  belarus: 'from-emerald-500 to-teal-800',
+  gruziya: 'from-amber-600 to-rose-700',
+  dagestan: 'from-amber-500 to-warm-600',
+  'saint-petersburg': 'from-indigo-400 to-indigo-700',
+  'zolotoe-kolco': 'from-yellow-500 to-amber-700',
+  kareliya: 'from-teal-600 to-slate-800',
+  belarus: 'from-emerald-500 to-emerald-800',
+  'abrau-dyurso': 'from-brand-500 to-brand-700',
+  'lago-naki': 'from-teal-500 to-brand-700',
+  arhyz: 'from-teal-500 to-brand-700',
+  kalmykiya: 'from-orange-400 to-rose-600',
+  kaliningrad: 'from-slate-400 to-slate-700',
 };
 
 export default function PopularDestinations() {
@@ -24,7 +44,7 @@ export default function PopularDestinations() {
             Популярные направления
           </h2>
           <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            Выбирайте поездки на выходные, семейные путешествия и многодневные маршруты по самым востребованным направлениям
+            От однодневных поездок рядом до многодневных маршрутов по всей России и за рубежом
           </p>
         </div>
 

@@ -8,6 +8,9 @@ import TourGallery from '@/components/tours/tour-gallery';
 import TourItinerary from '@/components/tours/tour-itinerary';
 import TourIncludes from '@/components/tours/tour-includes';
 import TourSidebar from '@/components/tours/tour-sidebar';
+import TourJsonLd from '@/components/tours/tour-jsonld';
+import FaqJsonLd from '@/components/seo/faq-jsonld';
+import BreadcrumbJsonLd from '@/components/seo/breadcrumb-jsonld';
 
 interface TourPageProps {
   params: Promise<{ slug: string }>;
@@ -24,6 +27,12 @@ export async function generateMetadata({ params }: TourPageProps): Promise<Metad
   return {
     title: tour.seoTitle,
     description: tour.seoDescription,
+    alternates: { canonical: `/tours/${tour.slug}` },
+    openGraph: {
+      title: tour.seoTitle,
+      description: tour.seoDescription,
+      ...(tour.gallery[0] && { images: [tour.gallery[0]] }),
+    },
   };
 }
 
@@ -42,6 +51,13 @@ export default async function TourPage({ params }: TourPageProps) {
 
   return (
     <div className="bg-gray-50/50 min-h-screen">
+      <TourJsonLd tour={tour} />
+      <FaqJsonLd faqs={tourFaqs} />
+      <BreadcrumbJsonLd items={[
+        { name: 'Главная', href: '/' },
+        { name: 'Все поездки', href: '/tours' },
+        { name: tour.title },
+      ]} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-10">
         <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
           <Link href="/" className="hover:text-brand-600 transition-colors">Главная</Link>
@@ -52,7 +68,7 @@ export default async function TourPage({ params }: TourPageProps) {
         </nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
-          <div className="lg:col-span-2 space-y-10">
+          <div className="lg:col-span-2 space-y-12">
             <TourGallery images={tour.gallery} title={tour.title} />
 
             <div>
@@ -72,7 +88,7 @@ export default async function TourPage({ params }: TourPageProps) {
               <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">{tour.title}</h1>
 
               <div className="flex items-center gap-3 mt-3 text-sm text-gray-500">
-                <span className="text-brand-600 font-medium">{tour.destination}</span>
+                <span className="text-brand-600 font-medium">{(tour.destinations ?? [tour.destination]).join(' · ')}</span>
                 <span className="text-gray-300">·</span>
                 <span>{pluralDays(tour.durationDays)}</span>
                 <span className="text-gray-300">·</span>
@@ -93,7 +109,7 @@ export default async function TourPage({ params }: TourPageProps) {
                 { label: 'Питание', value: tour.meals },
                 { label: 'Сложность', value: difficultyLabel[tour.difficulty] },
               ].map((item) => (
-                <div key={item.label} className="bg-white rounded-xl p-4 border border-gray-100/80 shadow-sm">
+                <div key={item.label} className="bg-white rounded-xl p-4 border border-gray-100 shadow-card">
                   <p className="text-[11px] uppercase tracking-wider text-gray-400 font-semibold mb-1.5">{item.label}</p>
                   <p className="text-sm font-bold text-gray-900">{item.value}</p>
                 </div>
@@ -101,25 +117,28 @@ export default async function TourPage({ params }: TourPageProps) {
             </div>
 
             <div className="bg-white rounded-xl p-5 border border-gray-100">
-              <p className="text-sm font-medium text-gray-500 mb-2">Города выезда</p>
-              {tour.departureCities.length === 0 ? (
-                <p className="text-sm text-gray-700 leading-relaxed">
-                  Фиксированного города отправления нет: тур доступен при выборе любого города в каталоге — вы
-                  добираетесь к месту начала программы самостоятельно. Детали по встрече на маршруте — в блоке «Транспорт»
-                  и при бронировании.
-                </p>
+              {tour.departureCities.length > 0 ? (
+                <>
+                  <p className="text-sm font-medium text-gray-500 mb-2">Города выезда</p>
+                  <div className="flex flex-wrap gap-2">
+                    {tour.departureCities.map((dc) => (
+                      <Link
+                        key={dc.slug}
+                        href={`/from/${dc.slug}`}
+                        className="text-sm bg-brand-50 text-brand-700 px-3 py-1.5 rounded-lg hover:bg-brand-100 transition-colors font-medium"
+                      >
+                        {dc.city}
+                      </Link>
+                    ))}
+                  </div>
+                </>
               ) : (
-                <div className="flex flex-wrap gap-2">
-                  {tour.departureCities.map((dc) => (
-                    <Link
-                      key={dc.slug}
-                      href={`/from/${dc.slug}`}
-                      className="text-sm bg-brand-50 text-brand-700 px-3 py-1.5 rounded-lg hover:bg-brand-100 transition-colors font-medium"
-                    >
-                      {dc.city}
-                    </Link>
-                  ))}
-                </div>
+                <>
+                  <p className="text-sm font-medium text-gray-500 mb-2">Старт по месту программы</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Добор из вашего города — поможем подобрать удобный поезд, билеты и маршрут до начала тура
+                  </p>
+                </>
               )}
             </div>
 
@@ -201,7 +220,7 @@ export default async function TourPage({ params }: TourPageProps) {
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Частые вопросы</h2>
                 <div className="space-y-4">
                   {tourFaqs.map((faq) => (
-                    <div key={faq.id} className="bg-white rounded-xl p-5 border border-gray-100">
+                    <div key={faq.id} className="bg-white rounded-xl p-5 border border-gray-100 border-l-2 border-l-brand-200">
                       <h3 className="text-base font-semibold text-gray-900">{faq.question}</h3>
                       <p className="mt-2 text-sm text-gray-600 leading-relaxed">{faq.answer}</p>
                     </div>
@@ -215,7 +234,7 @@ export default async function TourPage({ params }: TourPageProps) {
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Отзывы</h2>
                 <div className="space-y-4">
                   {tourReviews.map((review) => (
-                    <div key={review.id} className="bg-white rounded-xl p-5 border border-gray-100">
+                    <div key={review.id} className="bg-white rounded-xl p-5 border border-gray-100 border-l-2 border-l-amber-200">
                       <div className="flex items-center gap-2 mb-2">
                         <span className="font-semibold text-gray-900 text-sm">{review.author}</span>
                         <span className="text-xs text-gray-400">· {review.city}</span>
