@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'amra-turistik.ru',
       },
+      {
+        protocol: 'https',
+        hostname: 'bogema.ru',
+      },
     ],
   },
 };
