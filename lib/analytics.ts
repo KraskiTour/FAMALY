@@ -14,6 +14,7 @@ type EventName =
   | 'click_telegram'
   | 'click_max'
   | 'click_call'
+  | 'click_booking_atoms'
   | 'open_tour_lead_form'
   | 'submit_tour_lead_form';
 
