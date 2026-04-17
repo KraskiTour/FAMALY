@@ -1,0 +1,780 @@
+{
+  "161": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Геленджик",
+      "slug": "gelendzhik",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Горячий ключ",
+      "slug": "goryachij-klyuch",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "162": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Геленджик",
+      "slug": "gelendzhik",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "163": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Майкоп",
+      "slug": "majkop",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "164": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Геленджик",
+      "slug": "gelendzhik",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Горячий ключ",
+      "slug": "goryachij-klyuch",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "165": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Геленджик",
+      "slug": "gelendzhik",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Ставрополь",
+      "slug": "stavropol",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Горячий ключ",
+      "slug": "goryachij-klyuch",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Сочи",
+      "slug": "sochi",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "166": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Горячий ключ",
+      "slug": "goryachij-klyuch",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "167": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Геленджик",
+      "slug": "gelendzhik",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "168": [
+    {
+      "city": "Горячий ключ",
+      "slug": "goryachij-klyuch",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "169": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Ставрополь",
+      "slug": "stavropol",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Геленджик",
+      "slug": "gelendzhik",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "170": [
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    }
+  ],
+  "171": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "172": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Геленджик",
+      "slug": "gelendzhik",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "173": [
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Ставрополь",
+      "slug": "stavropol",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Ростов",
+      "slug": "rostov",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "174": [
+    {
+      "city": "Горячий ключ",
+      "slug": "goryachij-klyuch",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "175": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Геленджик",
+      "slug": "gelendzhik",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "176": [
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Геленджик",
+      "slug": "gelendzhik",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Горячий ключ",
+      "slug": "goryachij-klyuch",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "177": [
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Майкоп",
+      "slug": "majkop",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Горячий ключ",
+      "slug": "goryachij-klyuch",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "178": [
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Горячий ключ",
+      "slug": "goryachij-klyuch",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "179": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Геленджик",
+      "slug": "gelendzhik",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "180": [
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Горячий ключ",
+      "slug": "goryachij-klyuch",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "181": [
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Горячий ключ",
+      "slug": "goryachij-klyuch",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "182": [
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Ставрополь",
+      "slug": "stavropol",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "183": [
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Горячий ключ",
+      "slug": "goryachij-klyuch",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "184": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Ставрополь",
+      "slug": "stavropol",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "185": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Геленджик",
+      "slug": "gelendzhik",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "186": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Геленджик",
+      "slug": "gelendzhik",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Сочи",
+      "slug": "sochi",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "187": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Геленджик",
+      "slug": "gelendzhik",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "188": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Геленджик",
+      "slug": "gelendzhik",
+      "time": "",
+      "point": ""
+    }
+  ],
+  "189": [
+    {
+      "city": "Новороссийск",
+      "slug": "novorossijsk",
+      "time": "",
+      "point": "Анапское шоссе, д. 39А, у ТЦ «Бон Пассаж»"
+    },
+    {
+      "city": "Краснодар",
+      "slug": "krasnodar",
+      "time": "",
+      "point": "ул. Захарова, 3/2, ост. «ТРК Сити-Центр»"
+    },
+    {
+      "city": "Анапа",
+      "slug": "anapa",
+      "time": "",
+      "point": ""
+    },
+    {
+      "city": "Геленджик",
+      "slug": "gelendzhik",
+      "time": "",
+      "point": ""
+    }
+  ]
+}

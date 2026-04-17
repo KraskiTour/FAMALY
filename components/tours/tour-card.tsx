@@ -1,5 +1,7 @@
+'use client';
+
 import Link from 'next/link';
-import Image from 'next/image';
+import { useState } from 'react';
 import { Tour, BADGE_LABELS, BADGE_COLORS } from '@/lib/types';
 import { formatPrice, pluralDays, formatDate, getProductLabel } from '@/lib/utils';
 
@@ -9,6 +11,9 @@ interface TourCardProps {
 
 export default function TourCard({ tour }: TourCardProps) {
   const nextDate = tour.nextDates[0];
+  const [imageFailed, setImageFailed] = useState(false);
+  const primaryImage = !imageFailed && tour.gallery[0] ? tour.gallery[0] : '/images/hero-home.png';
+  const showPrimaryImage = primaryImage.startsWith('/images/') || primaryImage.startsWith('http');
 
   return (
     <Link
@@ -17,14 +22,13 @@ export default function TourCard({ tour }: TourCardProps) {
     >
       <div className="relative aspect-[16/10] bg-gradient-to-br from-brand-50 via-teal-50 to-sky-50 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/5 to-transparent z-10" />
-        {tour.gallery[0] && (tour.gallery[0].startsWith('/images/') || tour.gallery[0].startsWith('http')) ? (
-          <Image
-            src={tour.gallery[0]}
+        {showPrimaryImage ? (
+          <img
+            src={primaryImage}
             alt={tour.title}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            unoptimized={tour.gallery[0].startsWith('https://')}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            loading="lazy"
+            onError={() => setImageFailed(true)}
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">

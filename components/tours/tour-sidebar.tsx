@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Tour } from '@/lib/types';
-import { CONTACTS } from '@/lib/config';
+import { CONTACTS, ATOMS_TRAVEL } from '@/lib/config';
 import { formatPrice, formatDateRange, pluralDays } from '@/lib/utils';
 import { trackEvent } from '@/lib/analytics';
 
@@ -123,10 +123,22 @@ export default function TourSidebar({ tour }: TourSidebarProps) {
       <div className="space-y-3">
         {!showForm ? (
           <>
+            {tour.atomsTourId && (
+              <a
+                href={`/booking?tour=${tour.atomsTourId}`}
+                onClick={() => trackEvent('click_booking_atoms', { tour: tour.slug, atomsTourId: tour.atomsTourId! })}
+                className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-brand-600 to-brand-700 text-white py-4 rounded-2xl text-base font-bold hover:from-brand-700 hover:to-brand-800 transition-all duration-200 shadow-md shadow-brand-600/20 hover:shadow-lg hover:scale-[1.02]"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                </svg>
+                Забронировать онлайн
+              </a>
+            )}
             <button
               type="button"
               onClick={() => { trackEvent('open_tour_lead_form', { tour: tour.slug }); setShowForm(true); }}
-              className="w-full bg-gradient-to-r from-brand-600 to-brand-700 text-white py-4 rounded-2xl text-base font-bold hover:from-brand-700 hover:to-brand-800 transition-all duration-200 shadow-md shadow-brand-600/20 hover:shadow-lg hover:scale-[1.02]"
+              className={`w-full ${tour.atomsTourId ? 'bg-white text-brand-700 border-2 border-brand-200 hover:border-brand-400 hover:bg-brand-50' : 'bg-gradient-to-r from-brand-600 to-brand-700 text-white hover:from-brand-700 hover:to-brand-800 shadow-md shadow-brand-600/20 hover:shadow-lg hover:scale-[1.02]'} py-4 rounded-2xl text-base font-bold transition-all duration-200`}
             >
               Оставить заявку на тур
             </button>
@@ -203,6 +215,24 @@ export default function TourSidebar({ tour }: TourSidebarProps) {
           </div>
         ))}
       </div>
+
+      {tour.sourceUrl && (
+        <div className="mt-4 pt-3 border-t border-gray-100">
+          <a
+            href={tour.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-brand-600 transition-colors"
+            title={`Посмотреть оригинал у ${tour.sourceOperator || 'оператора'}`}
+          >
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.64 0 8.577 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.64 0-8.577-3.007-9.963-7.178z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            Тур на сайте {tour.sourceOperator || 'оператора'}
+          </a>
+        </div>
+      )}
     </div>
   );
 }

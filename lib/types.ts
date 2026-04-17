@@ -64,6 +64,9 @@ export interface Tour {
   maxGroupSize?: number;
   minAge?: number;
   organizationalInfo?: TourOrganizationalInfo;
+  sourceUrl?: string;
+  sourceOperator?: string;
+  atomsTourId?: string;
 }
 
 export interface City {

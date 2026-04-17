@@ -46,6 +46,12 @@ export const CONTACTS = {
   email: 'office@kraski.travel',
 } as const;
 
+export const ATOMS_TRAVEL = {
+  apiKey: 'b6d3bc9d52c640048476da873c555b7a',
+  host: 'atom-s.com',
+  scriptUrl: 'https://atom-s.com/script.js',
+} as const;
+
 export const SITE = {
   url: 'https://kraski.travel',
   defaultTitle: `${COMPANY.name} — семейные туры и поездки по России`,

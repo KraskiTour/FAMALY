@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 
 interface TourGalleryProps {
   images: string[];
@@ -14,21 +13,25 @@ function isRealImage(src: string) {
 
 export default function TourGallery({ images, title }: TourGalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeImage = images[activeIndex];
+  const [failedImages, setFailedImages] = useState<Record<number, boolean>>({});
+  const activeImage = failedImages[activeIndex] ? '/images/hero-home.png' : images[activeIndex];
   const showReal = activeImage && isRealImage(activeImage);
 
   return (
     <div>
       <div className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-gradient-to-br from-brand-50 via-teal-50/50 to-sky-50 shadow-sm">
         {showReal ? (
-          <Image
+          <img
             src={activeImage}
             alt={`${title} — фото ${activeIndex + 1}`}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 66vw"
-            priority={activeIndex === 0}
-            unoptimized={activeImage.startsWith('https://')}
+            className="absolute inset-0 h-full w-full object-cover"
+            loading={activeIndex === 0 ? 'eager' : 'lazy'}
+            onError={() =>
+              setFailedImages((prev) => ({
+                ...prev,
+                [activeIndex]: true,
+              }))
+            }
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
@@ -53,13 +56,17 @@ export default function TourGallery({ images, title }: TourGalleryProps) {
               }`}
             >
               {isRealImage(img) ? (
-                <Image
-                  src={img}
+                <img
+                  src={failedImages[index] ? '/images/hero-home.png' : img}
                   alt={`${title} — ${index + 1}`}
-                  width={80}
-                  height={56}
                   className="w-full h-full object-cover"
-                  unoptimized={img.startsWith('https://')}
+                  loading="lazy"
+                  onError={() =>
+                    setFailedImages((prev) => ({
+                      ...prev,
+                      [index]: true,
+                    }))
+                  }
                 />
               ) : (
                 <div className="w-full h-full bg-gradient-to-br from-brand-50 to-teal-50/50 flex items-center justify-center">

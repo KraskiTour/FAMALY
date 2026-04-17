@@ -1,12 +1,19 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Hero() {
   return (
     <section className="relative bg-gradient-to-br from-brand-900 via-gray-900 to-stone-950 overflow-hidden">
       <div className="absolute inset-0">
-        <div className="brand-blob brand-blob-teal w-[600px] h-[500px] -top-20 -right-20 opacity-80" />
-        <div className="brand-blob brand-blob-warm w-[400px] h-[350px] bottom-0 left-10 opacity-70" />
-        <div className="brand-blob brand-blob-sky w-[350px] h-[300px] top-1/3 right-1/4 opacity-50" />
+        <Image
+          src="/images/hero-home.png"
+          alt="Коллаж направлений KRASKI.TRAVEL"
+          fill
+          priority
+          className="object-cover object-[72%_center] md:object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0f2e45]/92 via-[#14354c]/78 to-[#0b1320]/28" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/10" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-44">
