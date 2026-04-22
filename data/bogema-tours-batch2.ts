@@ -2166,7 +2166,7 @@ export const bogemaToursBatch2: Tour[] = [
       {
         day: 7,
         title: 'День в пути',
-        description: 'День в пути\n<span uk-icon="icon:chevron-up" class="program-toggle_7 uk',
+        description: 'Обратный путь в Краснодар. Прибытие вечером. Отдых и воспоминания о поездке.',
         images: [
           'https://bogema.ru/images/jatoms/tours/46767-zh-d-tur-v-sankt-peterburg-vse-samoe-interesnoe/e559971568f74495b9f5bd979ba8739c.jpeg',
         ],

@@ -26,6 +26,7 @@ export default function TourGallery({ images, title }: TourGalleryProps) {
             alt={`${title} — фото ${activeIndex + 1}`}
             className="absolute inset-0 h-full w-full object-cover"
             loading={activeIndex === 0 ? 'eager' : 'lazy'}
+            referrerPolicy="no-referrer"
             onError={() =>
               setFailedImages((prev) => ({
                 ...prev,
@@ -61,6 +62,7 @@ export default function TourGallery({ images, title }: TourGalleryProps) {
                   alt={`${title} — ${index + 1}`}
                   className="w-full h-full object-cover"
                   loading="lazy"
+                  referrerPolicy="no-referrer"
                   onError={() =>
                     setFailedImages((prev) => ({
                       ...prev,

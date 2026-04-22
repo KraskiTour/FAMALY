@@ -1,4 +1,4 @@
-export type Badge = 'hit' | 'new' | 'hot' | 'kids' | 'family' | 'weekend' | 'sea' | 'mountains' | 'city' | 'train' | 'bus';
+export type Badge = 'hit' | 'new' | 'hot' | 'kids' | 'family' | 'weekend' | 'sea' | 'mountains' | 'city' | 'train' | 'bus' | 'relax' | 'culture';
 
 export interface DepartureCity {
   city: string;
@@ -114,6 +114,8 @@ export const BADGE_LABELS: Record<Badge, string> = {
   city: 'Город',
   train: 'Поезд',
   bus: 'Автобус',
+  relax: 'Отдых',
+  culture: 'Культура',
 };
 
 export const BADGE_COLORS: Record<Badge, string> = {
@@ -128,4 +130,6 @@ export const BADGE_COLORS: Record<Badge, string> = {
   city: 'bg-orange-500/85 backdrop-blur-sm',
   train: 'bg-slate-600/85 backdrop-blur-sm',
   bus: 'bg-cyan-600/85 backdrop-blur-sm',
+  relax: 'bg-lime-500/85 backdrop-blur-sm',
+  culture: 'bg-purple-500/85 backdrop-blur-sm',
 };

@@ -14,9 +14,9 @@ type EventName =
   | 'click_telegram'
   | 'click_max'
   | 'click_call'
-  | 'click_booking_atoms'
   | 'open_tour_lead_form'
-  | 'submit_tour_lead_form';
+  | 'submit_tour_lead_form'
+  | 'click_booking_atoms';
 
 export function trackEvent(name: EventName, params?: Record<string, string>) {
   try {

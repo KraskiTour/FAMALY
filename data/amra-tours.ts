@@ -40,9 +40,10 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-18', end: '2026-04-18', price: 3000, seatsLeft: 8 },
-      { start: '2026-04-19', end: '2026-04-19', price: 3000, seatsLeft: 10 },
+      { start: '2026-05-09', end: '2026-05-09', price: 3000, seatsLeft: null },
       { start: '2026-05-10', end: '2026-05-10', price: 3000, seatsLeft: 12 },
+      { start: '2026-05-15', end: '2026-05-15', price: 3000, seatsLeft: null },
+      { start: '2026-05-30', end: '2026-05-30', price: 3000, seatsLeft: null },
       { start: '2026-05-31', end: '2026-05-31', price: 3000, seatsLeft: 8 },
     ],
     included: [
@@ -107,10 +108,11 @@ export const amraTours: Tour[] = [
     region: 'Краснодарский край',
     durationDays: 1,
     seasonMonths: [4],
-    priceFrom: 1900,
+    priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-04', end: '2026-04-04', price: 1900, seatsLeft: 14 },
+      { start: '2026-05-02', end: '2026-05-02', price: 3000, seatsLeft: null },
+      { start: '2026-05-23', end: '2026-05-23', price: 3000, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе',
@@ -176,8 +178,6 @@ export const amraTours: Tour[] = [
     priceFrom: 1900,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-05', end: '2026-04-05', price: 1900, seatsLeft: 12 },
-      { start: '2026-04-25', end: '2026-04-25', price: 3000, seatsLeft: 8 },
       { start: '2026-05-03', end: '2026-05-03', price: 1900, seatsLeft: 14 },
     ],
     included: [
@@ -248,9 +248,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4],
     priceFrom: 1900,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-11', end: '2026-04-11', price: 1900, seatsLeft: 12 },
-    ],
+    nextDates: [],
     included: [
       'Проезд на комфортабельном автобусе',
       'Все экскурсии по программе',
@@ -311,11 +309,10 @@ export const amraTours: Tour[] = [
     region: 'Краснодарский край',
     durationDays: 1,
     seasonMonths: [4],
-    priceFrom: 1900,
+    priceFrom: 2800,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-12', end: '2026-04-12', price: 1900, seatsLeft: 12 },
-      { start: '2026-04-19', end: '2026-04-19', price: 2800, seatsLeft: 8 },
+      { start: '2026-05-10', end: '2026-05-10', price: 2800, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе',
@@ -379,7 +376,7 @@ export const amraTours: Tour[] = [
     priceFrom: 1900,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-18', end: '2026-04-18', price: 1900, seatsLeft: 12 },
+      { start: '2026-05-29', end: '2026-05-29', price: 3000, seatsLeft: null },
       { start: '2026-05-30', end: '2026-05-30', price: 1900, seatsLeft: null },
     ],
     included: [
@@ -446,6 +443,7 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
+      { start: '2026-05-09', end: '2026-05-09', price: 3000, seatsLeft: null },
       { start: '2026-05-16', end: '2026-05-16', price: 3000, seatsLeft: 10 },
       { start: '2026-06-13', end: '2026-06-13', price: 3000, seatsLeft: 12 },
     ],
@@ -512,6 +510,7 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
+      { start: '2026-05-22', end: '2026-05-22', price: 3000, seatsLeft: null },
       { start: '2026-05-23', end: '2026-05-23', price: 3000, seatsLeft: 10 },
       { start: '2026-06-20', end: '2026-06-20', price: 3000, seatsLeft: 12 },
     ],
@@ -575,8 +574,7 @@ export const amraTours: Tour[] = [
     priceFrom: 39200,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-02', end: '2026-04-06', price: 39200, seatsLeft: 8 },
-      { start: '2026-04-07', end: '2026-04-11', price: 39200, seatsLeft: 8 },
+      { start: '2026-05-21', end: '2026-05-25', price: 39200, seatsLeft: null },
     ],
     included: [
       'Проживание 4 ночи в отеле 3* рядом с Голубой мечетью',
@@ -747,7 +745,8 @@ export const amraTours: Tour[] = [
     priceFrom: 54900,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-30', end: '2026-05-08', price: 54900, seatsLeft: 6 },
+      { start: '2026-05-01', end: '2026-05-08', price: 54900, seatsLeft: null },
+      { start: '2026-06-20', end: '2026-06-27', price: 54900, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе туда и обратно',
@@ -859,10 +858,12 @@ export const amraTours: Tour[] = [
     region: 'Крым',
     durationDays: 2,
     seasonMonths: [3],
-    priceFrom: 12200,
+    priceFrom: 12000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-03-28', end: '2026-03-29', price: 12200, seatsLeft: 8 },
+      { start: '2026-05-01', end: '2026-05-02', price: 12000, seatsLeft: null },
+      { start: '2026-06-06', end: '2026-06-07', price: 12800, seatsLeft: null },
+      { start: '2026-06-20', end: '2026-06-21', price: 12800, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе',
@@ -900,12 +901,12 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1540979388779-3848578a2b9d?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1506377295622-ce39a08781b6?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1545558014-8692077e9d5c?w=1200&h=800&fit=crop&q=85',
+      'http://amra-turistik.ru/wp-content/uploads/2019/07/29B63F98-E585-4B7D-B3B9-FCB642739027.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2024/11/scale_1200.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2024/11/scale_1200-1024x684.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5769.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5769-1024x683.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5767.jpg',
     ],
     badges: ['sea', 'bus'],
     transport: 'Комфортабельный автобус',
@@ -943,9 +944,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4],
     priceFrom: 5200,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-04', end: '2026-04-04', price: 5200, seatsLeft: 10 },
-    ],
+    nextDates: [],
     included: [
       'Проезд на комфортабельном автобусе',
       'Сопровождение экскурсовода',
@@ -971,11 +970,10 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1506377295622-ce39a08781b6?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&h=800&fit=crop&q=85',
+      'https://amra-turistik.ru/wp-content/uploads/2026/03/dsc00812_0.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2026/03/755755e893a4ba8d4b0de6fc4ac0738a.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2026/04/1-72-1024x683.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2026/04/1-72.jpg',
     ],
     badges: ['sea', 'bus', 'new'],
     transport: 'Комфортабельный автобус',
@@ -1014,7 +1012,9 @@ export const amraTours: Tour[] = [
     priceFrom: 12000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-04', end: '2026-04-05', price: 12000, seatsLeft: 10 },
+      { start: '2026-05-01', end: '2026-05-02', price: 12000, seatsLeft: null },
+      { start: '2026-06-06', end: '2026-06-07', price: 12800, seatsLeft: null },
+      { start: '2026-06-20', end: '2026-06-21', price: 12800, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе',
@@ -1051,12 +1051,12 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1437712947931-bc787c9d64d4?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1506377295622-ce39a08781b6?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1544556631-1eef3ebf5069?w=1200&h=800&fit=crop&q=85',
+      'http://amra-turistik.ru/wp-content/uploads/2019/07/29B63F98-E585-4B7D-B3B9-FCB642739027.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2024/11/scale_1200.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2024/11/scale_1200-1024x684.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5769.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5769-1024x683.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5767.jpg',
     ],
     badges: ['sea', 'bus'],
     transport: 'Комфортабельный автобус',
@@ -1094,9 +1094,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4],
     priceFrom: 12000,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-18', end: '2026-04-19', price: 12000, seatsLeft: 10 },
-    ],
+    nextDates: [],
     included: [
       'Проезд на комфортабельном автобусе',
       'Проживание 1 ночь в Алуште',
@@ -1132,11 +1130,12 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1506377295622-ce39a08781b6?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&h=800&fit=crop&q=85',
+      'http://amra-turistik.ru/wp-content/uploads/2019/07/29B63F98-E585-4B7D-B3B9-FCB642739027.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2024/11/scale_1200.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2024/11/scale_1200-1024x684.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5769.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5769-1024x683.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5767.jpg',
     ],
     badges: ['sea', 'bus', 'new'],
     transport: 'Комфортабельный автобус',
@@ -1175,7 +1174,7 @@ export const amraTours: Tour[] = [
     priceFrom: 42800,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-29', end: '2026-05-03', price: 42800, seatsLeft: 5 },
+      { start: '2026-06-11', end: '2026-06-15', price: 42800, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе',
@@ -1263,6 +1262,7 @@ export const amraTours: Tour[] = [
     priceFrom: 42800,
     oldPrice: null,
     nextDates: [
+      { start: '2026-06-11', end: '2026-06-15', price: 42800, seatsLeft: null },
       { start: '2026-09-03', end: '2026-09-07', price: 42800, seatsLeft: 10 },
     ],
     included: [
@@ -1348,11 +1348,11 @@ export const amraTours: Tour[] = [
     region: 'Грузия',
     durationDays: 4,
     seasonMonths: [4, 5],
-    priceFrom: 32000,
+    priceFrom: 38100,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-10', end: '2026-04-13', price: 32000, seatsLeft: null },
       { start: '2026-05-07', end: '2026-05-10', price: 38100, seatsLeft: null },
+      { start: '2026-05-08', end: '2026-05-11', price: 38100, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе',
@@ -1433,8 +1433,6 @@ export const amraTours: Tour[] = [
     priceFrom: 950,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-05', end: '2026-04-05', price: 950, seatsLeft: 15 },
-      { start: '2026-04-19', end: '2026-04-19', price: 950, seatsLeft: 18 },
       { start: '2026-05-10', end: '2026-05-10', price: 950, seatsLeft: 18 },
     ],
     included: [
@@ -1495,8 +1493,6 @@ export const amraTours: Tour[] = [
     priceFrom: 950,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-04', end: '2026-04-04', price: 950, seatsLeft: 15 },
-      { start: '2026-04-18', end: '2026-04-18', price: 950, seatsLeft: 18 },
       { start: '2026-05-09', end: '2026-05-09', price: 950, seatsLeft: 18 },
     ],
     included: [
@@ -1555,8 +1551,6 @@ export const amraTours: Tour[] = [
     priceFrom: 950,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-04', end: '2026-04-04', price: 950, seatsLeft: 15 },
-      { start: '2026-04-25', end: '2026-04-25', price: 950, seatsLeft: 18 },
       { start: '2026-05-16', end: '2026-05-16', price: 950, seatsLeft: 18 },
     ],
     included: [
@@ -1616,8 +1610,9 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-12', end: '2026-04-12', price: 3000, seatsLeft: null },
+      { start: '2026-05-02', end: '2026-05-02', price: 3000, seatsLeft: null },
       { start: '2026-05-03', end: '2026-05-03', price: 3000, seatsLeft: null },
+      { start: '2026-05-30', end: '2026-05-30', price: 3000, seatsLeft: null },
       { start: '2026-05-31', end: '2026-05-31', price: 3000, seatsLeft: null },
     ],
     included: [
@@ -1638,7 +1633,14 @@ export const amraTours: Tour[] = [
         description: 'Утренний выезд из Краснодара (07:30). Переезд ~2 часа до долины Лефкадия.\n\n● Долина Лефкадия — современная винодельня с одной из самых красивых территорий на юге. Ровные ряды лоз уходят к горизонту, а за ними — предгорья. Здесь можно погулять по парку, сфотографироваться на фоне виноградников и зайти в фирменный магазин. По желанию — экскурсия по производству и дегустация (от 1 500 ₽): расскажут про терруар, сорта и технологию, дадут попробовать линейку «Лефкадия» и «Ликурия».\n\n● Шато-Пино — совсем другое настроение. Небольшое поместье у подножия горы Колдун, окружённое виноградниками и дубовой рощей. На территории — музей ретро-автомобилей, коллекция старинных фотоаппаратов, фермерская улиточная ферма. Фирменная дегустация «эскарго» по бургундскому рецепту — визитная карточка места: улитки под чесночным маслом с травами, в паре с авторским вином (от 850 ₽ только улитки, от 1 200 ₽ улитки + вино). Виды с террасы на закате — одни из лучших на побережье.\n\n● Абрау-Дюрсо завершает день. Знаменитое горное озеро Абрау, обрамлённое соснами и виноградниками, — самое крупное пресноводное озеро Краснодарского края. Прогулка по набережной, парк у завода шампанских вин и фирменный магазин с ценами ниже городских. Весной и летом по вечерам работает шоу фонтанов на озере.\n\nВозвращение в Краснодар около 22:30. Три винодельни — три совершенно разных характера: панорама виноградников, поместье с улитками и закат над горным озером.',
       },
     ],
-    gallery: [],
+    gallery: [
+      'http://amra-turistik.ru/wp-content/uploads/2020/07/restoran-chateau-pinot-660x400-1.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2020/06/img_8919.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/0E0AB79B-34F6-4D20-B209-DCE6A050D733.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/9F08A60E-6575-493A-A6AD-C7B5AA081369.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/9F08A60E-6575-493A-A6AD-C7B5AA081369-1024x682.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/9FC90A79-6058-4D42-A4C7-DBC137915F27.jpeg',
+    ],
     badges: ['weekend', 'bus', 'sea'] as const,
     transport: 'Комфортабельный автобус',
     meals: 'Питание не включено',
@@ -1674,8 +1676,9 @@ export const amraTours: Tour[] = [
     priceFrom: 2600,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-26', end: '2026-04-26', price: 2600, seatsLeft: 8 },
+      { start: '2026-05-08', end: '2026-05-08', price: 2600, seatsLeft: null },
       { start: '2026-05-09', end: '2026-05-09', price: 2600, seatsLeft: null },
+      { start: '2026-05-23', end: '2026-05-23', price: 2600, seatsLeft: null },
     ],
     included: [
       'Проезд на автобусе',
@@ -1693,7 +1696,12 @@ export const amraTours: Tour[] = [
         description: 'Утренний выезд из Краснодара. По прибытии — пешеходная экскурсия по Горячему Ключу: курортная часть, питьевая галерея с минеральной водой, Дантово ущелье с его узким скальным коридором и скала Петушок над рекой Псекупс. Свободное время для прогулки и обеда. Затем переезд на ферму альпак и капибар: знакомство с животными, фотосессия и прогулка по территории. Возвращение в Краснодар к вечеру.',
       },
     ],
-    gallery: [],
+    gallery: [
+      'https://bogema.ru/images/jatoms/tours/46024-goryachij-klyuch-kanatnaya-doroga-dykhanie-gor-ferma-alpak-i-kapibar/223bd588b6394836addf65c9acf76905.jpeg',
+      'https://bogema.ru/images/jatoms/tours/46024-goryachij-klyuch-kanatnaya-doroga-dykhanie-gor-ferma-alpak-i-kapibar/2af73806da1b41fb8191ef1356e85d1b.jpeg',
+      'https://bogema.ru/images/jatoms/tours/46024-goryachij-klyuch-kanatnaya-doroga-dykhanie-gor-ferma-alpak-i-kapibar/600c084aef8446b48e44d1ead08c598b.jpeg',
+      'https://bogema.ru/images/jatoms/tours/46024-goryachij-klyuch-kanatnaya-doroga-dykhanie-gor-ferma-alpak-i-kapibar/a7d69baac7bc41cda60bd7f12cbe49d7.jpeg',
+    ],
     badges: ['weekend', 'bus', 'family', 'kids'] as const,
     transport: 'Комфортабельный автобус',
     meals: 'Питание не включено',
@@ -1729,10 +1737,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [3, 4, 5, 6, 7, 8, 9, 10],
     priceFrom: 3300,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-03-29', end: '2026-03-29', price: 3300, seatsLeft: null },
-      { start: '2026-04-26', end: '2026-04-26', price: 3300, seatsLeft: 8 },
-    ],
+    nextDates: [],
     included: [
       'Проезд на автобусе туристического класса',
       'Страховка',
@@ -1795,7 +1800,7 @@ export const amraTours: Tour[] = [
     priceFrom: 82300,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-08', end: '2026-04-14', price: 82300, seatsLeft: null },
+      { start: '2026-05-13', end: '2026-05-19', price: 82300, seatsLeft: null },
     ],
     included: [
       'Проживание 6 ночей в отелях (Ташкент, Хива, Бухара, Самарканд)',
@@ -1899,9 +1904,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4],
     priceFrom: 13500,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-11', end: '2026-04-12', price: 13500, seatsLeft: null },
-    ],
+    nextDates: [],
     included: [
       'Проезд на комфортабельном автобусе',
       'Проживание 1 ночь в Алуште',
@@ -1938,12 +1941,10 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1520763185298-aa3098718946?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1548013146-72479768b347?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&h=800&fit=crop&q=85',
+      'https://amra-turistik.ru/wp-content/uploads/2026/03/dsc00812_0.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2026/03/755755e893a4ba8d4b0de6fc4ac0738a.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2026/04/1-72-1024x683.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2026/04/1-72.jpg',
     ],
     badges: ['new', 'bus'] as const,
     transport: 'Комфортабельный автобус',
@@ -1979,10 +1980,10 @@ export const amraTours: Tour[] = [
     region: 'Абхазия',
     durationDays: 2,
     seasonMonths: [4],
-    priceFrom: 10500,
+    priceFrom: 16900,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-11', end: '2026-04-12', price: 10500, seatsLeft: null },
+      { start: '2026-05-01', end: '2026-05-03', price: 16900, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе',
@@ -2065,7 +2066,8 @@ export const amraTours: Tour[] = [
     priceFrom: 10200,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-11', end: '2026-04-12', price: 10200, seatsLeft: null },
+      { start: '2026-05-02', end: '2026-05-03', price: 10200, seatsLeft: null },
+      { start: '2026-06-06', end: '2026-06-07', price: 10200, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе',
@@ -2144,10 +2146,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4],
     priceFrom: 15000,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-11', end: '2026-04-12', price: 15000, seatsLeft: null },
-      { start: '2026-04-18', end: '2026-04-19', price: 15000, seatsLeft: null },
-    ],
+    nextDates: [],
     included: [
       'Проезд на комфортабельном автобусе',
       'Проживание 1 ночь в отеле в Элисте',
@@ -2231,7 +2230,7 @@ export const amraTours: Tour[] = [
     priceFrom: 13500,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-18', end: '2026-04-19', price: 13500, seatsLeft: null },
+      { start: '2026-05-09', end: '2026-05-10', price: 13500, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе',
@@ -2309,10 +2308,10 @@ export const amraTours: Tour[] = [
     region: 'Крым',
     durationDays: 2,
     seasonMonths: [4],
-    priceFrom: 12600,
+    priceFrom: 14600,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-18', end: '2026-04-19', price: 12600, seatsLeft: null },
+      { start: '2026-06-06', end: '2026-06-07', price: 14600, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе',
@@ -2350,13 +2349,12 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1520763185298-aa3098718946?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1506377295622-ce39a08781b6?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&h=800&fit=crop&q=85',
+      'https://amra-turistik.ru/wp-content/uploads/2021/03/579096.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/09/i-1-1.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/06/voroncov.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/06/masandra.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/06/masandra-1024x683.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMGP2875.jpg',
     ],
     badges: ['bus', 'sea'] as const,
     transport: 'Комфортабельный автобус',
@@ -2392,10 +2390,11 @@ export const amraTours: Tour[] = [
     region: 'Кавказ',
     durationDays: 2,
     seasonMonths: [4, 5],
-    priceFrom: 11000,
+    priceFrom: 12800,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-18', end: '2026-04-19', price: 11000, seatsLeft: null },
+      { start: '2026-05-01', end: '2026-05-02', price: 12800, seatsLeft: null },
+      { start: '2026-05-09', end: '2026-05-10', price: 12800, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе',
@@ -2477,7 +2476,7 @@ export const amraTours: Tour[] = [
     priceFrom: 73200,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-25', end: '2026-05-02', price: 73200, seatsLeft: 5 },
+      { start: '2026-06-06', end: '2026-06-13', price: 73200, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе Краснодар — Беларусь — Краснодар',
@@ -2590,9 +2589,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4, 5],
     priceFrom: 54600,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-29', end: '2026-05-05', price: 54600, seatsLeft: 5 },
-    ],
+    nextDates: [],
     included: [
       'Проезд на комфортабельном автобусе',
       'Проживание 3 ночи в отеле 3* в Тбилиси',
@@ -2709,9 +2706,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4, 5],
     priceFrom: 28000,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-30', end: '2026-05-03', price: 28000, seatsLeft: 6 },
-    ],
+    nextDates: [],
     included: [
       'Проезд на автобусе',
       'Проживание 3 ночи в Гунибе (гостевые дома / мини-отели)',
@@ -2807,7 +2802,7 @@ export const amraTours: Tour[] = [
     priceFrom: 53800,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-30', end: '2026-05-08', price: 53800, seatsLeft: 6 },
+      { start: '2026-06-03', end: '2026-06-11', price: 53800, seatsLeft: null },
     ],
     included: [
       'Транспортное и экскурсионное обслуживание в Калининграде',
@@ -2895,9 +2890,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4, 5],
     priceFrom: 64500,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-30', end: '2026-05-08', price: 64500, seatsLeft: 5 },
-    ],
+    nextDates: [],
     included: [
       'Проезд на комфортабельном автобусе',
       'Проживание: 4 ночи в Тбилиси (3*), 1 ночь в Боржоми (3*), 3 ночи в Батуми (3*)',
@@ -3021,7 +3014,7 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-04', end: '2026-04-04', price: 3000, seatsLeft: 8 },
+      { start: '2026-05-22', end: '2026-05-22', price: 3000, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе',
@@ -3087,10 +3080,10 @@ export const amraTours: Tour[] = [
     region: 'Краснодарский край',
     durationDays: 1,
     seasonMonths: [4, 5, 6, 7, 8, 9, 10],
-    priceFrom: 3300,
+    priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-04', end: '2026-04-04', price: 3300, seatsLeft: 8 },
+      { start: '2026-05-29', end: '2026-05-29', price: 3000, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе',
@@ -3159,7 +3152,7 @@ export const amraTours: Tour[] = [
     priceFrom: 3300,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-04', end: '2026-04-04', price: 3300, seatsLeft: 8 },
+      { start: '2026-05-15', end: '2026-05-15', price: 3300, seatsLeft: null },
     ],
     included: [
       'Проезд Краснодар — Мезмай — Гуамка — Краснодар',
@@ -3231,7 +3224,7 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-04', end: '2026-04-04', price: 3000, seatsLeft: 8 },
+      { start: '2026-05-10', end: '2026-05-10', price: 3000, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе',
@@ -3301,11 +3294,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4],
     priceFrom: 5800,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-04', end: '2026-04-04', price: 5800, seatsLeft: 8 },
-      { start: '2026-04-11', end: '2026-04-11', price: 5800, seatsLeft: 8 },
-      { start: '2026-04-18', end: '2026-04-18', price: 5800, seatsLeft: 8 },
-    ],
+    nextDates: [],
     included: [
       'Проезд на комфортабельном автобусе',
       'Экскурсовод',
@@ -3377,7 +3366,7 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-05', end: '2026-04-05', price: 3000, seatsLeft: 8 },
+      { start: '2026-05-01', end: '2026-05-01', price: 3000, seatsLeft: null },
     ],
     included: [
       'Проезд на комфортабельном автобусе',
@@ -3446,7 +3435,7 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-05', end: '2026-04-05', price: 3000, seatsLeft: 8 },
+      { start: '2026-05-16', end: '2026-05-16', price: 3000, seatsLeft: null },
     ],
     included: ['Проезд на автобусе', 'Экскурсовод', 'Все экскурсии по программе', 'Страховка'],
     excluded: ['Вход на водопады (~600 ₽ взр. / ~300 ₽ дет.)', 'Конная прогулка (~1 000 ₽, по желанию)', 'Питание'],
@@ -3500,7 +3489,7 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-05', end: '2026-04-05', price: 3000, seatsLeft: 8 },
+      { start: '2026-05-08', end: '2026-05-08', price: 3000, seatsLeft: null },
     ],
     included: ['Проезд на автобусе', 'Экскурсовод', 'Все экскурсии по программе'],
     excluded: ['Питание', 'Эко-сбор на водопады (~400 ₽ взр. / ~300 ₽ дет.)', 'Музей «Хлеба и Вина» (~500 ₽)'],
@@ -3556,10 +3545,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4, 5],
     priceFrom: 3000,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-11', end: '2026-04-11', price: 3000, seatsLeft: 8 },
-      { start: '2026-04-12', end: '2026-04-12', price: 3000, seatsLeft: 8 },
-    ],
+    nextDates: [],
     included: ['Проезд на автобусе', 'Экскурсовод', 'Все экскурсии по программе', 'Страховка'],
     excluded: ['Питание', 'Термальные источники (~700 ₽ взр. / ~450 ₽ дет., 1 час, по желанию)'],
     itinerary: [
@@ -3617,7 +3603,7 @@ export const amraTours: Tour[] = [
     priceFrom: 3300,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-11', end: '2026-04-11', price: 3300, seatsLeft: 8 },
+      { start: '2026-05-08', end: '2026-05-08', price: 3300, seatsLeft: null },
     ],
     included: ['Проезд Краснодар — Мезмай — Краснодар', 'Проводник-экскурсовод', 'Все экскурсии по программе', 'Страховка'],
     excluded: ['Питание'],
@@ -3673,9 +3659,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4],
     priceFrom: 6600,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-11', end: '2026-04-11', price: 6600, seatsLeft: 8 },
-    ],
+    nextDates: [],
     included: ['Проезд на автобусе', 'Экскурсовод', 'Все экскурсии по программе', 'Страховка'],
     excluded: ['Морская прогулка, эко-сбор, Никитский ботанический сад (~1 600 ₽, по желанию)', 'Питание'],
     itinerary: [
@@ -3692,14 +3676,12 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1520763185298-aa3098718946?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1506377295622-ce39a08781b6?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1200&h=800&fit=crop&q=85',
+      'http://amra-turistik.ru/wp-content/uploads/2019/07/29B63F98-E585-4B7D-B3B9-FCB642739027.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2024/11/scale_1200.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2024/11/scale_1200-1024x684.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5769.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5769-1024x683.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5767.jpg',
     ],
     badges: ['hot', 'bus', 'sea'] as const,
     transport: 'Комфортабельный автобус',
@@ -3734,7 +3716,8 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-11', end: '2026-04-11', price: 3000, seatsLeft: 8 },
+      { start: '2026-05-09', end: '2026-05-09', price: 3000, seatsLeft: null },
+      { start: '2026-05-22', end: '2026-05-22', price: 3000, seatsLeft: null },
     ],
     included: ['Проезд на автобусе', 'Экскурсовод', 'Все экскурсии по программе'],
     excluded: ['Рафтинг (~2 400 ₽, по желанию)', 'Питание'],
@@ -3790,9 +3773,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4],
     priceFrom: 5500,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-11', end: '2026-04-11', price: 5500, seatsLeft: 8 },
-    ],
+    nextDates: [],
     included: ['Проезд на автобусе', 'Экскурсовод', 'Все экскурсии по программе'],
     excluded: ['Питание', 'Экологический сбор в заповедник (~300 ₽)'],
     itinerary: [
@@ -3808,12 +3789,12 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1520763185298-aa3098718946?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1545558014-8692077e9d5c?w=1200&h=800&fit=crop&q=85',
+      'https://amra-turistik.ru/wp-content/uploads/2021/03/579096.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/09/i-1-1.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/06/voroncov.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/06/masandra.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/06/masandra-1024x683.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMGP2875.jpg',
     ],
     badges: ['hot', 'bus'] as const,
     transport: 'Комфортабельный автобус',
@@ -3846,10 +3827,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4],
     priceFrom: 5900,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-11', end: '2026-04-11', price: 5900, seatsLeft: 8 },
-      { start: '2026-04-18', end: '2026-04-18', price: 5900, seatsLeft: 8 },
-    ],
+    nextDates: [],
     included: ['Проезд на автобусе', 'Экскурсовод из Краснодара и местный', 'Все экскурсии по программе', 'Эко-сборы'],
     excluded: ['Питание'],
     itinerary: [
@@ -3904,7 +3882,7 @@ export const amraTours: Tour[] = [
     priceFrom: 5800,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-11', end: '2026-04-11', price: 5800, seatsLeft: 8 },
+      { start: '2026-05-01', end: '2026-05-01', price: 5800, seatsLeft: null },
     ],
     included: ['Проезд на автобусе класса «Турист»', 'Все экскурсии по программе', 'Экскурсовод'],
     excluded: ['Питание', 'Входной билет в Генуэзскую крепость (~300 ₽ взр. / ~100 ₽ дет.)'],
@@ -3921,13 +3899,12 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1437712947931-bc787c9d64d4?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1544556631-1eef3ebf5069?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1200&h=800&fit=crop&q=85',
+      'http://amra-turistik.ru/wp-content/uploads/2019/07/29B63F98-E585-4B7D-B3B9-FCB642739027.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/507602DD-FD6B-464E-A937-6F6CC8F02486.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5769.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5769-1024x683.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5767.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5767-1024x683.jpg',
     ],
     badges: ['hot', 'bus', 'sea'] as const,
     transport: 'Автобус класса «Турист»',
@@ -3960,9 +3937,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4],
     priceFrom: 2800,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-12', end: '2026-04-12', price: 2800, seatsLeft: 8 },
-    ],
+    nextDates: [],
     included: ['Проезд на автобусе', 'Экскурсовод', 'Все объекты по программе', 'Страховка'],
     excluded: ['Питание', 'Входной билет в Атамань (~700 ₽ взр. / ~450 ₽ дет. / ~600 ₽ пенсионеры)'],
     itinerary: [
@@ -4010,7 +3985,8 @@ export const amraTours: Tour[] = [
     priceFrom: 2800,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-12', end: '2026-04-12', price: 2800, seatsLeft: 8 },
+      { start: '2026-05-09', end: '2026-05-09', price: 2800, seatsLeft: null },
+      { start: '2026-06-11', end: '2026-06-11', price: 2800, seatsLeft: null },
     ],
     included: ['Проезд на автобусе класса «Турист»', 'Экскурсовод на маршруте', 'Все экскурсии по программе'],
     excluded: ['Питание (с собой на первую половину дня, кафе в Геленджике)'],
@@ -4067,7 +4043,7 @@ export const amraTours: Tour[] = [
     priceFrom: 3300,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-12', end: '2026-04-12', price: 3300, seatsLeft: 8 },
+      { start: '2026-05-01', end: '2026-05-01', price: 3300, seatsLeft: null },
     ],
     included: ['Проезд Краснодар–Мезмай–Краснодар', 'Проводник-экскурсовод на маршруте', 'Все экскурсии по программе'],
     excluded: ['Питание'],
@@ -4125,7 +4101,7 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-12', end: '2026-04-12', price: 3000, seatsLeft: 8 },
+      { start: '2026-05-09', end: '2026-05-09', price: 3000, seatsLeft: null },
     ],
     included: ['Проезд на автобусе класса «Турист»', 'Все экскурсии по программе', 'Экскурсовод'],
     excluded: ['Питание', 'Экскурсия и дегустация в Шато де Талю (~2 000 ₽, по желанию)'],
@@ -4181,9 +4157,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4],
     priceFrom: 3000,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-12', end: '2026-04-12', price: 3000, seatsLeft: 8 },
-    ],
+    nextDates: [],
     included: ['Проезд на автобусе', 'Все экскурсии по программе', 'Экскурсовод', 'Страховка'],
     excluded: ['Питание', 'Подземный монастырь (~150 ₽, по желанию)'],
     itinerary: [
@@ -4238,9 +4212,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4, 5],
     priceFrom: 6500,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-18', end: '2026-04-18', price: 6500, seatsLeft: 8 },
-    ],
+    nextDates: [],
     included: ['Проезд на автобусе', 'Все экскурсии по программе', 'Экскурсовод', 'Страховка'],
     excluded: ['Питание', 'Входной билет в Никитский ботанический сад (~700 ₽)'],
     itinerary: [
@@ -4256,13 +4228,12 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1520763185298-aa3098718946?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=1200&h=800&fit=crop&q=85',
+      'https://amra-turistik.ru/wp-content/uploads/2019/09/1114235296.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2024/09/zn5vc1gz7wg.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2024/09/zn5vc1gz7wg-1024x682.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/09/m3i6nRocfMA.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMGP2855.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/IMGP2848.jpg',
     ],
     badges: ['hot', 'bus'] as const,
     transport: 'Автобус класса «Турист»',
@@ -4296,7 +4267,7 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-18', end: '2026-04-18', price: 3000, seatsLeft: 8 },
+      { start: '2026-05-02', end: '2026-05-02', price: 3000, seatsLeft: null },
     ],
     included: ['Проезд на автобусе класса «Турист»', 'Экскурсовод', 'Все экскурсии по программе', 'Страховка'],
     excluded: ['Питание', 'Экологический сбор на водопады Жане (~500 ₽ взр. / ~300 ₽ дет.)'],
@@ -4353,9 +4324,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4, 5],
     priceFrom: 5900,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-18', end: '2026-04-18', price: 5900, seatsLeft: 8 },
-    ],
+    nextDates: [],
     included: ['Проезд на автобусе', 'Экскурсовод', 'Все экскурсии по программе'],
     excluded: ['Питание', 'Эко-сбор (~300 ₽)'],
     itinerary: [
@@ -4371,13 +4340,12 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1520763185298-aa3098718946?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1437712947931-bc787c9d64d4?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1545558014-8692077e9d5c?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&h=800&fit=crop&q=85',
+      'http://amra-turistik.ru/wp-content/uploads/2019/07/E1CBC0BF-37F8-49A4-99DE-C341FB195C60.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2020/03/img_3092-1.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/mitridat_pantikapey_l-1.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/mitridat_pantikapey_l-1-1024x682.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/D11433D5-C282-47B8-90A0-CE26D81A77A2.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/D11433D5-C282-47B8-90A0-CE26D81A77A2-1024x683.jpeg',
     ],
     badges: ['hot', 'bus', 'sea'] as const,
     transport: 'Автобус класса «Турист»',
@@ -4412,7 +4380,7 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-18', end: '2026-04-18', price: 3000, seatsLeft: 8 },
+      { start: '2026-05-29', end: '2026-05-29', price: 3000, seatsLeft: null },
     ],
     included: ['Проезд на автобусе', 'Все экскурсии по программе', 'Экскурсовод', 'Страховка'],
     excluded: ['Питание', 'Канатная дорога (~1 200 ₽ взр. / ~600 ₽ дет.)'],
@@ -4469,7 +4437,7 @@ export const amraTours: Tour[] = [
     priceFrom: 5600,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-18', end: '2026-04-18', price: 5600, seatsLeft: 8 },
+      { start: '2026-05-01', end: '2026-05-01', price: 5600, seatsLeft: null },
     ],
     included: ['Проезд на автобусе', 'Все экскурсии по программе', 'Экскурсовод', 'Страховка'],
     excluded: ['Питание', 'Джиппинг на Язык тролля (~1 300 ₽)', 'Вход в Шато-Экрен (~150 ₽ взр. / ~100 ₽ дет.)'],
@@ -4528,7 +4496,8 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-19', end: '2026-04-19', price: 3000, seatsLeft: 8 },
+      { start: '2026-05-02', end: '2026-05-02', price: 3000, seatsLeft: null },
+      { start: '2026-05-23', end: '2026-05-23', price: 3000, seatsLeft: null },
     ],
     included: ['Проезд на автобусе класса «Турист»', 'Все экскурсии по программе', 'Экскурсовод', 'Страховка'],
     excluded: ['Питание', 'Экскурсия на завод шампанских вин (по желанию)'],
@@ -4582,9 +4551,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [3, 4, 5, 10],
     priceFrom: 2800,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-19', end: '2026-04-19', price: 2800, seatsLeft: 8 },
-    ],
+    nextDates: [],
     included: ['Проезд на автобусе', 'Проводник-экскурсовод на маршруте', 'Все экскурсии по программе', 'Страховка'],
     excluded: ['Питание (с собой)', 'Вход на дольмен (~150 ₽)'],
     itinerary: [
@@ -4640,7 +4607,8 @@ export const amraTours: Tour[] = [
     priceFrom: 2600,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-19', end: '2026-04-19', price: 2600, seatsLeft: 8 },
+      { start: '2026-05-02', end: '2026-05-02', price: 2600, seatsLeft: null },
+      { start: '2026-05-16', end: '2026-05-16', price: 2600, seatsLeft: null },
     ],
     included: ['Проезд на автобусе', 'Проводник-экскурсовод', 'Все экскурсии по программе', 'Страховка'],
     excluded: ['Питание (с собой)', 'Конная прогулка (~1 000 ₽, по желанию)'],
@@ -4694,9 +4662,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4, 5, 6, 7, 8, 9],
     priceFrom: 3000,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-19', end: '2026-04-19', price: 3000, seatsLeft: 8 },
-    ],
+    nextDates: [],
     included: ['Проезд на автобусе', 'Экскурсии по программе', 'Экскурсовод', 'Страховка'],
     excluded: ['Экскурсия и дегустация в Питейном доме — 1 300 ₽ (без дегустации — 700 ₽)', 'Водная Ривьера 3 часа — 1 000 ₽', 'Питание'],
     itinerary: [
@@ -4751,7 +4717,7 @@ export const amraTours: Tour[] = [
     priceFrom: 5800,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-25', end: '2026-04-25', price: 5800, seatsLeft: 8 },
+      { start: '2026-05-09', end: '2026-05-09', price: 5800, seatsLeft: null },
     ],
     included: ['Проезд на автобусе класса «Турист»', 'Все экскурсии по программе', 'Экскурсовод'],
     excluded: ['Питание'],
@@ -4768,12 +4734,12 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1437712947931-bc787c9d64d4?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1544556631-1eef3ebf5069?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=1200&h=800&fit=crop&q=85',
+      'http://amra-turistik.ru/wp-content/uploads/2022/03/5482672_xlarge.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2022/03/maxresdefault.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2022/03/maxresdefault-1024x576.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2022/03/7de6363d-9501-11e6-9d38-ece89687dc88_original.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2022/03/7de6363d-9501-11e6-9d38-ece89687dc88_original-1024x682.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2022/03/7de6363d-9501-11e6-9d38-ece89687dc88_original-1536x1023.jpg',
     ],
     badges: ['bus', 'sea'] as const,
     transport: 'Автобус класса «Турист»',
@@ -4807,7 +4773,7 @@ export const amraTours: Tour[] = [
     priceFrom: 3800,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-25', end: '2026-04-25', price: 3800, seatsLeft: 8 },
+      { start: '2026-05-22', end: '2026-05-22', price: 3800, seatsLeft: null },
     ],
     included: ['Проезд на микроавтобусе', 'Экскурсии по программе', 'Экскурсовод'],
     excluded: ['Экологические сборы (~200 ₽ за ущелье)', 'Пещера Ведьм — 150 ₽', 'Питание'],
@@ -4863,7 +4829,7 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-25', end: '2026-04-25', price: 3000, seatsLeft: 8 },
+      { start: '2026-05-08', end: '2026-05-08', price: 3000, seatsLeft: null },
     ],
     included: ['Проезд на автобусе', 'Все экскурсии по программе', 'Экскурсовод'],
     excluded: ['Питание', 'Посещение подворья Старого Грека с дегустацией — 1 500 ₽ (по желанию)'],
@@ -4918,9 +4884,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4, 5],
     priceFrom: 5900,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-25', end: '2026-04-25', price: 5900, seatsLeft: 8 },
-    ],
+    nextDates: [],
     included: ['Проезд на автобусе класса «Турист»', 'Все экскурсии по программе', 'Экскурсовод', 'Экологический сбор'],
     excluded: ['Питание'],
     itinerary: [
@@ -4936,12 +4900,12 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1520763185298-aa3098718946?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1499002238440-d264b596c721?w=1200&h=800&fit=crop&q=85',
-      'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=1200&h=800&fit=crop&q=85',
+      'http://amra-turistik.ru/wp-content/uploads/2020/03/img_3088.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2020/03/d4_-lvgxkaapej-1-1.jpg-large-1.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2020/03/d4_-lvgxkaapej-1-1.jpg-large-1-1024x576.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/D11433D5-C282-47B8-90A0-CE26D81A77A2.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/D11433D5-C282-47B8-90A0-CE26D81A77A2-1024x683.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/28EA8400-DAAB-44FE-BDDD-03EE8A30EF74.jpeg',
     ],
     badges: ['bus', 'mountains'] as const,
     transport: 'Автобус класса «Турист»',
@@ -4975,9 +4939,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4, 5, 6, 7, 8, 9, 10],
     priceFrom: 3000,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-25', end: '2026-04-25', price: 3000, seatsLeft: 8 },
-    ],
+    nextDates: [],
     included: ['Проезд на автобусе', 'Все экскурсии по программе', 'Экскурсовод'],
     excluded: ['Питание', 'Дегустация в усадьбе Семигорье — 2 000 ₽', 'Экскурсия + дегустация Шато-Андре — 2 300 ₽'],
     itinerary: [
@@ -5032,7 +4994,8 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-26', end: '2026-04-26', price: 3000, seatsLeft: 8 },
+      { start: '2026-05-08', end: '2026-05-08', price: 3000, seatsLeft: null },
+      { start: '2026-05-23', end: '2026-05-23', price: 3000, seatsLeft: null },
     ],
     included: ['Проезд на автобусе', 'Экскурсовод'],
     excluded: ['Питание', 'Фанагория «Авторская» — 1 400 ₽ / 900 ₽ без дегустации', 'Chateau Tamagne мастер-класс — 2 000 ₽ / 700 ₽ без дегустации'],
@@ -5085,7 +5048,7 @@ export const amraTours: Tour[] = [
     priceFrom: 3000,
     oldPrice: null,
     nextDates: [
-      { start: '2026-04-26', end: '2026-04-26', price: 3000, seatsLeft: 8 },
+      { start: '2026-05-10', end: '2026-05-10', price: 3000, seatsLeft: null },
     ],
     included: ['Проезд на автобусе', 'Страховка', 'Все экскурсии по программе', 'Экскурсовод'],
     excluded: ['Питание (с собой или в кафе)'],
@@ -5140,9 +5103,7 @@ export const amraTours: Tour[] = [
     seasonMonths: [4, 5, 6, 7, 8, 9, 10],
     priceFrom: 3000,
     oldPrice: null,
-    nextDates: [
-      { start: '2026-04-26', end: '2026-04-26', price: 3000, seatsLeft: 8 },
-    ],
+    nextDates: [],
     included: ['Проезд на автобусе', 'Все экскурсии по программе', 'Экскурсовод'],
     excluded: ['Старый Парк — 1 000 ₽ / 500 ₽ дети', 'Дегустация улиток и вина Шато-Пино — 1 200 ₽', 'Питание'],
     itinerary: [

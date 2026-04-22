@@ -78,9 +78,9 @@ export default function TourSidebar({ tour }: TourSidebarProps) {
         <div className="mb-6">
           <h3 className="text-sm font-semibold text-gray-900 mb-3">Ближайшие даты</h3>
           <div className="space-y-2">
-            {tour.nextDates.map((date) => (
+            {tour.nextDates.map((date, idx) => (
               <div
-                key={date.start}
+                key={`${date.start}-${idx}`}
                 className="flex items-center justify-between text-sm bg-gray-50 rounded-lg px-3 py-2.5"
               >
                 <span className="text-gray-700">
