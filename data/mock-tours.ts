@@ -3,6 +3,7 @@ import { goldenRingTours } from './golden-ring-tours';
 import { amraTours } from './amra-tours';
 import { bogemaTours } from './bogema-tours';
 import { bogemaToursBatch2 } from './bogema-tours-batch2';
+import toursJson from './tours.json';
 
 // ============================================================================
 // КАК ДОБАВИТЬ НОВЫЙ ТУР
@@ -6160,8 +6161,14 @@ export function getFaqsForTour(tour: Tour): FAQ[] {
 // ФУНКЦИИ ДОСТУПА К ДАННЫМ
 // ============================================================================
 
+/**
+ * Runtime source of truth for tours:
+ * edit `data/tours.json` (e.g. via local admin panel) and site will use updates.
+ */
+const runtimeTours = toursJson as Tour[];
+
 export function getPublishedTours(): Tour[] {
-  return tours.filter((t) => t.isPublished !== false);
+  return runtimeTours.filter((t) => t.isPublished !== false);
 }
 
 export function getToursByCity(citySlug: string): Tour[] {
