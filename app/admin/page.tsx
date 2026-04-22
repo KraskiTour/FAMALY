@@ -45,6 +45,11 @@ function safeParseDates(raw: string): NextDate[] | null {
 }
 
 export default function AdminPage() {
+  const [configured, setConfigured] = useState<boolean | null>(null);
+  const [authenticated, setAuthenticated] = useState(false);
+  const [loginPassword, setLoginPassword] = useState('');
+  const [loginError, setLoginError] = useState('');
+
   const [tours, setTours] = useState<Tour[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [query, setQuery] = useState('');
@@ -52,8 +57,35 @@ export default function AdminPage() {
   const [isSavingAll, setIsSavingAll] = useState(false);
   const [datesText, setDatesText] = useState('[]');
   const [datesError, setDatesError] = useState('');
+  const [tourJsonText, setTourJsonText] = useState('{}');
+  const [tourJsonError, setTourJsonError] = useState('');
+  const [galleryInput, setGalleryInput] = useState('');
 
   useEffect(() => {
+    let active = true;
+    (async () => {
+      try {
+        const res = await fetch('/api/admin/session', { cache: 'no-store' });
+        const data = await res.json();
+        if (!active) return;
+        setConfigured(Boolean(data.configured));
+        setAuthenticated(Boolean(data.authenticated));
+        if (!data.configured) {
+          setStatus('Set ADMIN_PASSWORD in .env.local and restart dev server');
+        }
+      } catch {
+        if (!active) return;
+        setConfigured(false);
+        setStatus('Failed to check admin session');
+      }
+    })();
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!authenticated) return;
     let active = true;
     (async () => {
       try {
@@ -71,7 +103,7 @@ export default function AdminPage() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [authenticated]);
 
   const filteredIndexes = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -91,14 +123,16 @@ export default function AdminPage() {
   useEffect(() => {
     if (!current) return;
     setDatesText(JSON.stringify(current.nextDates || [], null, 2));
+    setTourJsonText(JSON.stringify(current, null, 2));
     setDatesError('');
+    setTourJsonError('');
   }, [current?.slug]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function patchCurrent(patch: Partial<Tour>) {
     if (!current) return;
-    setTours((prev) =>
-      prev.map((item, idx) => (idx === selectedIndex ? { ...item, ...patch } : item))
-    );
+    const updated = { ...current, ...patch };
+    setTours((prev) => prev.map((item, idx) => (idx === selectedIndex ? updated : item)));
+    setTourJsonText(JSON.stringify(updated, null, 2));
   }
 
   function addTour() {
@@ -126,6 +160,65 @@ export default function AdminPage() {
     setStatus('Tour removed locally (not saved yet)');
   }
 
+  function applyTourJsonDraft(): Tour | null {
+    try {
+      const parsed = JSON.parse(tourJsonText) as Tour;
+      if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+        setTourJsonError('Tour JSON must be an object');
+        return null;
+      }
+      if (!parsed.slug || !parsed.title) {
+        setTourJsonError('Tour JSON must include at least `slug` and `title`');
+        return null;
+      }
+      setTourJsonError('');
+      return parsed;
+    } catch {
+      setTourJsonError('Tour JSON is invalid');
+      return null;
+    }
+  }
+
+  function addGalleryItem() {
+    if (!current) return;
+    const nextUrl = galleryInput.trim();
+    if (!nextUrl) return;
+    const currentGallery = Array.isArray(current.gallery) ? (current.gallery as string[]) : [];
+    patchCurrent({ gallery: [...currentGallery, nextUrl] });
+    setGalleryInput('');
+  }
+
+  function removeGalleryItem(index: number) {
+    if (!current) return;
+    const currentGallery = Array.isArray(current.gallery) ? (current.gallery as string[]) : [];
+    patchCurrent({ gallery: currentGallery.filter((_, i) => i !== index) });
+  }
+
+  async function login() {
+    setLoginError('');
+    try {
+      const res = await fetch('/api/admin/session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: loginPassword }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error || 'Login failed');
+      setAuthenticated(true);
+      setLoginPassword('');
+      setStatus('Authenticated');
+    } catch (error) {
+      setLoginError(error instanceof Error ? error.message : 'Login failed');
+    }
+  }
+
+  async function logout() {
+    await fetch('/api/admin/session', { method: 'DELETE' });
+    setAuthenticated(false);
+    setTours([]);
+    setStatus('Signed out');
+  }
+
   async function saveAll() {
     if (!current) return;
 
@@ -135,14 +228,21 @@ export default function AdminPage() {
       return;
     }
     setDatesError('');
-    patchCurrent({ nextDates: parsedDates });
+
+    const parsedTour = applyTourJsonDraft();
+    if (!parsedTour) return;
+
+    const mergedTour: Tour = { ...parsedTour, nextDates: parsedDates };
+    const nextTours = tours.map((t, i) => (i === selectedIndex ? mergedTour : t));
+    setTours(nextTours);
+    setTourJsonText(JSON.stringify(mergedTour, null, 2));
 
     setIsSavingAll(true);
     try {
       const res = await fetch('/api/admin/tours', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ tours: tours.map((t, i) => (i === selectedIndex ? { ...t, nextDates: parsedDates } : t)) }),
+        body: JSON.stringify({ tours: nextTours }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data?.error || 'Failed to save');
@@ -154,11 +254,57 @@ export default function AdminPage() {
     }
   }
 
+  if (configured === false) {
+    return (
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h1 className="text-2xl font-extrabold text-gray-900 mb-3">Admin is not configured</h1>
+        <p className="text-sm text-gray-600 mb-2">
+          Create `.env.local` and add:
+        </p>
+        <pre className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-xs">ADMIN_PASSWORD=your_strong_password</pre>
+        <p className="text-sm text-gray-600 mt-2">Then restart the dev server.</p>
+      </div>
+    );
+  }
+
+  if (!authenticated) {
+    return (
+      <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="border border-gray-200 rounded-2xl bg-white p-6">
+          <h1 className="text-xl font-bold text-gray-900 mb-4">Admin Login</h1>
+          <input
+            type="password"
+            value={loginPassword}
+            onChange={(e) => setLoginPassword(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') void login();
+            }}
+            placeholder="Enter admin password"
+            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mb-3"
+          />
+          {loginError && <p className="text-xs text-red-600 mb-3">{loginError}</p>}
+          <button
+            onClick={() => void login()}
+            className="w-full px-4 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-700 text-sm font-semibold"
+          >
+            Sign In
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
         <h1 className="text-2xl font-extrabold text-gray-900">Mini Admin: Tours JSON</h1>
         <div className="flex gap-2">
+          <button
+            onClick={() => window.open('/api/admin/tours?download=1', '_blank')}
+            className="px-4 py-2 rounded-lg bg-emerald-100 hover:bg-emerald-200 text-sm font-semibold"
+          >
+            Download tours.json
+          </button>
           <button onClick={addTour} className="px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-sm font-semibold">
             Add Tour
           </button>
@@ -168,6 +314,9 @@ export default function AdminPage() {
             className="px-4 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-700 disabled:opacity-60 text-sm font-semibold"
           >
             {isSavingAll ? 'Saving...' : 'Save All'}
+          </button>
+          <button onClick={() => void logout()} className="px-4 py-2 rounded-lg bg-red-50 hover:bg-red-100 text-sm font-semibold text-red-700">
+            Logout
           </button>
         </div>
       </div>
@@ -274,6 +423,48 @@ export default function AdminPage() {
                 />
                 Published
               </label>
+
+              <div>
+                <p className="text-sm text-gray-700 mb-1">Tour JSON (all fields)</p>
+                <textarea
+                  value={tourJsonText}
+                  onChange={(e) => setTourJsonText(e.target.value)}
+                  rows={16}
+                  className="w-full border border-gray-200 rounded-lg px-3 py-2 font-mono text-xs"
+                />
+                {tourJsonError && <p className="text-xs text-red-600 mt-1">{tourJsonError}</p>}
+              </div>
+
+              <div>
+                <p className="text-sm text-gray-700 mb-1">Gallery</p>
+                <div className="flex gap-2 mb-2">
+                  <input
+                    value={galleryInput}
+                    onChange={(e) => setGalleryInput(e.target.value)}
+                    placeholder="https://... or /images/tours/..."
+                    className="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm"
+                  />
+                  <button
+                    onClick={addGalleryItem}
+                    className="px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-sm font-semibold"
+                  >
+                    Add
+                  </button>
+                </div>
+                <div className="space-y-1 max-h-36 overflow-auto">
+                  {(Array.isArray(current.gallery) ? (current.gallery as string[]) : []).map((url, i) => (
+                    <div key={`${url}-${i}`} className="flex items-center justify-between gap-2 text-xs border border-gray-100 rounded px-2 py-1">
+                      <span className="truncate text-gray-700">{url}</span>
+                      <button
+                        onClick={() => removeGalleryItem(i)}
+                        className="text-red-600 hover:text-red-700 font-semibold"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
               <div>
                 <p className="text-sm text-gray-700 mb-1">
