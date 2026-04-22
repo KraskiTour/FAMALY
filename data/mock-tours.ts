@@ -6167,8 +6167,25 @@ export function getFaqsForTour(tour: Tour): FAQ[] {
  */
 const runtimeTours = toursJson as Tour[];
 
+function isTourActive(tour: Tour): boolean {
+  if (!tour.nextDates || tour.nextDates.length === 0) {
+    // If no dates are provided, keep the tour visible (manual control via isPublished).
+    return true;
+  }
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  return tour.nextDates.some((date) => {
+    const endDate = new Date(date.end || date.start);
+    if (Number.isNaN(endDate.getTime())) return false;
+    endDate.setHours(0, 0, 0, 0);
+    return endDate >= today;
+  });
+}
+
 export function getPublishedTours(): Tour[] {
-  return runtimeTours.filter((t) => t.isPublished !== false);
+  return runtimeTours.filter((t) => t.isPublished !== false && isTourActive(t));
 }
 
 export function getToursByCity(citySlug: string): Tour[] {
