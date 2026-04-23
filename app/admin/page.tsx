@@ -9,6 +9,13 @@ type NextDate = {
   seatsLeft: number | null;
 };
 
+type ItineraryDay = {
+  day: number;
+  title: string;
+  description: string;
+  images?: string[];
+};
+
 type Tour = {
   id: string;
   slug: string;
@@ -19,6 +26,8 @@ type Tour = {
   priceFrom: number;
   isPublished?: boolean;
   nextDates: NextDate[];
+  itinerary?: ItineraryDay[];
+  gallery?: string[];
   [key: string]: unknown;
 };
 
@@ -60,6 +69,7 @@ export default function AdminPage() {
   const [tourJsonText, setTourJsonText] = useState('{}');
   const [tourJsonError, setTourJsonError] = useState('');
   const [galleryInput, setGalleryInput] = useState('');
+  const [itineraryImageInputByDay, setItineraryImageInputByDay] = useState<Record<number, string>>({});
 
   useEffect(() => {
     let active = true;
@@ -188,10 +198,80 @@ export default function AdminPage() {
     setGalleryInput('');
   }
 
+  function updateGalleryItem(index: number, value: string) {
+    if (!current) return;
+    const currentGallery = Array.isArray(current.gallery) ? (current.gallery as string[]) : [];
+    const updated = currentGallery.map((item, i) => (i === index ? value : item));
+    patchCurrent({ gallery: updated });
+  }
+
   function removeGalleryItem(index: number) {
     if (!current) return;
     const currentGallery = Array.isArray(current.gallery) ? (current.gallery as string[]) : [];
     patchCurrent({ gallery: currentGallery.filter((_, i) => i !== index) });
+  }
+
+  function addItineraryDay() {
+    if (!current) return;
+    const itinerary = Array.isArray(current.itinerary) ? [...current.itinerary] : [];
+    const nextDay = itinerary.length > 0 ? Math.max(...itinerary.map((d) => d.day || 0)) + 1 : 1;
+    itinerary.push({
+      day: nextDay,
+      title: `День ${nextDay}`,
+      description: '',
+      images: [],
+    });
+    patchCurrent({ itinerary });
+  }
+
+  function updateItineraryDay(dayIndex: number, patch: Partial<ItineraryDay>) {
+    if (!current) return;
+    const itinerary = Array.isArray(current.itinerary) ? (current.itinerary as ItineraryDay[]) : [];
+    const updated = itinerary.map((day, i) => (i === dayIndex ? { ...day, ...patch } : day));
+    patchCurrent({ itinerary: updated });
+  }
+
+  function removeItineraryDay(dayIndex: number) {
+    if (!current) return;
+    const itinerary = Array.isArray(current.itinerary) ? (current.itinerary as ItineraryDay[]) : [];
+    patchCurrent({ itinerary: itinerary.filter((_, i) => i !== dayIndex) });
+  }
+
+  function addItineraryImage(dayIndex: number) {
+    if (!current) return;
+    const url = (itineraryImageInputByDay[dayIndex] || '').trim();
+    if (!url) return;
+
+    const itinerary = Array.isArray(current.itinerary) ? (current.itinerary as ItineraryDay[]) : [];
+    const updated = itinerary.map((day, i) => {
+      if (i !== dayIndex) return day;
+      const images = Array.isArray(day.images) ? [...day.images, url] : [url];
+      return { ...day, images };
+    });
+    patchCurrent({ itinerary: updated });
+    setItineraryImageInputByDay((prev) => ({ ...prev, [dayIndex]: '' }));
+  }
+
+  function updateItineraryImage(dayIndex: number, imageIndex: number, value: string) {
+    if (!current) return;
+    const itinerary = Array.isArray(current.itinerary) ? (current.itinerary as ItineraryDay[]) : [];
+    const updated = itinerary.map((day, i) => {
+      if (i !== dayIndex) return day;
+      const images = Array.isArray(day.images) ? day.images.map((img, j) => (j === imageIndex ? value : img)) : [];
+      return { ...day, images };
+    });
+    patchCurrent({ itinerary: updated });
+  }
+
+  function removeItineraryImage(dayIndex: number, imageIndex: number) {
+    if (!current) return;
+    const itinerary = Array.isArray(current.itinerary) ? (current.itinerary as ItineraryDay[]) : [];
+    const updated = itinerary.map((day, i) => {
+      if (i !== dayIndex) return day;
+      const images = Array.isArray(day.images) ? day.images.filter((_, j) => j !== imageIndex) : [];
+      return { ...day, images };
+    });
+    patchCurrent({ itinerary: updated });
   }
 
   function buildDraftTours(): Tour[] | null {
@@ -529,16 +609,113 @@ export default function AdminPage() {
                     Add
                   </button>
                 </div>
-                <div className="space-y-1 max-h-36 overflow-auto">
+                <div className="space-y-1 max-h-48 overflow-auto">
                   {(Array.isArray(current.gallery) ? (current.gallery as string[]) : []).map((url, i) => (
                     <div key={`${url}-${i}`} className="flex items-center justify-between gap-2 text-xs border border-gray-100 rounded px-2 py-1">
-                      <span className="truncate text-gray-700">{url}</span>
+                      <input
+                        value={url}
+                        onChange={(e) => updateGalleryItem(i, e.target.value)}
+                        className="flex-1 border border-gray-200 rounded px-2 py-1 text-xs"
+                      />
                       <button
                         onClick={() => removeGalleryItem(i)}
                         className="text-red-600 hover:text-red-700 font-semibold"
                       >
                         Remove
                       </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <p className="text-sm text-gray-700">Itinerary</p>
+                  <button
+                    onClick={addItineraryDay}
+                    className="px-3 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-xs font-semibold"
+                  >
+                    Add Day
+                  </button>
+                </div>
+                <div className="space-y-3 max-h-[34rem] overflow-auto pr-1">
+                  {(Array.isArray(current.itinerary) ? (current.itinerary as ItineraryDay[]) : []).map((day, dayIndex) => (
+                    <div key={`${day.day}-${dayIndex}`} className="border border-gray-200 rounded-lg p-3">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mb-2">
+                        <label className="text-xs">
+                          <span className="block text-gray-600 mb-1">Day</span>
+                          <input
+                            type="number"
+                            value={day.day}
+                            onChange={(e) => updateItineraryDay(dayIndex, { day: Number(e.target.value) || 1 })}
+                            className="w-full border border-gray-200 rounded px-2 py-1"
+                          />
+                        </label>
+                        <label className="text-xs md:col-span-2">
+                          <span className="block text-gray-600 mb-1">Title</span>
+                          <input
+                            value={day.title || ''}
+                            onChange={(e) => updateItineraryDay(dayIndex, { title: e.target.value })}
+                            className="w-full border border-gray-200 rounded px-2 py-1"
+                          />
+                        </label>
+                      </div>
+
+                      <label className="text-xs block mb-2">
+                        <span className="block text-gray-600 mb-1">Description</span>
+                        <textarea
+                          value={day.description || ''}
+                          onChange={(e) => updateItineraryDay(dayIndex, { description: e.target.value })}
+                          rows={4}
+                          className="w-full border border-gray-200 rounded px-2 py-1"
+                        />
+                      </label>
+
+                      <div className="text-xs">
+                        <p className="text-gray-600 mb-1">Images</p>
+                        <div className="space-y-1 mb-2">
+                          {(Array.isArray(day.images) ? day.images : []).map((img, imageIndex) => (
+                            <div key={`${img}-${imageIndex}`} className="flex items-center gap-2">
+                              <input
+                                value={img}
+                                onChange={(e) => updateItineraryImage(dayIndex, imageIndex, e.target.value)}
+                                className="flex-1 border border-gray-200 rounded px-2 py-1 text-xs"
+                              />
+                              <button
+                                onClick={() => removeItineraryImage(dayIndex, imageIndex)}
+                                className="text-red-600 hover:text-red-700 font-semibold"
+                              >
+                                Remove
+                              </button>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <input
+                            value={itineraryImageInputByDay[dayIndex] || ''}
+                            onChange={(e) =>
+                              setItineraryImageInputByDay((prev) => ({ ...prev, [dayIndex]: e.target.value }))
+                            }
+                            placeholder="https://... or /images/tours/..."
+                            className="flex-1 border border-gray-200 rounded px-2 py-1 text-xs"
+                          />
+                          <button
+                            onClick={() => addItineraryImage(dayIndex)}
+                            className="px-2 py-1 rounded bg-gray-100 hover:bg-gray-200 font-semibold"
+                          >
+                            Add image
+                          </button>
+                        </div>
+                      </div>
+
+                      <div className="pt-2 text-right">
+                        <button
+                          onClick={() => removeItineraryDay(dayIndex)}
+                          className="text-xs text-red-600 hover:text-red-700 font-semibold"
+                        >
+                          Delete day
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>
