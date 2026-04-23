@@ -6178,23 +6178,31 @@ function normalizeDateKey(value: string | undefined): string {
   return value.trim().slice(0, 10);
 }
 
+function getFutureDates(dates: Tour['nextDates'] | undefined): Tour['nextDates'] {
+  if (!dates || dates.length === 0) return [];
+  const todayKey = getLocalTodayKey();
+  return dates
+    .filter((d) => normalizeDateKey(d.start) >= todayKey)
+    .sort((a, b) => normalizeDateKey(a.start).localeCompare(normalizeDateKey(b.start)));
+}
+
 function isTourActive(tour: Tour): boolean {
-  if (!tour.nextDates || tour.nextDates.length === 0) {
+  const futureDates = getFutureDates(tour.nextDates);
+  if (futureDates.length === 0) {
     // If no dates are provided, keep the tour visible (manual control via isPublished).
-    return true;
+    return !tour.nextDates || tour.nextDates.length === 0;
   }
 
-  const todayKey = getLocalTodayKey();
-
-  return tour.nextDates.some((date) => {
-    const startKey = normalizeDateKey(date.start);
-    if (!startKey) return false;
-    return startKey >= todayKey;
-  });
+  return true;
 }
 
 export function getPublishedTours(): Tour[] {
-  return runtimeTours.filter((t) => t.isPublished !== false && isTourActive(t));
+  return runtimeTours
+    .filter((t) => t.isPublished !== false && isTourActive(t))
+    .map((t) => ({
+      ...t,
+      nextDates: getFutureDates(t.nextDates),
+    }));
 }
 
 export function getToursByCity(citySlug: string): Tour[] {
