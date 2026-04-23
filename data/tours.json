@@ -68,7 +68,19 @@
       {
         "day": 1,
         "title": "Лаго-Наки за 1 день",
-        "description": "Выезд утром. Хаджохская теснина, водопады Руфабго, Азишская пещера. Подъём на плато Лаго-Наки. Возвращение вечером."
+        "description": "Выезд утром. Хаджохская теснина, водопады Руфабго, Азишская пещера. Подъём на плато Лаго-Наки. Возвращение вечером.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/0B4C4E46-990D-4EB2-A9C8-94D90F8DC26E.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/9D7720EF-1DD6-4BCA-8EB0-5B775550227E.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/5649FC67-8671-4E90-BD31-C961A2545F0B.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/50138288-676F-4379-9EF3-1C10ABDA33DE.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/A41DEA8F-60C2-47E9-8F60-B5F94BD884CC.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/B9EF3DFB-B626-4D54-8EA0-B9510CDBD039.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/B90974ED-AEB5-48A1-BE42-734478D4B33D.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/C533A455-6EA3-43FD-BFC3-E8399850B28B.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/ED4BA88E-EDBD-4ABC-AB70-BBD369873D15.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2026/04/1-72.jpg"
+        ]
       }
     ],
     "gallery": [
@@ -177,7 +189,21 @@
       {
         "day": 1,
         "title": "Геленджик за 1 день",
-        "description": "Выезд утром. Скала Парус. Набережная Геленджика, свободное время. Канатная дорога (по желанию). Свободное время на берегу. Возвращение вечером."
+        "description": "Выезд утром. Скала Парус. Набережная Геленджика, свободное время. Канатная дорога (по желанию). Свободное время на берегу. Возвращение вечером.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/2CE735D5-DEC9-4204-B9D9-5948AF0BC0BB.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/0EF8E226-DF7E-4B41-92F7-D7E80636C066.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/6D45CCF8-6398-4A3C-AC81-2430AC10806A.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/6DD74773-820F-4887-8FC7-472B1AC228C3.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/061DC265-5936-4EBF-8E31-D9C4E667ED33.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/721029CB-0EF1-42F0-9178-4B5A913BACC4.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/80352E08-8BF2-443F-BAE2-A46D5E7AA170.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/C2869F3B-6DF5-4BC8-A10D-62DE9FCB9DEF.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/D15302BD-3CD5-468E-ABAD-706EB8E3E7C4.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/8959325A-C55C-4D17-8685-CA3924CFBF06.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/11/cropped-foodnews_7-5.jpg"
+        ]
       }
     ],
     "gallery": [
@@ -277,7 +303,15 @@
       {
         "day": 1,
         "title": "Абрау-Дюрсо: винный день",
-        "description": "Экскурсия на винодельню с дегустацией. Прогулка у озера Абрау. Свободное время на набережной. Возвращение вечером."
+        "description": "Экскурсия на винодельню с дегустацией. Прогулка у озера Абрау. Свободное время на набережной. Возвращение вечером.",
+        "images": [
+          "http://amra-turistik.ru/wp-content/uploads/2022/06/ozero-abrau-3.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/06/vkuiip-ndjy.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/0EF8E226-DF7E-4B41-92F7-D7E80636C066.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/2CE735D5-DEC9-4204-B9D9-5948AF0BC0BB.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/6DD74773-820F-4887-8FC7-472B1AC228C3.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/6DD74773-820F-4887-8FC7-472B1AC228C3-1024x683.jpeg"
+        ]
       }
     ],
     "gallery": [
@@ -411,7 +445,15 @@
       {
         "day": 1,
         "title": "Пятигорск и Кисловодск",
-        "description": "Выезд рано утром. Пятигорск: Провал, озеро, виды на Эльбрус. Кисловодск: Нарзанная галерея, Курортный парк. Возвращение вечером."
+        "description": "Выезд рано утром. Пятигорск: Провал, озеро, виды на Эльбрус. Кисловодск: Нарзанная галерея, Курортный парк. Возвращение вечером.",
+        "images": [
+          "https://bogema.ru/images/jatoms/tours/45699-kavminvody-pyatigorsk-kislovodsk-zheleznovodsk-essentuki/0b3c295d1b5a475f834e4e4f8cee62d2.jpeg",
+          "https://bogema.ru/images/jatoms/tours/45699-kavminvody-pyatigorsk-kislovodsk-zheleznovodsk-essentuki/2ce9cc26161c48239e1a2a7712e81cc6.jpeg",
+          "https://bogema.ru/images/jatoms/tours/45699-kavminvody-pyatigorsk-kislovodsk-zheleznovodsk-essentuki/3eb8fb7fea184ae6b9543ecbe21d8baa.jpeg",
+          "https://bogema.ru/images/jatoms/tours/45699-kavminvody-pyatigorsk-kislovodsk-zheleznovodsk-essentuki/42e055a312ef49848e09b1c2029af45b.jpeg",
+          "https://bogema.ru/images/jatoms/tours/45699-kavminvody-pyatigorsk-kislovodsk-zheleznovodsk-essentuki/cace3f679e234b1e84a263114a45fad2.jpeg",
+          "https://bogema.ru/images/jatoms/tours/45699-kavminvody-pyatigorsk-kislovodsk-zheleznovodsk-essentuki/dc8e44c28c194c5ea9797e200572135d.jpeg"
+        ]
       }
     ],
     "gallery": [
@@ -552,12 +594,29 @@
       {
         "day": 1,
         "title": "Архыз — канатная дорога и экотропы",
-        "description": "Выезд утром. Канатная дорога, смотровая площадка, прогулка по экотропам. Заселение в отель."
+        "description": "Выезд утром. Канатная дорога, смотровая площадка, прогулка по экотропам. Заселение в отель.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2020/10/maxresdefault.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/11/photo_1670747_588493a13b8f7.jpg"
+        ]
       },
       {
         "day": 2,
         "title": "Софийские водопады и возвращение",
-        "description": "Завтрак. Софийские водопады. Свободное время. Возвращение."
+        "description": "Завтрак. Софийские водопады. Свободное время. Возвращение.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/4B875B11-CC16-45D2-B1C7-C02976018528.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/4B875B11-CC16-45D2-B1C7-C02976018528-1024x683.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/29AA8A7C-444C-435D-BA0E-7A172DB03944.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/0010A1A7-99C9-4B05-AFDD-9F85069869F6.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/9FDFAECB-8A88-49DA-94B3-65786D6EFB90.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/8EA3796A-8A6C-4D33-9F00-28FF890AB408.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/8D0A60CD-47E8-4655-96EF-BF0A858D4AD8.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/6FD2B442-024F-49D5-845D-D8FE312165B1.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/6DF80C59-8116-4434-AAF7-C5F1C60C9513.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/00E1DF46-D492-4931-B402-E63EAA187349.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/10/2010368_1000.jpg"
+        ]
       }
     ],
     "gallery": [
@@ -729,7 +788,11 @@
       {
         "day": 1,
         "title": "Домбай и ущелье Аманауз",
-        "description": "Выезд утром. Ущелье Аманауз, Чёртова мельница, горные водопады. Заселение в отель с видом на вершины."
+        "description": "Выезд утром. Ущелье Аманауз, Чёртова мельница, горные водопады. Заселение в отель с видом на вершины.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2021/09/6fd05d0afd30412db47247d5c34977af.max-1200x800-1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/09/e96cea.jpg"
+        ]
       },
       {
         "day": 2,
@@ -883,7 +946,11 @@
       {
         "day": 1,
         "title": "Канатная дорога на Эльбрус",
-        "description": "Выезд утром. Канатная дорога от Азау до станции «Мир» (3 500 м). Горные виды. Заселение в гостиницу."
+        "description": "Выезд утром. Канатная дорога от Азау до станции «Мир» (3 500 м). Горные виды. Заселение в гостиницу.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2023/08/zgllamq0pk3iofwrnhqsljzgve-1920.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2023/08/photo1627480021-1.jpeg"
+        ]
       },
       {
         "day": 2,
@@ -1331,7 +1398,11 @@
       {
         "day": 1,
         "title": "День 1",
-        "description": "Выезд, экскурсионная программа."
+        "description": "Выезд, экскурсионная программа.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2020/02/img_0976.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/uep4nVdFh7Y.jpg"
+        ]
       },
       {
         "day": 2,
@@ -1454,7 +1525,14 @@
       {
         "day": 1,
         "title": "Термальные источники",
-        "description": "Выезд утром. Термальный комплекс: бассейны под открытым небом. Прогулка по Майкопу. Возвращение вечером."
+        "description": "Выезд утром. Термальный комплекс: бассейны под открытым небом. Прогулка по Майкопу. Возвращение вечером.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2024/12/svmjx8huawouoh6xichl8xqag2pkbianp_hrte5l5pgxclndkjklvlbrjsmhiqq5daqfebqpgmygv3s_ts38ac8u.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2024/12/opengraph_1628512786.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/11/1621009561_74-p-sosna-kryuchkovataya-foto-87.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/B9EF3DFB-B626-4D54-8EA0-B9510CDBD039.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/A41DEA8F-60C2-47E9-8F60-B5F94BD884CC.jpeg"
+        ]
       }
     ],
     "gallery": [
@@ -1574,7 +1652,17 @@
       {
         "day": 1,
         "title": "Верхняя Балкария и Чегем",
-        "description": "Выезд рано утром. Чегемские водопады. Верхняя Балкария: горное ущелье, Язык тролля, средневековые башни. Возвращение вечером."
+        "description": "Выезд рано утром. Чегемские водопады. Верхняя Балкария: горное ущелье, Язык тролля, средневековые башни. Возвращение вечером.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2019/06/DSC02588.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2024/10/5ca6a4697f5fbcb44b219a71454d729f378f22a3.0f89f896.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/06/DSC_4827.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/06/DSC_4827-1024x684.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/06/172.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/06/172-1024x678.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/06/kabardino-balkariya.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2026/04/1-72.jpg"
+        ]
       }
     ],
     "gallery": [
@@ -1707,7 +1795,15 @@
       {
         "day": 1,
         "title": "Бермамыт и Джилы-Су",
-        "description": "Ранний выезд. Пересадка на внедорожники. Плато Бермамыт: обрывы, «столбы», вид на Эльбрус. Переезд к Джилы-Су: водопад Султан, нарзанные источники. Обратный путь, прибытие поздно вечером."
+        "description": "Ранний выезд. Пересадка на внедорожники. Плато Бермамыт: обрывы, «столбы», вид на Эльбрус. Переезд к Джилы-Су: водопад Султан, нарзанные источники. Обратный путь, прибытие поздно вечером.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2023/08/zgllamq0pk3iofwrnhqsljzgve-1920.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2023/08/photo1627480021-1.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2023/08/1703019370_baldezh-top-p-ozero-donguz-orun-kel-krasivo-32.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2023/08/1648743833_37-vsegda-pomnim-com-p-ozero-na-chegete-foto-37.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2023/08/1648743833_37-vsegda-pomnim-com-p-ozero-na-chegete-foto-37-1024x680.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2023/08/1648743833_37-vsegda-pomnim-com-p-ozero-na-chegete-foto-37-1536x1020.jpg"
+        ]
       }
     ],
     "gallery": [
@@ -1857,7 +1953,11 @@
       {
         "day": 1,
         "title": "День 1",
-        "description": "Выезд, экскурсионная программа."
+        "description": "Выезд, экскурсионная программа.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2020/03/2r3olpcqlj0.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/03/xqpbgquvccg.jpg"
+        ]
       },
       {
         "day": 2,
@@ -2397,7 +2497,11 @@
       {
         "day": 1,
         "title": "День 1",
-        "description": "Выезд, экскурсионная программа."
+        "description": "Выезд, экскурсионная программа.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2019/11/QpvtcX_K5vs.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/uep4nVdFh7Y.jpg"
+        ]
       },
       {
         "day": 2,
@@ -2543,7 +2647,13 @@
       {
         "day": 1,
         "title": "Парк Лога и окрестности",
-        "description": "Выезд утром. Парк Лога: скульптуры, водопады, гроты, мини-зоопарк. Парк Патриот. Возвращение вечером."
+        "description": "Выезд утром. Парк Лога: скульптуры, водопады, гроты, мини-зоопарк. Парк Патриот. Возвращение вечером.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2024/04/1663365368_47-mykaleidoscope-ru-p-arkhitektura-rostova-na-donu-krasivo-51.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/11/h2o_waterpark_rostov-on-don_russia-4.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/11/h2o_waterpark_rostov-on-don_russia-10.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/11/h2o_waterpark_rostov-on-don_russia-14.jpg"
+        ]
       }
     ],
     "gallery": [
@@ -2783,7 +2893,21 @@
       {
         "day": 1,
         "title": "Элиста — Калмыкия",
-        "description": "Выезд рано утром. Золотая обитель Будды Шакьямуни, Сити-Чесс, калмыцкая кухня. Весной — тюльпановые степи. Возвращение вечером."
+        "description": "Выезд рано утром. Золотая обитель Будды Шакьямуни, Сити-Чесс, калмыцкая кухня. Весной — тюльпановые степи. Возвращение вечером.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2022/02/kalmykiya.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/02/kalmykiya35641278.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/02/4_1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/02/772a0f831a3b54acbeed8925a98d219a.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/02/110048_original.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/02/67202c1dc8892cfa65c4748d4e80584d58342e99.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/02/130086652_img_20160605_135022.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/02/1616113061_14-p-kalmikiya-krasivie-foto-14.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/02/kalmytskaya-step-3.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/02/scale_1200-1-1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/02/scale_1200-2.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/02/xxl.jpg"
+        ]
       }
     ],
     "gallery": [
@@ -2929,7 +3053,11 @@
       {
         "day": 1,
         "title": "День 1",
-        "description": "Выезд, экскурсионная программа."
+        "description": "Выезд, экскурсионная программа.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2021/03/ffqtqyal6a8.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/03/fqwvz6js9ko.jpg"
+        ]
       },
       {
         "day": 2,
@@ -3049,7 +3177,21 @@
       {
         "day": 1,
         "title": "Горячий Ключ и Парк Галицкого",
-        "description": "Утро — Горячий Ключ: Дантово ущелье, Иверская часовня, набережная Псекупса. Вечером — Парк Галицкого в Краснодаре с подсветкой."
+        "description": "Утро — Горячий Ключ: Дантово ущелье, Иверская часовня, набережная Псекупса. Вечером — Парк Галицкого в Краснодаре с подсветкой.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2022/03/594357_900.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/03/img_1452-copy-1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/03/img_5127-scaled.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/03/img_5638-scaled.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/03/p1010634-scaled.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/03/z8a-fr5iqmy.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/03/p1010642-scaled.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/03/p1010643-scaled.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/03/img_1476-copy-1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/03/img_1475-copy-1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/03/img_1474-copy-1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/03/img_1473-copy-1.jpg"
+        ]
       }
     ],
     "gallery": [
@@ -3167,12 +3309,22 @@
       {
         "day": 1,
         "title": "Олимпийский парк и набережная",
-        "description": "Выезд ночью. Олимпийский парк, шоу поющих фонтанов, набережная. Заселение в отель."
+        "description": "Выезд ночью. Олимпийский парк, шоу поющих фонтанов, набережная. Заселение в отель.",
+        "images": [
+          "http://amra-turistik.ru/wp-content/uploads/2019/11/QpvtcX_K5vs.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/uep4nVdFh7Y.jpg"
+        ]
       },
       {
         "day": 2,
         "title": "Красная Поляна",
-        "description": "Подъём на Роза Хутор или Газпром. Горные виды. Возвращение в Ростов."
+        "description": "Подъём на Роза Хутор или Газпром. Горные виды. Возвращение в Ростов.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/uep4nVdFh7Y-1024x683.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/fhCZJ3T8eQc.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/fhCZJ3T8eQc-1024x682.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/H6b3gWf0OGA.jpg"
+        ]
       }
     ],
     "gallery": [
@@ -3278,7 +3430,15 @@
       {
         "day": 1,
         "title": "5 городов КавМинВод",
-        "description": "Пятигорск: Провал, место дуэли Лермонтова. Кисловодск: Нарзанная галерея, Курортный парк. Ессентуки, Железноводск, Минеральные Воды."
+        "description": "Пятигорск: Провал, место дуэли Лермонтова. Кисловодск: Нарзанная галерея, Курортный парк. Ессентуки, Железноводск, Минеральные Воды.",
+        "images": [
+          "https://bogema.ru/images/jatoms/tours/45699-kavminvody-pyatigorsk-kislovodsk-zheleznovodsk-essentuki/0b3c295d1b5a475f834e4e4f8cee62d2.jpeg",
+          "https://bogema.ru/images/jatoms/tours/45699-kavminvody-pyatigorsk-kislovodsk-zheleznovodsk-essentuki/2ce9cc26161c48239e1a2a7712e81cc6.jpeg",
+          "https://bogema.ru/images/jatoms/tours/45699-kavminvody-pyatigorsk-kislovodsk-zheleznovodsk-essentuki/3eb8fb7fea184ae6b9543ecbe21d8baa.jpeg",
+          "https://bogema.ru/images/jatoms/tours/45699-kavminvody-pyatigorsk-kislovodsk-zheleznovodsk-essentuki/42e055a312ef49848e09b1c2029af45b.jpeg",
+          "https://bogema.ru/images/jatoms/tours/45699-kavminvody-pyatigorsk-kislovodsk-zheleznovodsk-essentuki/cace3f679e234b1e84a263114a45fad2.jpeg",
+          "https://bogema.ru/images/jatoms/tours/45699-kavminvody-pyatigorsk-kislovodsk-zheleznovodsk-essentuki/dc8e44c28c194c5ea9797e200572135d.jpeg"
+        ]
       }
     ],
     "gallery": [
@@ -15301,27 +15461,49 @@
       {
         "day": 1,
         "title": "Прилёт и первое знакомство",
-        "description": "Встреча группы, трансфер в отель. Расселение, отдых. Первая прогулка: площадь Султанахмет, Ай-София, Голубая мечеть (вход), дворец Ибрагима Паши, узкие исторические улочки. Парк Гюльхане и бесплатная цистерна."
+        "description": "Встреча группы, трансфер в отель. Расселение, отдых. Первая прогулка: площадь Султанахмет, Ай-София, Голубая мечеть (вход), дворец Ибрагима Паши, узкие исторические улочки. Парк Гюльхане и бесплатная цистерна.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/1920x1080_1374256_www.artfile.ru_.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/balat-istanbul.jpg"
+        ]
       },
       {
         "day": 2,
         "title": "День тюльпанов — парк Эмирган",
-        "description": "Завтрак. Парк Эмирган — главная площадка Стамбульского фестиваля тюльпанов: свыше 3 миллионов цветов, ухоженная территория с видом на Босфор, архитектурные павильоны Османской эпохи. Прогулка по берегу. Возвращение в отель."
+        "description": "Завтрак. Парк Эмирган — главная площадка Стамбульского фестиваля тюльпанов: свыше 3 миллионов цветов, ухоженная территория с видом на Босфор, архитектурные павильоны Османской эпохи. Прогулка по берегу. Возвращение в отель.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/istiklal.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/galataturm-in-istanbul-istock-497215513-2-scaled.jpg"
+        ]
       },
       {
         "day": 3,
         "title": "Дворец Долмабахче — Истикляль — Галата",
-        "description": "Дворец Долмабахче (визуальный осмотр, ворота на Босфор). Площадь Таксим. Знаменитая кондитерская Хафиз Мустафа. Улица Истикляль, ретро-трамвай. Галатская башня. Мечеть Сулеймание. Прогулка через Гранд Базар."
+        "description": "Дворец Долмабахче (визуальный осмотр, ворота на Босфор). Площадь Таксим. Знаменитая кондитерская Хафиз Мустафа. Улица Истикляль, ретро-трамвай. Галатская башня. Мечеть Сулеймание. Прогулка через Гранд Базар.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2022/02/img_0103.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/01d4884b946afa98ee5439ada72566bd.jpg"
+        ]
       },
       {
         "day": 4,
         "title": "Холм Пьера Лоти — Балат — Базары",
-        "description": "Канатная дорога на холм Пьера Лоти, кофе с видами. Колоритный район Балат. Египетский Базар. Гранд Базар. Свободное время."
+        "description": "Канатная дорога на холм Пьера Лоти, кофе с видами. Колоритный район Балат. Египетский Базар. Гранд Базар. Свободное время.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/3b4f2ae19167ffe4a066a6e650ee7b20.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/106247076.jpg"
+        ]
       },
       {
         "day": 5,
         "title": "Свободное утро и вылет",
-        "description": "Завтрак. Свободное утро в Стамбуле. Трансфер в аэропорт. Вылет домой."
+        "description": "Завтрак. Свободное утро в Стамбуле. Трансфер в аэропорт. Вылет домой.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/ezn-gnkxyaackrm.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/i-1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/i-3.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/kakoi-gorod-vibrat-dlya-otdiha-v-turcii-stambul-1536x1152-1.jpg"
+        ]
       }
     ],
     "gallery": [
@@ -15406,27 +15588,49 @@
       {
         "day": 1,
         "title": "Прилёт, расселение, первая прогулка",
-        "description": "Встреча в аэропорту, трансфер в отель. Приветственный обед в колоритном ресторанчике. Первая прогулка: Ай-София, Голубая мечеть с посещением, площадь Ипподром, дворец Ибрагима Паши."
+        "description": "Встреча в аэропорту, трансфер в отель. Приветственный обед в колоритном ресторанчике. Первая прогулка: Ай-София, Голубая мечеть с посещением, площадь Ипподром, дворец Ибрагима Паши.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/1920x1080_1374256_www.artfile.ru_.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/balat-istanbul.jpg"
+        ]
       },
       {
         "day": 2,
         "title": "С гидом: Топкапы, Босфор, Гюльхане",
-        "description": "Пешеходный день с лицензированным гидом. Голубая мечеть (внешний осмотр), площадь Ипподром, Дворец Топкапы с гаремом (вход доп. плата). Церковь Святой Ирины. Парк Гюльхане, бесплатная цистерна. Прогулка на кораблике по Босфору (доп. плата)."
+        "description": "Пешеходный день с лицензированным гидом. Голубая мечеть (внешний осмотр), площадь Ипподром, Дворец Топкапы с гаремом (вход доп. плата). Церковь Святой Ирины. Парк Гюльхане, бесплатная цистерна. Прогулка на кораблике по Босфору (доп. плата).",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/kakoi-gorod-vibrat-dlya-otdiha-v-turcii-stambul-1536x1152-1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/02/img_0103.jpg"
+        ]
       },
       {
         "day": 3,
         "title": "Долмабахче — Таксим — Галата",
-        "description": "Дворец Долмабахче с посещением (доп. плата). Площадь Таксим. Кондитерская Хафиз Мустафа. Улица Истикляль, ретро-трамвай. Башня Галата, Галатский мост. Мечеть Сулеймание. Гранд Базар."
+        "description": "Дворец Долмабахче с посещением (доп. плата). Площадь Таксим. Кондитерская Хафиз Мустафа. Улица Истикляль, ретро-трамвай. Башня Галата, Галатский мост. Мечеть Сулеймание. Гранд Базар.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/01d4884b946afa98ee5439ada72566bd.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/3b4f2ae19167ffe4a066a6e650ee7b20.jpg"
+        ]
       },
       {
         "day": 4,
         "title": "Балат — Холм Пьера Лоти — Свободное время",
-        "description": "Прогулка по колоритному Балату. Канатная дорога на холм Пьера Лоти (доп. плата). Свободное время для шопинга или прогулки."
+        "description": "Прогулка по колоритному Балату. Канатная дорога на холм Пьера Лоти (доп. плата). Свободное время для шопинга или прогулки.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/106247076.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/ezn-gnkxyaackrm.jpg"
+        ]
       },
       {
         "day": 5,
         "title": "Завтрак и вылет",
-        "description": "Завтрак. Трансфер в аэропорт. Вылет домой."
+        "description": "Завтрак. Трансфер в аэропорт. Вылет домой.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/galataturm-in-istanbul-istock-497215513-2-scaled.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/i-1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/i-3.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/10/istiklal.jpg"
+        ]
       }
     ],
     "gallery": [
@@ -15538,12 +15742,20 @@
       {
         "day": 1,
         "title": "Ночной переезд из Краснодара",
-        "description": "30 апреля, 19:00 — выезд из Краснодара (Драм театр). Ночная дорога с комфортными остановками. Присоединиться также можно из Ростова-на-Дону."
+        "description": "30 апреля, 19:00 — выезд из Краснодара (Драм театр). Ночная дорога с комфортными остановками. Присоединиться также можно из Ростова-на-Дону.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2021/03/ivv-1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/03/img_8566-scaled.jpg"
+        ]
       },
       {
         "day": 2,
         "title": "Прибытие в Петербург. Обзорная экскурсия",
-        "description": "1 мая, ~22:00 — прибытие в Петербург. Заселение. Отдых. Завтра начинается программа."
+        "description": "1 мая, ~22:00 — прибытие в Петербург. Заселение. Отдых. Завтра начинается программа.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2021/03/img_7950-scaled.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/03/img_8243-scaled.jpg"
+        ]
       },
       {
         "day": 3,
@@ -15556,7 +15768,11 @@
       {
         "day": 4,
         "title": "Теплоход по каналам + Петергоф",
-        "description": "Завтрак. Теплоходная экскурсия «Северная Венеция» по рекам и каналам — дворцы, мосты, Нева. Петергоф: Нижний парк с Большим каскадом, фонтаном «Самсон», фонтанами-шутихами. Свободное время в парке."
+        "description": "Завтрак. Теплоходная экскурсия «Северная Венеция» по рекам и каналам — дворцы, мосты, Нева. Петергоф: Нижний парк с Большим каскадом, фонтаном «Самсон», фонтанами-шутихами. Свободное время в парке.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2021/03/tbcpfqb4ct5ciugzoxqvk0mxmv7yo85e.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2021/03/kryishi.jpg"
+        ]
       },
       {
         "day": 5,
@@ -15593,7 +15809,10 @@
       {
         "day": 9,
         "title": "Возвращение домой",
-        "description": "8 мая, ~23:00–01:00 ночи — прибытие в Краснодар."
+        "description": "8 мая, ~23:00–01:00 ночи — прибытие в Краснодар.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2021/03/img_8360-scaled.jpg"
+        ]
       }
     ],
     "gallery": [
@@ -16110,17 +16329,26 @@
       {
         "day": 2,
         "title": "Тбилиси с гидом — крепость, бани, водопад",
-        "description": "Завтрак. Целый день с экскурсоводом. Храм Метехи, площадь Европы, парк Рико. Крепость Нарикала на канатке, скульптура Мать Грузии. Серные бани и средневековые улочки. Тайный водопад в Инжировом ущелье — прямо в центре города. Мост Мира, собор Святой Троицы, улица Руставелли, Блошиный рынок."
+        "description": "Завтрак. Целый день с экскурсоводом. Храм Метехи, площадь Европы, парк Рико. Крепость Нарикала на канатке, скульптура Мать Грузии. Серные бани и средневековые улочки. Тайный водопад в Инжировом ущелье — прямо в центре города. Мост Мира, собор Святой Троицы, улица Руставелли, Блошиный рынок.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2022/09/2436665.jpg"
+        ]
       },
       {
         "day": 3,
         "title": "Свободный день в Тбилиси",
-        "description": "Завтрак. Полный свободный день для самостоятельного знакомства с городом. Кофейни, уличная еда, шопинг, рестораны с грузинской кухней."
+        "description": "Завтрак. Полный свободный день для самостоятельного знакомства с городом. Кофейни, уличная еда, шопинг, рестораны с грузинской кухней.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2022/09/staryj-tbilisi-1.jpg"
+        ]
       },
       {
         "day": 4,
         "title": "Кахетия: Бодбе, Сигнахи, дегустация вина",
-        "description": "Завтрак. Кахетия — «виноградный рай» Грузии. Монастырь Бодбе с могилой Святой Нино. Сигнахи — «город любви» с крепостной стеной XVI–XVIII веков и видами на Алазанскую долину. Село Бидаури: горячий хлеб из тонэ и домашний грузинский сыр. Большая дегустация грузинского вина в имении. Возвращение в Тбилиси."
+        "description": "Завтрак. Кахетия — «виноградный рай» Грузии. Монастырь Бодбе с могилой Святой Нино. Сигнахи — «город любви» с крепостной стеной XVI–XVIII веков и видами на Алазанскую долину. Село Бидаури: горячий хлеб из тонэ и домашний грузинский сыр. Большая дегустация грузинского вина в имении. Возвращение в Тбилиси.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2026/04/1-72.jpg"
+        ]
       },
       {
         "day": 5,
@@ -16228,17 +16456,26 @@
       {
         "day": 2,
         "title": "Тбилиси с гидом",
-        "description": "Завтрак. Экскурсия: Метехи, Нарикала, Мать Грузии, серные бани, Инжировое ущелье, Мост Мира, собор Святой Троицы, Руставелли, Блошиный рынок."
+        "description": "Завтрак. Экскурсия: Метехи, Нарикала, Мать Грузии, серные бани, Инжировое ущелье, Мост Мира, собор Святой Троицы, Руставелли, Блошиный рынок.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2022/09/2436665.jpg"
+        ]
       },
       {
         "day": 3,
         "title": "Каньон Дашбаши — стеклянный мост",
-        "description": "Завтрак. Регион Картли — колыбель Грузинского царства. Алгетское водохранилище с панорамными видами. Каньон Дашбаши: стеклянный мост над ущельем (открыт в 2022 году, один из самых длинных пешеходных стеклянных мостов в мире). Пешая тропа вниз в каньон к водопадам. Обед в кафе. Возвращение в Тбилиси."
+        "description": "Завтрак. Регион Картли — колыбель Грузинского царства. Алгетское водохранилище с панорамными видами. Каньон Дашбаши: стеклянный мост над ущельем (открыт в 2022 году, один из самых длинных пешеходных стеклянных мостов в мире). Пешая тропа вниз в каньон к водопадам. Обед в кафе. Возвращение в Тбилиси.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2022/09/staryj-tbilisi-1.jpg"
+        ]
       },
       {
         "day": 4,
         "title": "Кахетия: Бодбе, Сигнахи, вино",
-        "description": "Завтрак. Монастырь Бодбе с могилой Святой Нино. Сигнахи — «город любви» с крепостной стеной и видом на Алазанскую долину. Село Бидаури: горячий хлеб из тонэ и домашний сыр. Большая дегустация грузинского вина. Возвращение в Тбилиси."
+        "description": "Завтрак. Монастырь Бодбе с могилой Святой Нино. Сигнахи — «город любви» с крепостной стеной и видом на Алазанскую долину. Село Бидаури: горячий хлеб из тонэ и домашний сыр. Большая дегустация грузинского вина. Возвращение в Тбилиси.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2026/04/1-72.jpg"
+        ]
       },
       {
         "day": 5,
@@ -16344,12 +16581,18 @@
       {
         "day": 2,
         "title": "Тбилиси с экскурсоводом",
-        "description": "Завтрак. Весь день с гидом: Метехи, Нарикала, Мать Грузии, серные бани, Инжировое ущелье, Мост Мира, Руставелли, Блошиный рынок."
+        "description": "Завтрак. Весь день с гидом: Метехи, Нарикала, Мать Грузии, серные бани, Инжировое ущелье, Мост Мира, Руставелли, Блошиный рынок.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2022/09/staryj-tbilisi-1.jpg"
+        ]
       },
       {
         "day": 3,
         "title": "Кахетия: Бодбе, Сигнахи, вино",
-        "description": "Завтрак. Монастырь Бодбе. Сигнахи — «город любви» с панорамой Алазанской долины. Дегустация грузинского вина. Возвращение в Тбилиси."
+        "description": "Завтрак. Монастырь Бодбе. Сигнахи — «город любви» с панорамой Алазанской долины. Дегустация грузинского вина. Возвращение в Тбилиси.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2026/04/1-72.jpg"
+        ]
       },
       {
         "day": 4,
@@ -16718,7 +16961,22 @@
       {
         "day": 1,
         "title": "Краснодар — Лефкадия — Шато-Пино — Абрау-Дюрсо — Краснодар",
-        "description": "Утренний выезд из Краснодара (07:30). Переезд ~2 часа до долины Лефкадия.\n\n● Долина Лефкадия — современная винодельня с одной из самых красивых территорий на юге. Ровные ряды лоз уходят к горизонту, а за ними — предгорья. Здесь можно погулять по парку, сфотографироваться на фоне виноградников и зайти в фирменный магазин. По желанию — экскурсия по производству и дегустация (от 1 500 ₽): расскажут про терруар, сорта и технологию, дадут попробовать линейку «Лефкадия» и «Ликурия».\n\n● Шато-Пино — совсем другое настроение. Небольшое поместье у подножия горы Колдун, окружённое виноградниками и дубовой рощей. На территории — музей ретро-автомобилей, коллекция старинных фотоаппаратов, фермерская улиточная ферма. Фирменная дегустация «эскарго» по бургундскому рецепту — визитная карточка места: улитки под чесночным маслом с травами, в паре с авторским вином (от 850 ₽ только улитки, от 1 200 ₽ улитки + вино). Виды с террасы на закате — одни из лучших на побережье.\n\n● Абрау-Дюрсо завершает день. Знаменитое горное озеро Абрау, обрамлённое соснами и виноградниками, — самое крупное пресноводное озеро Краснодарского края. Прогулка по набережной, парк у завода шампанских вин и фирменный магазин с ценами ниже городских. Весной и летом по вечерам работает шоу фонтанов на озере.\n\nВозвращение в Краснодар около 22:30. Три винодельни — три совершенно разных характера: панорама виноградников, поместье с улитками и закат над горным озером."
+        "description": "Утренний выезд из Краснодара (07:30). Переезд ~2 часа до долины Лефкадия.\n\n● Долина Лефкадия — современная винодельня с одной из самых красивых территорий на юге. Ровные ряды лоз уходят к горизонту, а за ними — предгорья. Здесь можно погулять по парку, сфотографироваться на фоне виноградников и зайти в фирменный магазин. По желанию — экскурсия по производству и дегустация (от 1 500 ₽): расскажут про терруар, сорта и технологию, дадут попробовать линейку «Лефкадия» и «Ликурия».\n\n● Шато-Пино — совсем другое настроение. Небольшое поместье у подножия горы Колдун, окружённое виноградниками и дубовой рощей. На территории — музей ретро-автомобилей, коллекция старинных фотоаппаратов, фермерская улиточная ферма. Фирменная дегустация «эскарго» по бургундскому рецепту — визитная карточка места: улитки под чесночным маслом с травами, в паре с авторским вином (от 850 ₽ только улитки, от 1 200 ₽ улитки + вино). Виды с террасы на закате — одни из лучших на побережье.\n\n● Абрау-Дюрсо завершает день. Знаменитое горное озеро Абрау, обрамлённое соснами и виноградниками, — самое крупное пресноводное озеро Краснодарского края. Прогулка по набережной, парк у завода шампанских вин и фирменный магазин с ценами ниже городских. Весной и летом по вечерам работает шоу фонтанов на озере.\n\nВозвращение в Краснодар около 22:30. Три винодельни — три совершенно разных характера: панорама виноградников, поместье с улитками и закат над горным озером.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2020/07/restoran-chateau-pinot-660x400-1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/06/img_8919.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/0E0AB79B-34F6-4D20-B209-DCE6A050D733.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/9F08A60E-6575-493A-A6AD-C7B5AA081369.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/9F08A60E-6575-493A-A6AD-C7B5AA081369-1024x682.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/9FC90A79-6058-4D42-A4C7-DBC137915F27.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/837CB6CE-AA11-4408-BCD7-4F496706BA56.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/60751794-A776-41D2-8CC1-293154E46554.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2019/07/EA80C6EA-08B6-47C1-91D3-F553AA7217D5.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/03/5315bea8b8526a4844c054105ea91ee9.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/07/huge.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/07/4ea28f69b1e73b9ff9a88e444ad39380.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/07/10414574159255615_110e-600x400-1.jpg"
+        ]
       }
     ],
     "gallery": [
@@ -16824,7 +17082,25 @@
       {
         "day": 1,
         "title": "Краснодар — Горячий Ключ — ферма альпак и капибар — Краснодар",
-        "description": "Утренний выезд из Краснодара. По прибытии — пешеходная экскурсия по Горячему Ключу: курортная часть, питьевая галерея с минеральной водой, Дантово ущелье с его узким скальным коридором и скала Петушок над рекой Псекупс. Свободное время для прогулки и обеда. Затем переезд на ферму альпак и капибар: знакомство с животными, фотосессия и прогулка по территории. Возвращение в Краснодар к вечеру."
+        "description": "Утренний выезд из Краснодара. По прибытии — пешеходная экскурсия по Горячему Ключу: курортная часть, питьевая галерея с минеральной водой, Дантово ущелье с его узким скальным коридором и скала Петушок над рекой Псекупс. Свободное время для прогулки и обеда. Затем переезд на ферму альпак и капибар: знакомство с животными, фотосессия и прогулка по территории. Возвращение в Краснодар к вечеру.",
+        "images": [
+          "https://bogema.ru/images/jatoms/tours/46024-goryachij-klyuch-kanatnaya-doroga-dykhanie-gor-ferma-alpak-i-kapibar/223bd588b6394836addf65c9acf76905.jpeg",
+          "https://bogema.ru/images/jatoms/tours/46024-goryachij-klyuch-kanatnaya-doroga-dykhanie-gor-ferma-alpak-i-kapibar/2af73806da1b41fb8191ef1356e85d1b.jpeg",
+          "https://bogema.ru/images/jatoms/tours/46024-goryachij-klyuch-kanatnaya-doroga-dykhanie-gor-ferma-alpak-i-kapibar/600c084aef8446b48e44d1ead08c598b.jpeg",
+          "https://bogema.ru/images/jatoms/tours/46024-goryachij-klyuch-kanatnaya-doroga-dykhanie-gor-ferma-alpak-i-kapibar/a7d69baac7bc41cda60bd7f12cbe49d7.jpeg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/03/594357_900.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/03/img_1452-copy-1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/03/img_5127-scaled.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/03/img_5638-scaled.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/03/p1010634-scaled.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/03/p1010642-scaled.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2020/03/p1010643-scaled.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/03/z8a-fr5iqmy.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/03/img_1476-copy-1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/03/img_1475-copy-1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/03/img_1474-copy-1.jpg",
+          "https://amra-turistik.ru/wp-content/uploads/2022/03/img_1473-copy-1.jpg"
+        ]
       }
     ],
     "gallery": [
@@ -18472,7 +18748,10 @@
       {
         "day": 9,
         "title": "Батуми — дорога домой",
-        "description": "Завтрак. Свободное время в Батуми до 12:00. Выезд в Краснодар (или трансфер во Владикавказ / Минеральные Воды). Остановка на обед по дороге."
+        "description": "Завтрак. Свободное время в Батуми до 12:00. Выезд в Краснодар (или трансфер во Владикавказ / Минеральные Воды). Остановка на обед по дороге.",
+        "images": [
+          "https://amra-turistik.ru/wp-content/uploads/2026/04/1-72.jpg"
+        ]
       }
     ],
     "gallery": [
@@ -24374,7 +24653,10 @@
         "day": 1,
         "title": "Вечернее отправление",
         "description": "Отправление вечером из Новороссийска, Краснодара и других городов. Ночной переезд в Осетию.",
-        "images": []
+        "images": [
+          "https://bogema.ru/images/jatoms/tours/45755-severnaya-osetiya-polnoe-pogruzhenie/a077d57a998a4ddc9752f7ce19e3abc5.jpeg",
+          "https://bogema.ru/images/jatoms/tours/45755-severnaya-osetiya-polnoe-pogruzhenie/0113b24c3080401f8d940bab4a91fa37.jpeg"
+        ]
       },
       {
         "day": 2,
@@ -24533,7 +24815,10 @@
         "day": 1,
         "title": "Вечернее отправление",
         "description": "Отправление вечером из Новороссийска, Краснодара и других городов. Ночной переезд в Чечню.",
-        "images": []
+        "images": [
+          "https://bogema.ru/images/jatoms/tours/45752-puteshestvie-v-chechnyu-serdtse-groznogo-vysokogornoe-ozero-kazenoj-am/c6bb210cabdd45d38f1729580819d4c9.jpeg",
+          "https://bogema.ru/images/jatoms/tours/45752-puteshestvie-v-chechnyu-serdtse-groznogo-vysokogornoe-ozero-kazenoj-am/ddfcefa08c21428b8795f7cb8652d6dc.jpeg"
+        ]
       },
       {
         "day": 2,
@@ -24673,7 +24958,10 @@
         "day": 1,
         "title": "Вечернее отправление",
         "description": "Отправление вечером из Новороссийска и ночью из Краснодара. Переезд в Нальчик — столицу Кабардино-Балкарии.",
-        "images": []
+        "images": [
+          "https://bogema.ru/images/jatoms/tours/46113-ot-ushchelij-do-elbrusa-puteshestvie-po-kabardino-balkarii/197beb2a89294db687bec8ceb5ed1dac.jpeg",
+          "https://bogema.ru/images/jatoms/tours/46113-ot-ushchelij-do-elbrusa-puteshestvie-po-kabardino-balkarii/2b576f2e40fe43fba8aba1936734b2f3.jpeg"
+        ]
       },
       {
         "day": 2,
@@ -25279,7 +25567,9 @@
         "day": 4,
         "title": "Завтрак. Освобождение номеров. Сегодня мы отправляемся знакомиться с достопримечательностями столицы",
         "description": "Завтрак. Освобождение номеров. Сегодня мы отправляемся знакомиться с достопримечательностями столицы республики - г. Грозным.\nЕсли посмотреть на историю Чеченской Республики с высоты птичьего полета, то город Грозный находится на границе между старинной Чечней с традиционным укладом общества и современным, стремящимся вперед.\nВо время экскурсии мы прогуляемся с вами по центральной улице, которая теперь называется проспектом Путина. Мы посетим русскую церковь Михаила Архангела - небольшой островок православия в центре мусульманской культуры.\nОбед (за доп.плату)\nв кафе города с национальной кухней.\nРядом с проспектом и замечательной, выстроенной в петербургском духе, набережной реки Сунжи, мы увидим роскошное, поражающее великолепием здание соборной мечети. Ее называют\n«Сердце Чечни»\n. Мечеть возведена в стиле знаменитой Айя-София в Стамбуле, с использованием дорогих природных материалов из Ирана и других стран мира. У нас будет возможность побывать на различных ярусах этой величественной постройки. Также мы посетим комплекс высотных зданий\nГрозный-Сити\n, поднимемся на\nвертолетную площадку комплекса небоскребов «Грозный сити»\n, где с 30-го этажа открывается умопомрачительный вид.\nМы прогуляемся по прекрасному цветочному парку.\nОбщая площадь нового цветочного парка - 45 тыс. кв. метров\n. Он состоит из 467 металлических конструкций с высаженными цветами, которые будут радовать жителей и гостей столицы до первых морозов.\nМы посетим\nМемориальный комплекс Славы и музей им. Кадырова\n. Желающие смогут посетить местный рынок, где смогут приобрести местные вкусности.\nМы посетим смотровую площадку\n\"Лестница в небеса\"\n. Отсюда открывается потрясающий вид на весь город: высотки «Грозный Сити», Центральная мечеть «Сердце Чечни», ТРЦ «Гранд парк» и многое другое.\nПосле таких насыщенных выходных отправляемся домой. Прибытие домой под утро.",
-        "images": []
+        "images": [
+          "https://bogema.ru/images/jatoms/tours/27328-chechnya-ingushetiya-severnaya-osetiya/a03f66d90ffb4c72ab8b45e11896cc13.jpeg"
+        ]
       }
     ],
     "gallery": [
@@ -25457,13 +25747,17 @@
         "day": 4,
         "title": "По следам царицы Тамары",
         "description": "По следам царицы Тамары\nБоржоми и Ахалцихе:\nСегодня мы отправимся в Боржоми, чтобы насладиться видом на Боржомское ущелье, где когда-то отдыхали российские монархи. Прогулка по парку, знакомство с водопадами и историей города.\nКрепость Рабат:\nВечером мы посетим старинный грузинский город Ахалцихе и крепость Рабат, которая хранит в себе множество вековых тайн. Это место — настоящий археологический музей под открытым небом.",
-        "images": []
+        "images": [
+          "https://bogema.ru/images/jatoms/tours/33359-sokrovishcha-gruzii-ot-vinnykh-podvalov-do-drevnikh-khramov/a77be2ff54ea479e81fb4b043ae16476.jpeg"
+        ]
       },
       {
         "day": 5,
         "title": "Древняя Мцхета и прощание с Грузией",
         "description": "Древняя Мцхета и прощание с Грузией\nМцхета — столица Грузии:\nМы посетим древнюю столицу Грузии — Мцхету, которая стала символом христианства в стране. Прогуляемся по ее уютным улочкам, посетим собор Светицховели и храм Джвари, где открывается незабываемая панорама.\nПрощание с Грузией:\nПосле экскурсии отправляемся на границу, прощаясь с Грузией, полной впечатлений и воспоминаний. Возвращение домой.",
-        "images": []
+        "images": [
+          "https://bogema.ru/images/jatoms/tours/33359-sokrovishcha-gruzii-ot-vinnykh-podvalov-do-drevnikh-khramov/f150f7e5b15b42c6b8e3c03548212bc3.jpeg"
+        ]
       }
     ],
     "gallery": [
@@ -25810,7 +26104,9 @@
         "day": 4,
         "title": "Сулак: бирюза каньона и адреналин",
         "description": "Сулак: бирюза каньона и адреналин\nЗавтрак в гостинице, выселение.\nЭкскурсия на Сулакский каньон – один из самых глубоких каньонов в мире (до 1920 метров). Со смотровых площадок вы насладитесь захватывающими видами: ярко-бирюзовая река Сулак, каскад гидроэлектростанций, бескрайние степи и горы.\nОтправимся на новую и самую яркую достопримечательность — подвесной мост через каньон и пещеры Нохьо.\nПрогулка на катере по реке Сулак. Это невероятный опыт, который подарит яркие эмоции и красивые фотографии. Посещение форелевого хозяйства, где нас ждёт вкусный поздний обед.\nВечером – отправление домой.",
-        "images": []
+        "images": [
+          "https://bogema.ru/images/jatoms/tours/45670-dagestan-derbent-makhachkala-sulakskij-kanon-gamsutl-saltinskij-vodopad/c986635778ae434e9eeeea493a2a46e2.jpeg"
+        ]
       }
     ],
     "gallery": [
@@ -26723,13 +27019,17 @@
         "day": 4,
         "title": "Завтрак. Выезд на экскурсию в Боголюбово (35 км).",
         "description": "Завтрак. Выезд на экскурсию в Боголюбово (35 км).\nПосещение\nБоголюбского монастыря\n– резиденции князя Андрея Боголюбского.\nПрогулка по заповедному лугу к храму Покрова на Нерли\n(1,5 км в одну сторону).\nПереезд в Суздаль (30 км)\n– один из самых красивых городов Золотого кольца.\nОбзорная экскурсия\n: Владимирское Ополье,\nМузей деревянного зодчества или Золотая кладовая.\nСпасо-Евфимиев монастырь\n(территория,\nСпасо-Преображенский собор\n, колокольные звоны).\nСуздальский Кремль\n– древнейший архитектурный комплекс города с\nРождественским собором, Никольской церковью и Архиерейскими палатами\nВозвращение во Владимир\n– один из древнейших городов России, основанный князем Владимиром Мономахом.\nОбзорная экскурсия по городу\n, осмотр\nСоборной площади, Успенского собора (XII век), Дмитриевского собора и Золотых ворот\n. Свободное время.",
-        "images": []
+        "images": [
+          "https://bogema.ru/images/jatoms/tours/45922-13-gorodov-zolotogo-koltsa-rossii/d712e5944f46416895dad1bb97b9f432.jpeg"
+        ]
       },
       {
         "day": 5,
         "title": "Выезд на экскурсию в Гусь-Хрустальный (68 км)",
         "description": "Выезд на экскурсию в Гусь-Хрустальный (68 км)\n– центр стеклоделия России.\nПосещение\nРынка хрусталя\nс изделиями 60 фабрик России и Европы.\nМузей Хрусталя\nв храме\nГеоргия Победоносца\n– выдающийся памятник архитектуры XIX-XX вв.\nПереезд в Муром (100 км)\n– древний город на берегу Оки.\nОбзорная экскурсия\nс посещением\nОкского парка и памятника Илье Муромцу\nТроицкий монастырь\nс мощами Петра и Февронии – покровителей семьи и брака.\nПосещение старинных монастырей и церквей, в том числе\nцеркви Гурия, Самона и Авива\n, где хранится икона с мощами святого Ильи Муромца.\nВыезд в Краснодар\nпосле окончания экскурсионной программы.",
-        "images": []
+        "images": [
+          "https://bogema.ru/images/jatoms/tours/45922-13-gorodov-zolotogo-koltsa-rossii/e1884d242e814a9c8bff34758d73a4a8.jpeg"
+        ]
       },
       {
         "day": 6,
@@ -27135,7 +27435,9 @@
         "day": 4,
         "title": "Путеводитель по заброшенным мирам и природным чудесам Восточной Абхазии",
         "description": "Путеводитель по заброшенным мирам и природным чудесам Восточной Абхазии\n🕖 7:30 - 8:30 — Завтрак и сдача номеров.\nВремя отправиться в захватывающее путешествие по восточной части Абхазии, где вас ждут уникальные природные и исторические объекты.\nНаша экскурсия начнется с посещения Ткуарчала — города-призрака,\nкоторый напоминает сцены из постапокалиптических фильмов. Город, основанный в 1942 году, был в свое время развитым шахтёрским центром с красивой архитектурой и развитой инфраструктурой. Здесь можно увидеть, как природа, в лице гигантских деревьев, постепенно поглощает бетонные руины, создавая невероятно атмосферное место для путешественников.\nНо несмотря на свою заброшенность, Ткуарчал остаётся самым молодым городом Абхазии.\nВам предстоит увидеть дома, построенные немецкими военнопленными, а также забытые, но потрясающие памятники архитектуры. И даже в этом заброшенном уголке Абхазии можно найти следы былого великолепия, таких как санаторий с радоновыми ваннами, который когда-то был одним из самых популярных курортов региона.\nДалее мы отправимся в удивительное место — водопад «Великан».\nЭтот величественный водопад, с высотой около 100 метров, является самым высоким в окрестностях Ткуарчала. Вода с невероятной мощью падает с горы и красиво растекается по пропасти, создавая потрясающее зрелище. Здесь, на самом краю водопада, мы сможем подойти почти вплотную к его потокам, ощутить свежесть и мощь воды — здесь, по легенде, можно загадать желание, которое обязательно сбудется!\nРядом с Великаном расположены два других водопада — Ирина и Святой.\nЭти водопады, хоть и не такие величественные, по-своему очаровывают своим уютом и загадочной атмосферой. Водопад Святой, скрытый в зелени, считается святым, так как был освящён священником. Он олицетворяет спокойствие и умиротворение. Здесь, в небольшом кафе, мы можем отдохнуть и насладиться вкусным обедом (по желанию).\nСледующий водопад — Ирина, названный в честь мамы местного жителя,\nкоторый первым проложил тропу к этому чуду природы. Водопад представляет собой каскады воды, спадающие с высоты около 40 метров, создавая живописные и невероятно красивый пейзаж.\nНо это ещё не всё! Нас ждёт ещё одно природное чудо — пещера Абрскила, где протекает подземная река\n. Эта пещера, хотя и менее известна, чем Новоафонская, впечатляет своей красотой и атмосферой. Мы пройдем по подземному руслу реки в резиновых сапогах, освещая путь фонарями. Сталактиты и сталагмиты в пещере создают уникальные природные формы, которые невозможно забыть.\nОбед (по желанию) — время для отдыха и восстановления сил в одном из местных кафе.\nИ вот, после насыщенного дня, нас ждет обратный путь\nв Краснодар, Новороссийск, Анапу, Геленджик или Темрюк. Мы привезем с собой не только уникальные воспоминания, но и душевное спокойствие, ведь Восточная Абхазия оставляет в сердце каждого путешественника частичку своей магии.\n✨ Этот день подарит вам уникальную возможность побывать в местах, где природа и история переплетаются в волшебных картинах. Заброшенные города, величественные водопады и подземные тайны — Восточная Абхазия ждёт вас!",
-        "images": []
+        "images": [
+          "https://bogema.ru/images/jatoms/tours/46389-abkhaziya-na-pervomaj-pogruzhenie-v-prirodu-i-traditsii/ba2c6a0ca49d437ca226dd6725b53dd3.jpeg"
+        ]
       }
     ],
     "gallery": [
