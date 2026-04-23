@@ -11,18 +11,16 @@ function isTourActive(tour: Record<string, unknown>): boolean {
   const nextDates = Array.isArray(tour.nextDates) ? tour.nextDates : [];
   if (nextDates.length === 0) return true;
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  const now = new Date();
+  const tzOffsetMs = now.getTimezoneOffset() * 60 * 1000;
+  const todayKey = new Date(now.getTime() - tzOffsetMs).toISOString().slice(0, 10);
 
   return nextDates.some((date) => {
     if (!date || typeof date !== 'object') return false;
     const d = date as Record<string, unknown>;
-    const raw = typeof d.start === 'string' ? d.start : '';
+    const raw = typeof d.start === 'string' ? d.start.trim().slice(0, 10) : '';
     if (!raw) return false;
-    const parsed = new Date(raw);
-    if (Number.isNaN(parsed.getTime())) return false;
-    parsed.setHours(0, 0, 0, 0);
-    return parsed >= today;
+    return raw >= todayKey;
   });
 }
 

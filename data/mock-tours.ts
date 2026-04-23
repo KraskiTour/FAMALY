@@ -6167,20 +6167,29 @@ export function getFaqsForTour(tour: Tour): FAQ[] {
  */
 const runtimeTours = toursJson as Tour[];
 
+function getLocalTodayKey(): string {
+  const now = new Date();
+  const tzOffsetMs = now.getTimezoneOffset() * 60 * 1000;
+  return new Date(now.getTime() - tzOffsetMs).toISOString().slice(0, 10);
+}
+
+function normalizeDateKey(value: string | undefined): string {
+  if (!value) return '';
+  return value.trim().slice(0, 10);
+}
+
 function isTourActive(tour: Tour): boolean {
   if (!tour.nextDates || tour.nextDates.length === 0) {
     // If no dates are provided, keep the tour visible (manual control via isPublished).
     return true;
   }
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  const todayKey = getLocalTodayKey();
 
   return tour.nextDates.some((date) => {
-    const startDate = new Date(date.start);
-    if (Number.isNaN(startDate.getTime())) return false;
-    startDate.setHours(0, 0, 0, 0);
-    return startDate >= today;
+    const startKey = normalizeDateKey(date.start);
+    if (!startKey) return false;
+    return startKey >= todayKey;
   });
 }
 
