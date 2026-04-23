@@ -194,6 +194,76 @@ export default function AdminPage() {
     patchCurrent({ gallery: currentGallery.filter((_, i) => i !== index) });
   }
 
+  function buildDraftTours(): Tour[] | null {
+    if (!current) return tours;
+
+    const parsedDates = safeParseDates(datesText);
+    if (!parsedDates) {
+      setDatesError('`nextDates` JSON is invalid');
+      return null;
+    }
+    setDatesError('');
+
+    const parsedTour = applyTourJsonDraft();
+    if (!parsedTour) return null;
+
+    const mergedTour: Tour = { ...parsedTour, nextDates: parsedDates };
+    return tours.map((t, i) => (i === selectedIndex ? mergedTour : t));
+  }
+
+  function downloadDraftJson() {
+    const draft = buildDraftTours();
+    if (!draft) return;
+
+    const blob = new Blob([`${JSON.stringify(draft, null, 2)}\n`], {
+      type: 'application/json;charset=utf-8',
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'tours-draft.json';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    setStatus('Downloaded current draft from admin UI');
+  }
+
+  async function saveAndDownload() {
+    const draft = buildDraftTours();
+    if (!draft) return;
+
+    setTours(draft);
+    setIsSavingAll(true);
+    try {
+      const res = await fetch('/api/admin/tours', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ tours: draft }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error || 'Failed to save');
+
+      const blob = new Blob([`${JSON.stringify(draft, null, 2)}\n`], {
+        type: 'application/json;charset=utf-8',
+      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'tours.json';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+
+      setStatus(`Saved ${data.count} tours and downloaded updated JSON`);
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : 'Save failed');
+    } finally {
+      setIsSavingAll(false);
+    }
+  }
+
   async function login() {
     setLoginError('');
     try {
@@ -221,21 +291,10 @@ export default function AdminPage() {
 
   async function saveAll() {
     if (!current) return;
-
-    const parsedDates = safeParseDates(datesText);
-    if (!parsedDates) {
-      setDatesError('`nextDates` JSON is invalid');
-      return;
-    }
-    setDatesError('');
-
-    const parsedTour = applyTourJsonDraft();
-    if (!parsedTour) return;
-
-    const mergedTour: Tour = { ...parsedTour, nextDates: parsedDates };
-    const nextTours = tours.map((t, i) => (i === selectedIndex ? mergedTour : t));
+    const nextTours = buildDraftTours();
+    if (!nextTours) return;
     setTours(nextTours);
-    setTourJsonText(JSON.stringify(mergedTour, null, 2));
+    setTourJsonText(JSON.stringify(nextTours[selectedIndex], null, 2));
 
     setIsSavingAll(true);
     try {
@@ -304,6 +363,25 @@ export default function AdminPage() {
             className="px-4 py-2 rounded-lg bg-emerald-100 hover:bg-emerald-200 text-sm font-semibold"
           >
             Download tours.json
+          </button>
+          <button
+            onClick={downloadDraftJson}
+            className="px-4 py-2 rounded-lg bg-emerald-200 hover:bg-emerald-300 text-sm font-semibold"
+          >
+            Download current draft
+          </button>
+          <button
+            onClick={() => void saveAndDownload()}
+            disabled={isSavingAll || !current}
+            className="px-4 py-2 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-semibold disabled:opacity-60"
+          >
+            Save + Download
+          </button>
+          <button
+            onClick={() => window.open('/api/admin/tours?download=1&activeOnly=1', '_blank')}
+            className="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold"
+          >
+            Download active tours
           </button>
           <button onClick={addTour} className="px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-sm font-semibold">
             Add Tour

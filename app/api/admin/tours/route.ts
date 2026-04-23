@@ -7,6 +7,34 @@ const TOURS_FILE = path.join(process.cwd(), 'data', 'tours.json');
 
 export const dynamic = 'force-dynamic';
 
+function isTourActive(tour: Record<string, unknown>): boolean {
+  const nextDates = Array.isArray(tour.nextDates) ? tour.nextDates : [];
+  if (nextDates.length === 0) return true;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  return nextDates.some((date) => {
+    if (!date || typeof date !== 'object') return false;
+    const d = date as Record<string, unknown>;
+    const raw = typeof d.end === 'string' ? d.end : typeof d.start === 'string' ? d.start : '';
+    if (!raw) return false;
+    const parsed = new Date(raw);
+    if (Number.isNaN(parsed.getTime())) return false;
+    parsed.setHours(0, 0, 0, 0);
+    return parsed >= today;
+  });
+}
+
+function filterActiveTours(tours: unknown[]): unknown[] {
+  return tours.filter((item) => {
+    if (!item || typeof item !== 'object') return false;
+    const t = item as Record<string, unknown>;
+    const isPublished = t.isPublished !== false;
+    return isPublished && isTourActive(t);
+  });
+}
+
 function unauthorizedResponse() {
   if (!isAdminConfigured()) {
     return NextResponse.json(
@@ -24,17 +52,21 @@ export async function GET(req: Request) {
 
   try {
     const raw = await fs.readFile(TOURS_FILE, 'utf-8');
+    const tours = JSON.parse(raw);
     const url = new URL(req.url);
     if (url.searchParams.get('download') === '1') {
-      return new NextResponse(raw, {
+      const activeOnly = url.searchParams.get('activeOnly') === '1';
+      const payload = activeOnly && Array.isArray(tours) ? filterActiveTours(tours) : tours;
+      const body = `${JSON.stringify(payload, null, 2)}\n`;
+      return new NextResponse(body, {
         status: 200,
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
-          'Content-Disposition': 'attachment; filename="tours.json"',
+          'Content-Disposition': `attachment; filename="${activeOnly ? 'tours-active.json' : 'tours.json'}"`,
         },
       });
     }
-    const tours = JSON.parse(raw);
+
     return NextResponse.json({ tours });
   } catch (error) {
     console.error('Failed to read tours.json', error);
