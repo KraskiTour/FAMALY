@@ -439,42 +439,10 @@ export default function AdminPage() {
         <h1 className="text-2xl font-extrabold text-gray-900">Mini Admin: Tours JSON</h1>
         <div className="flex gap-2">
           <button
-            onClick={() => window.open('/api/admin/tours?download=1', '_blank')}
-            className="px-4 py-2 rounded-lg bg-emerald-100 hover:bg-emerald-200 text-sm font-semibold"
-          >
-            Download tours.json
-          </button>
-          <button
             onClick={downloadDraftJson}
             className="px-4 py-2 rounded-lg bg-emerald-200 hover:bg-emerald-300 text-sm font-semibold"
           >
             Download current draft
-          </button>
-          <button
-            onClick={() => void saveAndDownload()}
-            disabled={isSavingAll || !current}
-            className="px-4 py-2 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-semibold disabled:opacity-60"
-          >
-            Save + Download
-          </button>
-          <button
-            onClick={() => window.open('/api/admin/tours?download=1&activeOnly=1', '_blank')}
-            className="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold"
-          >
-            Download active tours
-          </button>
-          <button onClick={addTour} className="px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-sm font-semibold">
-            Add Tour
-          </button>
-          <button
-            onClick={saveAll}
-            disabled={isSavingAll || !current}
-            className="px-4 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-700 disabled:opacity-60 text-sm font-semibold"
-          >
-            {isSavingAll ? 'Saving...' : 'Save All'}
-          </button>
-          <button onClick={() => void logout()} className="px-4 py-2 rounded-lg bg-red-50 hover:bg-red-100 text-sm font-semibold text-red-700">
-            Logout
           </button>
         </div>
       </div>
