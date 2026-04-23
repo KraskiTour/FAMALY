@@ -11,6 +11,7 @@ interface TourSidebarProps {
 }
 
 export default function TourSidebar({ tour }: TourSidebarProps) {
+  const SOURCE_LINK_PASSWORD = '0001';
   const [showForm, setShowForm] = useState(false);
   const [name, setName] = useState('');
   const [contact, setContact] = useState('');
@@ -25,6 +26,19 @@ export default function TourSidebar({ tour }: TourSidebarProps) {
     trackEvent('submit_tour_lead_form', { tour: tour.slug });
     window.open(`${CONTACTS.whatsapp.url}?text=${encodeURIComponent(msg)}`, '_blank');
     setSent(true);
+  };
+
+  const handleSourceOpen = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (!tour.sourceUrl) return;
+
+    const entered = window.prompt('Введите пароль для перехода к источнику');
+    if (entered !== SOURCE_LINK_PASSWORD) {
+      window.alert('Неверный пароль');
+      return;
+    }
+
+    window.open(tour.sourceUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -224,12 +238,12 @@ export default function TourSidebar({ tour }: TourSidebarProps) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-brand-600 transition-colors"
             title={`Посмотреть оригинал у ${tour.sourceOperator || 'оператора'}`}
+            onClick={handleSourceOpen}
           >
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.64 0 8.577 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.64 0-8.577-3.007-9.963-7.178z" />
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            Тур на сайте {tour.sourceOperator || 'оператора'}
           </a>
         </div>
       )}
