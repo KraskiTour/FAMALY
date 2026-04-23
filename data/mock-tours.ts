@@ -6177,10 +6177,10 @@ function isTourActive(tour: Tour): boolean {
   today.setHours(0, 0, 0, 0);
 
   return tour.nextDates.some((date) => {
-    const endDate = new Date(date.end || date.start);
-    if (Number.isNaN(endDate.getTime())) return false;
-    endDate.setHours(0, 0, 0, 0);
-    return endDate >= today;
+    const startDate = new Date(date.start);
+    if (Number.isNaN(startDate.getTime())) return false;
+    startDate.setHours(0, 0, 0, 0);
+    return startDate >= today;
   });
 }
 

@@ -17,7 +17,7 @@ function isTourActive(tour: Record<string, unknown>): boolean {
   return nextDates.some((date) => {
     if (!date || typeof date !== 'object') return false;
     const d = date as Record<string, unknown>;
-    const raw = typeof d.end === 'string' ? d.end : typeof d.start === 'string' ? d.start : '';
+    const raw = typeof d.start === 'string' ? d.start : '';
     if (!raw) return false;
     const parsed = new Date(raw);
     if (Number.isNaN(parsed.getTime())) return false;
