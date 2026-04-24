@@ -33,12 +33,14 @@ export const CONTACTS = {
   telegram: {
     username: 'kraskitravel',
     url: 'https://t.me/kraskitravel',
+    botUsername: 'id230814735866_bot',
     label: 'Telegram',
   },
 
-  /** Замените на ссылку-профиль в MAX, когда будет готов канал компании */
+  /** Ссылка на мини-апп MAX-бота */
   max: {
-    url: 'https://max.ru',
+    url: 'https://max.ru/id230814735866_bot',
+    botUrl: 'https://max.ru/id230814735866_bot',
     label: 'MAX',
   },
 

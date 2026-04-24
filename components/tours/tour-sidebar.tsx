@@ -5,6 +5,7 @@ import { Tour } from '@/lib/types';
 import { CONTACTS } from '@/lib/config';
 import { formatPrice, formatDateRange, pluralDays } from '@/lib/utils';
 import { trackEvent } from '@/lib/analytics';
+import { getMaxMiniAppUrl, getTelegramMiniAppUrl } from '@/lib/miniapp-links';
 
 interface TourSidebarProps {
   tour: Tour;
@@ -28,6 +29,8 @@ export default function TourSidebar({ tour }: TourSidebarProps) {
     ? tour.nextDates
     : tour.nextDates.slice(0, DATES_VISIBLE_BY_DEFAULT);
   const hiddenDatesCount = tour.nextDates.length - DATES_VISIBLE_BY_DEFAULT;
+  const telegramMiniAppUrl = getTelegramMiniAppUrl(tour.id);
+  const maxMiniAppUrl = getMaxMiniAppUrl(tour.id);
 
   const handleSubmit = () => {
     const msg = [
@@ -228,10 +231,10 @@ export default function TourSidebar({ tour }: TourSidebarProps) {
               WhatsApp
             </a>
             <div className="grid grid-cols-2 gap-2">
-              <a href={CONTACTS.telegram.url} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('click_telegram', { tour: tour.slug })} className="inline-flex items-center justify-center gap-1.5 bg-white text-blue-600 border border-blue-100 py-2.5 rounded-xl text-xs font-semibold hover:border-blue-300 hover:bg-blue-50/60 transition-colors">
+              <a href={telegramMiniAppUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('click_telegram', { tour: tour.slug })} className="inline-flex items-center justify-center gap-1.5 bg-white text-blue-600 border border-blue-100 py-2.5 rounded-xl text-xs font-semibold hover:border-blue-300 hover:bg-blue-50/60 transition-colors">
                 Telegram
               </a>
-              <a href={CONTACTS.max.url} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('click_max', { tour: tour.slug })} className="inline-flex items-center justify-center gap-1.5 bg-white text-violet-600 border border-violet-100 py-2.5 rounded-xl text-xs font-semibold hover:border-violet-300 hover:bg-violet-50/60 transition-colors">
+              <a href={maxMiniAppUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('click_max', { tour: tour.slug })} className="inline-flex items-center justify-center gap-1.5 bg-white text-violet-600 border border-violet-100 py-2.5 rounded-xl text-xs font-semibold hover:border-violet-300 hover:bg-violet-50/60 transition-colors">
                 MAX
               </a>
             </div>
