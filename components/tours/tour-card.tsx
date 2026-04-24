@@ -12,13 +12,19 @@ interface TourCardProps {
 export default function TourCard({ tour }: TourCardProps) {
   const nextDate = tour.nextDates[0];
   const [imageFailed, setImageFailed] = useState(false);
-  const primaryImage = !imageFailed && tour.gallery[0] ? tour.gallery[0] : '/images/hero-home.png';
-  const showPrimaryImage = primaryImage.startsWith('/images/') || primaryImage.startsWith('http');
+  // If the primary image is missing or has already failed at runtime, we drop
+  // the <img> entirely and let the gradient backdrop beneath stay visible —
+  // better than a broken-image icon or a placeholder PNG that doesn't exist.
+  const primaryImage = tour.gallery[0];
+  const showPrimaryImage =
+    !imageFailed &&
+    typeof primaryImage === 'string' &&
+    (primaryImage.startsWith('/') || /^https?:\/\//i.test(primaryImage));
 
   return (
     <Link
       href={`/tours/${tour.slug}`}
-      className="group bg-white rounded-2xl shadow-card overflow-hidden hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300 flex flex-col border border-gray-100"
+      className="group bg-white rounded-2xl shadow-card overflow-hidden hover:shadow-card-hover hover:-translate-y-1 hover:border-brand-200 transition-all duration-300 flex flex-col border border-gray-200/70"
     >
       <div className="relative aspect-[16/10] bg-gradient-to-br from-brand-50 via-teal-50 to-sky-50 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/5 to-transparent z-10" />
@@ -28,7 +34,7 @@ export default function TourCard({ tour }: TourCardProps) {
             alt={tour.title}
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
             loading="lazy"
-            referrerPolicy="no-referrer"
+            decoding="async"
             onError={() => setImageFailed(true)}
           />
         ) : (

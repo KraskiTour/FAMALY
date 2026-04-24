@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import { destinations } from '@/data/mock-tours';
+import { destinations, getPublishedTours } from '@/data/mock-tours';
+import type { Tour } from '@/lib/types';
+import DestinationCard from './destination-card';
 
 const curatedSlugs = [
   'krym',
@@ -16,55 +18,101 @@ const curatedSlugs = [
   'kaliningrad',
 ];
 
-const popularDestinations = curatedSlugs
-  .map((slug) => destinations.find((d) => d.slug === slug))
-  .filter(Boolean) as typeof destinations;
+function matchesDestination(tour: Tour, destName: string): boolean {
+  return tour.destination === destName || (tour.destinations?.includes(destName) ?? false);
+}
 
-const destColors: Record<string, string> = {
-  krym: 'from-sky-400 to-sky-700',
-  gruziya: 'from-amber-600 to-rose-700',
-  dagestan: 'from-amber-500 to-warm-600',
-  'saint-petersburg': 'from-indigo-400 to-indigo-700',
-  'zolotoe-kolco': 'from-yellow-500 to-amber-700',
-  kareliya: 'from-teal-600 to-slate-800',
-  belarus: 'from-emerald-500 to-emerald-800',
-  'abrau-dyurso': 'from-brand-500 to-brand-700',
-  'lago-naki': 'from-teal-500 to-brand-700',
-  arhyz: 'from-teal-500 to-brand-700',
-  kalmykiya: 'from-orange-400 to-rose-600',
-  kaliningrad: 'from-slate-400 to-slate-700',
-};
+function badgeScore(tour: Tour): number {
+  let s = 0;
+  if (tour.badges.includes('hit')) s += 3;
+  if (tour.badges.includes('new')) s += 2;
+  if (tour.badges.includes('hot')) s += 2;
+  return s;
+}
+
+/**
+ * Resolve a real hero image for a destination by borrowing the first gallery
+ * photo from its strongest matching tour. Prefers hit/new/hot tours so the
+ * card reflects the operator's flagship visual for that destination.
+ *
+ * Returns null when no matching tour has a valid external image — in that
+ * case DestinationCard falls back to its designer motif layer.
+ */
+function resolveDestinationImage(destName: string, tours: Tour[]): string | null {
+  const matches = tours.filter(
+    (t) =>
+      matchesDestination(t, destName) &&
+      Boolean(t.gallery?.[0]) &&
+      /^https?:\/\//i.test(t.gallery[0].trim()),
+  );
+  if (matches.length === 0) return null;
+  const sorted = [...matches].sort((a, b) => badgeScore(b) - badgeScore(a));
+  return sorted[0].gallery[0];
+}
+
+function countToursForDestination(destName: string, tours: Tour[]): number {
+  return tours.filter((t) => matchesDestination(t, destName)).length;
+}
 
 export default function PopularDestinations() {
+  const tours = getPublishedTours();
+
+  const cards = curatedSlugs
+    .map((slug) => {
+      const dest = destinations.find((d) => d.slug === slug);
+      if (!dest) return null;
+      const realImage = resolveDestinationImage(dest.name, tours);
+      // Override the (possibly empty) static destination image with a live
+      // one pulled from real tour galleries — keeps the card looking like a
+      // travel service, not a design concept.
+      const enriched = realImage ? { ...dest, image: realImage } : dest;
+      return { dest: enriched, count: countToursForDestination(dest.name, tours) };
+    })
+    .filter(Boolean) as { dest: typeof destinations[number]; count: number }[];
+
   return (
-    <section className="py-20 lg:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
-            Популярные направления
-          </h2>
-          <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            От однодневных поездок рядом до многодневных маршрутов по всей России и за рубежом
-          </p>
+    <section className="section-y bg-white">
+      <div className="container-page">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10 lg:mb-12">
+          <div className="max-w-2xl">
+            <span className="eyebrow">Направления</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+              Популярные направления
+            </h2>
+            <p className="mt-3 text-base sm:text-lg text-gray-500 leading-relaxed">
+              От однодневных поездок рядом до многодневных маршрутов по всей России и за рубежом
+            </p>
+          </div>
+          <Link
+            href="/tours"
+            className="hidden sm:inline-flex items-center gap-1.5 text-brand-700 font-semibold hover:text-brand-800 transition-colors text-sm shrink-0 border-b border-brand-200 hover:border-brand-500 pb-0.5"
+          >
+            Все направления
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+          </Link>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
-          {popularDestinations.map((dest) => (
-            <Link
+          {cards.map(({ dest, count }, i) => (
+            <DestinationCard
               key={dest.slug}
-              href={`/tours?destination=${dest.slug}`}
-              className="group relative rounded-2xl overflow-hidden aspect-[4/3] flex items-end hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
-            >
-              <div className={`absolute inset-0 bg-gradient-to-br ${destColors[dest.slug] || 'from-gray-400 to-gray-600'}`} />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-              <div className="relative p-4 lg:p-5 w-full">
-                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white group-hover:text-brand-200 transition-colors">
-                  {dest.name}
-                </h3>
-                <p className="text-xs sm:text-sm text-white/70 mt-0.5">{dest.region}</p>
-              </div>
-            </Link>
+              destination={dest}
+              tourCount={count}
+              featured={i < 2}
+              priority={i === 0}
+            />
           ))}
+        </div>
+
+        <div className="mt-8 text-center sm:hidden">
+          <Link href="/tours" className="inline-flex items-center gap-1.5 text-brand-700 font-semibold text-sm">
+            Все направления
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>

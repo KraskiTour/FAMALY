@@ -1,10 +1,30 @@
-import React from 'react';
+'use client';
+
+// ---------------------------------------------------------------------------
+// Program-by-days section.
+//
+// Rendering is all-server-friendly (parsing is pure), but we mark this as a
+// client component because each day card now has an "Развернуть весь день"
+// toggle — long day descriptions made the page feel endless. Collapsed state
+// shows the first few parsed blocks; expanded shows the rest + images +
+// important/tip notes + day footer.
+//
+// Parser behaviour, data shape and inline formatting (times, attractions,
+// services) are unchanged — this polish only controls visibility.
+// ---------------------------------------------------------------------------
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { ItineraryDay } from '@/lib/types';
 
 interface TourItineraryProps {
   itinerary: ItineraryDay[];
 }
+
+// How many parsed blocks we show inside a day before collapsing the rest.
+// Tuned so that typical days stay at "morning + first stop" on first glance,
+// which is enough to decide whether to read further.
+const BLOCKS_VISIBLE_BY_DEFAULT = 3;
 
 function isRealImage(src: string) {
   return src.startsWith('/images/') || src.startsWith('http');
@@ -309,13 +329,21 @@ function ContentBlock({ content }: { content: string }) {
 // Day-level rendering
 // ---------------------------------------------------------------------------
 
-function DayDescription({ description }: { description: string }) {
+function DayDescription({
+  description,
+  expanded,
+}: {
+  description: string;
+  expanded: boolean;
+}) {
   const { blocks, footer } = parseDescription(description);
   const hasFooter = footer.endPoint || footer.duration;
+  const visibleBlocks = expanded ? blocks : blocks.slice(0, BLOCKS_VISIBLE_BY_DEFAULT);
+  const hiddenBlocksCount = blocks.length - visibleBlocks.length;
 
   return (
     <div className="space-y-3">
-      {blocks.map((block, i) => {
+      {visibleBlocks.map((block, i) => {
         if (block.type === 'time') {
           return (
             <div key={i} className="rounded-lg bg-gray-50/70 border border-gray-100 p-3">
@@ -351,7 +379,13 @@ function DayDescription({ description }: { description: string }) {
         return <ContentBlock key={i} content={block.content} />;
       })}
 
-      {hasFooter && (
+      {!expanded && hiddenBlocksCount > 0 && (
+        <p className="text-[12px] text-gray-400 italic pt-1">
+          +{hiddenBlocksCount} {hiddenBlocksCount === 1 ? 'пункт' : hiddenBlocksCount < 5 ? 'пункта' : 'пунктов'} программы скрыто
+        </p>
+      )}
+
+      {hasFooter && expanded && (
         <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1 pt-2 border-t border-gray-100">
           {footer.endPoint && (
             <span className="inline-flex items-center gap-1 text-xs text-gray-500">
@@ -405,53 +439,116 @@ function DayHighlights({ description }: { description: string }) {
 export default function TourItinerary({ itinerary }: TourItineraryProps) {
   return (
     <section>
-      <h2 className="text-2xl font-bold text-gray-900 mb-8 tracking-tight">Программа по дням</h2>
-      <div className="space-y-0">
-        {itinerary.map((day, index) => {
-          const hasImages = day.images && day.images.length > 0;
+      <div className="mb-6 lg:mb-8">
+        <span className="eyebrow">Маршрут</span>
+        <h2 className="mt-3 text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
+          Программа по дням
+        </h2>
+        <p className="mt-2 text-sm text-gray-500 leading-relaxed">
+          {itinerary.length === 1
+            ? 'Один насыщенный день — с таймингами и главными локациями'
+            : `${pluralDaysLocal(itinerary.length)} с таймингами, переездами и главными локациями`}
+        </p>
+      </div>
 
-          return (
-            <div key={day.day} className="relative pl-10 pb-8 last:pb-0">
-              {index < itinerary.length - 1 && (
-                <div className="absolute left-[13px] top-8 bottom-0 w-px bg-brand-200" />
-              )}
-              <div className="absolute left-0 top-0.5 w-7 h-7 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 text-white text-xs font-bold flex items-center justify-center shadow-sm shadow-brand-600/30">
-                {day.day}
-              </div>
-
-              <h3 className="text-[15px] font-bold text-gray-900 mb-1.5">{day.title}</h3>
-
-              <DayHighlights description={day.description} />
-
-              {hasImages && (
-                <div className="grid grid-cols-2 gap-2 mb-3">
-                  {day.images!.slice(0, 2).map((img, imgIdx) => {
-                    const showReal = isRealImage(img);
-                    return (
-                      <div key={imgIdx} className="relative aspect-[4/3] rounded-xl overflow-hidden bg-gradient-to-br from-brand-50 via-teal-50/50 to-sky-50 shadow-sm">
-                        {showReal ? (
-                          <Image
-                            src={img}
-                            alt={`${day.title} — фото ${imgIdx + 1}`}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 640px) 50vw, 200px"
-                            unoptimized={img.startsWith('https://')}
-                          />
-                        ) : (
-                          <PhotoPlaceholder label={img.split('/').pop()?.replace(/\.\w+$/, '').replace(/-/g, ' ') || day.title} />
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-
-              <DayDescription description={day.description} />
-            </div>
-          );
-        })}
+      <div className="space-y-4 lg:space-y-5">
+        {itinerary.map((day) => (
+          <DayCard key={day.day} day={day} />
+        ))}
       </div>
     </section>
   );
+}
+
+function DayCard({ day }: { day: ItineraryDay }) {
+  const [expanded, setExpanded] = useState(false);
+  const hasImages = day.images && day.images.length > 0;
+  const { blocks } = parseDescription(day.description);
+  const canExpand = blocks.length > BLOCKS_VISIBLE_BY_DEFAULT;
+
+  return (
+    <article className="bg-white rounded-2xl border border-gray-200/70 shadow-card overflow-hidden">
+      <header className="flex items-center gap-3 px-5 sm:px-6 pt-5 pb-3 border-b border-gray-100">
+        <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white text-sm font-bold shadow-button shrink-0">
+          {day.day}
+        </span>
+        <div className="min-w-0">
+          <p className="text-[11px] uppercase tracking-wider text-brand-700 font-semibold">
+            День {day.day}
+          </p>
+          <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-snug">
+            {day.title}
+          </h3>
+        </div>
+      </header>
+
+      <div className="px-5 sm:px-6 py-5">
+        <DayHighlights description={day.description} />
+
+        {/* Day images only when the day is expanded — they add a lot of visual
+            weight and aren't needed to decide "read more" at the glance stage. */}
+        {hasImages && expanded && (
+          <div className="grid grid-cols-2 gap-2 mb-4">
+            {day.images!.slice(0, 2).map((img, imgIdx) => {
+              const showReal = isRealImage(img);
+              return (
+                <div
+                  key={imgIdx}
+                  className="relative aspect-[4/3] rounded-xl overflow-hidden bg-gradient-to-br from-brand-50 via-teal-50/50 to-sky-50 shadow-sm"
+                >
+                  {showReal ? (
+                    <Image
+                      src={img}
+                      alt={`${day.title} — фото ${imgIdx + 1}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 50vw, 260px"
+                      unoptimized={img.startsWith('https://')}
+                    />
+                  ) : (
+                    <PhotoPlaceholder
+                      label={
+                        img.split('/').pop()?.replace(/\.\w+$/, '').replace(/-/g, ' ') ||
+                        day.title
+                      }
+                    />
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        <DayDescription description={day.description} expanded={expanded} />
+
+        {canExpand && (
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800 transition-colors"
+            aria-expanded={expanded}
+          >
+            {expanded ? 'Свернуть день' : 'Развернуть весь день'}
+            <svg
+              className={`w-3.5 h-3.5 transition-transform ${expanded ? 'rotate-180' : ''}`}
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2.2}
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
+        )}
+      </div>
+    </article>
+  );
+}
+
+function pluralDaysLocal(n: number): string {
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+  if (mod10 === 1 && mod100 !== 11) return `${n} день`;
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return `${n} дня`;
+  return `${n} дней`;
 }

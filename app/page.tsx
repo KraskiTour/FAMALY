@@ -63,26 +63,29 @@ function buildShowcase(all: Tour[]) {
 }
 
 function ShowcaseSection({
-  title, subtitle, tours, href, linkText,
+  eyebrow, title, subtitle, tours, href, linkText, surface = 'neutral',
 }: {
-  title: string; subtitle: string; tours: Tour[]; href: string; linkText: string;
+  eyebrow: string; title: string; subtitle: string; tours: Tour[]; href: string; linkText: string;
+  surface?: 'neutral' | 'white';
 }) {
   if (tours.length === 0) return null;
+  const bg = surface === 'white' ? 'bg-white' : 'bg-stone-50/60';
   return (
-    <section className="py-16 lg:py-24 bg-gray-50/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-end justify-between mb-10">
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
+    <section className={`section-y ${bg}`}>
+      <div className="container-page">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-8 lg:mb-10">
+          <div className="max-w-2xl">
+            <span className="eyebrow">{eyebrow}</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
               {title}
             </h2>
-            <p className="mt-2 text-base text-gray-500 leading-relaxed max-w-2xl">
+            <p className="mt-3 text-base sm:text-lg text-gray-500 leading-relaxed">
               {subtitle}
             </p>
           </div>
           <Link
             href={href}
-            className="hidden sm:inline-flex items-center gap-1.5 text-brand-600 font-semibold hover:text-brand-700 transition-colors text-sm shrink-0"
+            className="hidden sm:inline-flex items-center gap-1.5 text-brand-700 font-semibold hover:text-brand-800 transition-colors text-sm shrink-0 border-b border-brand-200 hover:border-brand-500 pb-0.5"
           >
             {linkText}
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
@@ -91,8 +94,8 @@ function ShowcaseSection({
           </Link>
         </div>
         <TourGrid tours={tours} />
-        <div className="mt-6 text-center sm:hidden">
-          <Link href={href} className="inline-flex items-center gap-1.5 text-brand-600 font-semibold text-sm">
+        <div className="mt-8 text-center sm:hidden">
+          <Link href={href} className="inline-flex items-center gap-1.5 text-brand-700 font-semibold text-sm">
             {linkText}
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -105,12 +108,65 @@ function ShowcaseSection({
 }
 
 const FORMAT_TILES = [
-  { label: 'Многодневные', sub: 'от 2 до 9 дней', href: '/tours?type=multiday', cls: 'from-brand-50 to-brand-100/60 border-brand-100/50 hover:border-brand-200' },
-  { label: 'На выходные', sub: 'однодневные рядом', href: '/tours?type=oneday', cls: 'from-violet-50 to-violet-100/60 border-violet-100/50 hover:border-violet-200' },
-  { label: 'За рубеж', sub: 'Грузия, Стамбул, Узбекистан', href: '/tours?tag=abroad', cls: 'from-amber-50 to-amber-100/60 border-amber-100/50 hover:border-amber-200' },
-  { label: 'С детьми', sub: 'семейные маршруты', href: '/tours?tag=family', cls: 'from-teal-50 to-teal-100/60 border-teal-100/50 hover:border-teal-200' },
-  { label: 'Экскурсии', sub: 'городские прогулки', href: '/tours?tag=excursion', cls: 'from-orange-50 to-orange-100/60 border-orange-100/50 hover:border-orange-200' },
+  {
+    label: 'Многодневные', sub: 'от 2 до 9 дней',
+    href: '/tours?type=multiday',
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+    ),
+    tone: 'brand',
+  },
+  {
+    label: 'На выходные', sub: 'однодневные рядом',
+    href: '/tours?type=oneday',
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+    ),
+    tone: 'neutral',
+  },
+  {
+    label: 'За рубеж', sub: 'Грузия, Стамбул, Узбекистан',
+    href: '/tours?tag=abroad',
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18zm0 0c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 18v-9m-9 0h18" />
+    ),
+    tone: 'warm',
+  },
+  {
+    label: 'С детьми', sub: 'семейные маршруты',
+    href: '/tours?tag=family',
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+    ),
+    tone: 'neutral',
+  },
+  {
+    label: 'Экскурсии', sub: 'городские прогулки',
+    href: '/tours?tag=excursion',
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0zM19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+    ),
+    tone: 'brand',
+  },
 ];
+
+const TONE_CLS: Record<string, { surface: string; iconWrap: string; icon: string }> = {
+  brand: {
+    surface: 'bg-gradient-to-br from-brand-50 to-white border-brand-100/70 hover:border-brand-300',
+    iconWrap: 'bg-brand-100 text-brand-700',
+    icon: 'text-brand-700',
+  },
+  warm: {
+    surface: 'bg-gradient-to-br from-warm-50 to-white border-warm-100 hover:border-warm-200',
+    iconWrap: 'bg-warm-100 text-warm-600',
+    icon: 'text-warm-600',
+  },
+  neutral: {
+    surface: 'bg-white border-gray-200/80 hover:border-brand-200',
+    iconWrap: 'bg-brand-50 text-brand-700',
+    icon: 'text-brand-700',
+  },
+};
 
 export default function HomePage() {
   const allTours = getPublishedTours();
@@ -122,40 +178,59 @@ export default function HomePage() {
       <PopularDestinations />
 
       {/* Format entry tiles */}
-      <section className="py-12 lg:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-lg font-bold text-gray-900 mb-5">Выберите формат</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            {FORMAT_TILES.map((tile) => (
-              <Link
-                key={tile.label}
-                href={tile.href}
-                className={`bg-gradient-to-br ${tile.cls} border rounded-xl px-4 py-4 transition-all duration-200 group hover:shadow-card`}
-              >
-                <span className="block text-sm font-bold text-gray-900 group-hover:text-brand-700 transition-colors">
-                  {tile.label}
-                </span>
-                <span className="block text-[11px] text-gray-500 mt-0.5">{tile.sub}</span>
-              </Link>
-            ))}
+      <section className="section-y-tight bg-white">
+        <div className="container-page">
+          <div className="flex items-end justify-between mb-6 lg:mb-7">
+            <div>
+              <span className="eyebrow">Форматы</span>
+              <h2 className="mt-3 text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
+                Выберите формат поездки
+              </h2>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+            {FORMAT_TILES.map((tile) => {
+              const t = TONE_CLS[tile.tone];
+              return (
+                <Link
+                  key={tile.label}
+                  href={tile.href}
+                  className={`group ${t.surface} border rounded-2xl p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-hover`}
+                >
+                  <span className={`inline-flex items-center justify-center w-10 h-10 rounded-xl ${t.iconWrap} mb-4`}>
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
+                      {tile.icon}
+                    </svg>
+                  </span>
+                  <span className="block text-sm font-bold text-gray-900 group-hover:text-brand-700 transition-colors">
+                    {tile.label}
+                  </span>
+                  <span className="block text-[12px] text-gray-500 mt-1 leading-snug">{tile.sub}</span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
       <ShowcaseSection
+        eyebrow="Многодневные"
         title="Путешествия на несколько дней"
         subtitle="Крым, Грузия, Петербург, Золотое кольцо и другие большие маршруты — от 2 до 9 дней"
         tours={trips}
         href="/tours?type=multiday"
         linkText="Все многодневные"
+        surface="neutral"
       />
 
       <ShowcaseSection
-        title="Поездки на выходные"
+        eyebrow="Выходные"
+        title="Поездки на один-два дня"
         subtitle="Однодневные маршруты рядом — горы, море, винодельни, природа"
         tours={weekends}
         href="/tours?type=oneday"
         linkText="Все однодневные"
+        surface="white"
       />
 
       <DepartureCities />

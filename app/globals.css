@@ -17,6 +17,7 @@
 
   --color-warm-50: #fff7ed;
   --color-warm-100: #ffedd5;
+  --color-warm-200: #fed7aa;
   --color-warm-400: #fb923c;
   --color-warm-500: #f97316;
   --color-warm-600: #ea580c;
@@ -33,30 +34,104 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
+
+  h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+  }
 }
 
 @layer utilities {
+  /* Unified shadow language */
   .shadow-card {
     box-shadow:
-      0 1px 2px rgba(0, 0, 0, 0.03),
-      0 4px 16px rgba(0, 0, 0, 0.04);
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 4px 16px rgba(15, 23, 42, 0.04);
   }
   .shadow-card-hover {
     box-shadow:
-      0 4px 12px rgba(0, 0, 0, 0.06),
-      0 12px 32px rgba(0, 0, 0, 0.06);
+      0 4px 12px rgba(15, 23, 42, 0.06),
+      0 16px 40px rgba(15, 23, 42, 0.07);
   }
   .shadow-panel {
     box-shadow:
-      0 1px 3px rgba(0, 0, 0, 0.04),
-      0 6px 24px rgba(0, 0, 0, 0.03);
+      0 1px 3px rgba(15, 23, 42, 0.04),
+      0 8px 28px rgba(15, 23, 42, 0.04);
   }
   .shadow-elevated {
     box-shadow:
-      0 8px 24px rgba(0, 0, 0, 0.06),
-      0 20px 48px rgba(0, 0, 0, 0.05);
+      0 10px 28px rgba(15, 23, 42, 0.08),
+      0 24px 56px rgba(15, 23, 42, 0.06);
+  }
+  .shadow-button {
+    box-shadow:
+      0 1px 2px rgba(13, 148, 136, 0.18),
+      0 8px 20px rgba(13, 148, 136, 0.16);
   }
 
+  /* Section spacing rhythm — tightened for a more connected, premium feel.
+     Was 5/6/7rem — felt too airy between consecutive sections (gaps of 14rem
+     on lg). Trimmed by ~1rem at each breakpoint so the page flows without
+     losing the breathing room around section headers. */
+  .section-y {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  @media (min-width: 640px) {
+    .section-y { padding-top: 5rem; padding-bottom: 5rem; }
+  }
+  @media (min-width: 1024px) {
+    .section-y { padding-top: 6rem; padding-bottom: 6rem; }
+  }
+  /* Used for connective tissue sections (e.g. the "Форматы" tile row) that
+     should hug their neighbours more tightly. */
+  .section-y-tight {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  @media (min-width: 640px) {
+    .section-y-tight { padding-top: 3rem; padding-bottom: 3rem; }
+  }
+  @media (min-width: 1024px) {
+    .section-y-tight { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  }
+
+  .container-page {
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) { .container-page { padding-inline: 1.5rem; } }
+  @media (min-width: 1024px) { .container-page { padding-inline: 2rem; } }
+
+  /* Eyebrow label above section headings */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-brand-700);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 1.5rem;
+    height: 1px;
+    background-color: var(--color-brand-400);
+  }
+  .eyebrow--center::before,
+  .eyebrow--center::after {
+    content: "";
+    width: 1.5rem;
+    height: 1px;
+    background-color: var(--color-brand-400);
+  }
+  .eyebrow--center {
+    justify-content: center;
+  }
+
+  /* Decorative soft blobs */
   .brand-blob {
     position: absolute;
     pointer-events: none;
@@ -74,4 +149,22 @@
     border-radius: 50% 50% 40% 60% / 40% 55% 45% 60%;
     background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(14, 165, 233, 0.03));
   }
+
+  /* Subtle grid backdrop for hero */
+  .hero-grid {
+    background-image:
+      linear-gradient(to right, rgba(15, 118, 110, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 118, 110, 0.045) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse at 60% 40%, rgba(0,0,0,0.85), transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at 60% 40%, rgba(0,0,0,0.85), transparent 70%);
+  }
+
+  /* Floating postcard animation for hero */
+  @keyframes float-soft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .float-soft { animation: float-soft 6s ease-in-out infinite; }
+  .float-soft-delay { animation: float-soft 7s ease-in-out infinite; animation-delay: -2s; }
 }

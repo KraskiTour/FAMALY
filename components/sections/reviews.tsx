@@ -2,7 +2,7 @@ import { reviews } from '@/data/mock-tours';
 
 function StarRating({ rating }: { rating: number }) {
   return (
-    <div className="flex gap-0.5">
+    <div className="flex gap-0.5" aria-label={`Рейтинг ${rating} из 5`}>
       {[1, 2, 3, 4, 5].map((star) => (
         <svg
           key={star}
@@ -17,40 +17,80 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
+const AVATAR_TONES = [
+  'from-brand-500 to-brand-700',
+  'from-warm-400 to-warm-600',
+  'from-sky-500 to-indigo-600',
+  'from-emerald-500 to-teal-700',
+  'from-rose-400 to-rose-600',
+  'from-amber-400 to-orange-600',
+];
+
+function getInitials(name: string) {
+  return name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0]?.toUpperCase() ?? '')
+    .join('');
+}
+
 export default function Reviews() {
+  const avgRating = (
+    reviews.reduce((sum, r) => sum + r.rating, 0) / Math.max(reviews.length, 1)
+  ).toFixed(1);
+
   return (
-    <section className="py-20 lg:py-28 bg-stone-50/60">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
-            Отзывы путешественников
-          </h2>
-          <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            Короткие путешествия на выходные, семейные выезды и насыщенные маршруты — каждый выбирает свой формат отдыха.
-          </p>
+    <section className="section-y bg-stone-50/60">
+      <div className="container-page">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12 lg:mb-14">
+          <div className="max-w-2xl">
+            <span className="eyebrow">Отзывы</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+              Что говорят путешественники
+            </h2>
+            <p className="mt-3 text-base sm:text-lg text-gray-500 leading-relaxed">
+              Короткие поездки на выходные, семейные выезды и насыщенные маршруты — каждый выбирает свой формат отдыха.
+            </p>
+          </div>
+          <div className="inline-flex items-center gap-3 bg-white border border-gray-200/70 rounded-2xl px-5 py-3 shadow-card shrink-0 self-start sm:self-auto">
+            <div className="flex flex-col">
+              <span className="text-2xl font-extrabold text-gray-900 tracking-tight leading-none">{avgRating}</span>
+              <span className="text-[11px] text-gray-500 mt-1">средний рейтинг</span>
+            </div>
+            <div className="w-px h-10 bg-gray-200" />
+            <div className="flex flex-col">
+              <StarRating rating={5} />
+              <span className="text-[11px] text-gray-500 mt-1">на основе отзывов</span>
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {reviews.map((review) => (
-            <div
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+          {reviews.map((review, i) => (
+            <article
               key={review.id}
-              className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 relative"
+              className="bg-white rounded-2xl p-6 border border-gray-200/70 hover:border-brand-200 hover:shadow-card-hover transition-all duration-300"
             >
-              <div className="absolute top-5 right-6 text-brand-100 text-4xl font-serif leading-none select-none">&ldquo;</div>
               <StarRating rating={review.rating} />
-              <p className="mt-4 text-gray-600 text-[15px] leading-relaxed relative">
+              <p className="mt-4 text-gray-700 text-[15px] leading-relaxed">
                 {review.text}
               </p>
-              <div className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-bold text-gray-900">{review.author}</p>
-                  <p className="text-xs text-gray-500 mt-0.5">{review.city}</p>
+              <div className="mt-6 pt-5 border-t border-gray-100 flex items-center gap-3">
+                <div
+                  className={`w-10 h-10 rounded-full bg-gradient-to-br ${AVATAR_TONES[i % AVATAR_TONES.length]} text-white font-bold text-sm flex items-center justify-center shrink-0`}
+                  aria-hidden
+                >
+                  {getInitials(review.author)}
                 </div>
-                <p className="text-xs text-gray-400">
-                  {new Date(review.date).toLocaleDateString('ru-RU', { month: 'long', year: 'numeric' })}
-                </p>
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-bold text-gray-900 truncate">{review.author}</p>
+                  <p className="text-xs text-gray-500 mt-0.5 truncate">
+                    {review.city} · {new Date(review.date).toLocaleDateString('ru-RU', { month: 'long', year: 'numeric' })}
+                  </p>
+                </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

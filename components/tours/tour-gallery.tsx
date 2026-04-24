@@ -14,19 +14,23 @@ function isRealImage(src: string) {
 export default function TourGallery({ images, title }: TourGalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [failedImages, setFailedImages] = useState<Record<number, boolean>>({});
-  const activeImage = failedImages[activeIndex] ? '/images/hero-home.png' : images[activeIndex];
-  const showReal = activeImage && isRealImage(activeImage);
+  // If the active image has already failed at runtime, drop it completely and
+  // show the gradient placeholder beneath instead of trying another missing
+  // local asset. This keeps the gallery surface clean on broken URLs.
+  const activeImage = !failedImages[activeIndex] ? images[activeIndex] : null;
+  const showReal = Boolean(activeImage) && isRealImage(activeImage!);
 
   return (
     <div>
       <div className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-gradient-to-br from-brand-50 via-teal-50/50 to-sky-50 shadow-sm">
-        {showReal ? (
+        {showReal && activeImage ? (
           <img
             src={activeImage}
             alt={`${title} — фото ${activeIndex + 1}`}
             className="absolute inset-0 h-full w-full object-cover"
             loading={activeIndex === 0 ? 'eager' : 'lazy'}
-            referrerPolicy="no-referrer"
+            fetchPriority={activeIndex === 0 ? 'high' : 'auto'}
+            decoding="async"
             onError={() =>
               setFailedImages((prev) => ({
                 ...prev,
@@ -56,13 +60,12 @@ export default function TourGallery({ images, title }: TourGalleryProps) {
                 index === activeIndex ? 'border-brand-500 shadow-sm' : 'border-transparent hover:border-gray-300'
               }`}
             >
-              {isRealImage(img) ? (
+              {isRealImage(img) && !failedImages[index] ? (
                 <img
-                  src={failedImages[index] ? '/images/hero-home.png' : img}
+                  src={img}
                   alt={`${title} — ${index + 1}`}
                   className="w-full h-full object-cover"
                   loading="lazy"
-                  referrerPolicy="no-referrer"
                   onError={() =>
                     setFailedImages((prev) => ({
                       ...prev,
