@@ -1,0 +1,32 @@
+name: Deploy kraski.travel
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Deploy on .121
+        run: |
+          set -e
+
+          cd /srv/www/kraski.travel/kraski-travel
+
+          git fetch origin
+          git reset --hard origin/main
+          git clean -fd
+
+          docker rm -f kraski-travel 2>/dev/null || true
+          docker build --no-cache --network=host -t kraski-travel .
+          docker run -d --name kraski-travel \
+            --restart unless-stopped \
+            -p 3000:3000 \
+           --env-file /etc/kraski-travel/kraski-travel.env \
+            kraski-travel
+
+          docker ps
