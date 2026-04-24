@@ -465,6 +465,7 @@ function DayCard({ day }: { day: ItineraryDay }) {
   const hasImages = day.images && day.images.length > 0;
   const { blocks } = parseDescription(day.description);
   const canExpand = blocks.length > BLOCKS_VISIBLE_BY_DEFAULT;
+  const showImages = hasImages && (expanded || !canExpand);
 
   return (
     <article className="bg-white rounded-2xl border border-gray-200/70 shadow-card overflow-hidden">
@@ -485,9 +486,9 @@ function DayCard({ day }: { day: ItineraryDay }) {
       <div className="px-5 sm:px-6 py-5">
         <DayHighlights description={day.description} />
 
-        {/* Day images only when the day is expanded — they add a lot of visual
-            weight and aren't needed to decide "read more" at the glance stage. */}
-        {hasImages && expanded && (
+        {/* For long days we keep images behind "expand"; for short days (without
+            the expand toggle) we show them immediately so they are never hidden. */}
+        {showImages && (
           <div className="grid grid-cols-2 gap-2 mb-4">
             {day.images!.slice(0, 2).map((img, imgIdx) => {
               const showReal = isRealImage(img);
