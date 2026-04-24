@@ -5,9 +5,12 @@ ENV NEXT_TELEMETRY_DISABLED=1
 FROM base AS deps
 COPY package*.json ./
 # Network-hardened install for unstable links in CI/build environments.
-RUN npm config set fetch-retries 5 \
+RUN npm config set registry https://registry.npmjs.org/ \
+  && npm config set maxsockets 1 \
+  && npm config set fetch-retries 5 \
   && npm config set fetch-retry-mintimeout 20000 \
   && npm config set fetch-retry-maxtimeout 120000 \
+  && npm config set fetch-timeout 600000 \
   && npm ci --no-audit --no-fund
 
 FROM base AS builder
