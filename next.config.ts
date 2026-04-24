@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'bogema.ru' },
       { protocol: 'https', hostname: 'imcdn.bolshayastrana.com' },
       { protocol: 'https', hostname: 'rt.plus' },
+      { protocol: 'https', hostname: 'storage.yandexcloud.net' },
     ],
   },
 };

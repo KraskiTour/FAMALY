@@ -1,5 +1,9 @@
-node_modules
-.next
 .git
 npm-debug.log
 .DS_Store
+.next
+node_modules
+upload.log
+upload.err.log
+*.pyc
+__pycache__/
