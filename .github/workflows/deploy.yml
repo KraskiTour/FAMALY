@@ -26,7 +26,7 @@ jobs:
           docker run -d --name kraski-travel \
             --restart unless-stopped \
             -p 3000:3000 \
-            --env-file /root/kraski-travel.env \
+           --env-file /etc/kraski-travel/kraski-travel.env \
             kraski-travel
 
           docker ps
