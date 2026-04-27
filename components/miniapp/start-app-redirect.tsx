@@ -3,19 +3,24 @@
 import { useEffect } from 'react';
 
 // ---------------------------------------------------------------------------
-// Клиентский fallback на случай, когда параметр старта мини-приложения
+// Клиентский fallback для случая, когда параметр старта мини-приложения
 // приходит НЕ через query-строку URL (которую ловит middleware), а через:
 //   • URL hash: #startapp=43, #tgWebAppStartParam=43
 //   • SDK MAX:  window.WebApp.initDataUnsafe.start_param
 //   • SDK Telegram: window.Telegram.WebApp.initDataUnsafe.start_param
 //
-// Проверяет источники периодически в течение ~10 секунд (SDK мини-приложения
-// иногда подгружается заметно позже React). При нахождении id делает
-// мгновенный редирект через /r?id=... — там уже route handler знает
-// карту id → slug.
+// Логика:
+//   1. На каждой странице слушаем источники (query, hash, SDK) ~10 секунд:
+//      SDK мини-приложения часто инициализируется позже React.
+//   2. Один и тот же id обрабатываем только один раз за сессию —
+//      сохраняем в sessionStorage, иначе при возврате на тур-страницу
+//      будет бесконечный цикл редиректов (SDK продолжает держать start_param).
+//
+// Включить отладочные логи можно из консоли:
+//   localStorage.setItem('startAppRedirect:debug', '1')
 // ---------------------------------------------------------------------------
 const ID_PATTERN = /^[A-Za-z0-9_-]{1,64}$/;
-const DEBUG = true;
+const SESSION_KEY = 'startAppRedirect:resolved';
 
 declare global {
   interface Window {
@@ -30,9 +35,24 @@ declare global {
   }
 }
 
+function isDebug(): boolean {
+  if (typeof window === 'undefined') return false;
+  try {
+    return window.localStorage.getItem('startAppRedirect:debug') === '1';
+  } catch {
+    return false;
+  }
+}
+
 function log(...args: unknown[]) {
-  if (DEBUG && typeof console !== 'undefined') {
-    console.log('[StartAppRedirect]', ...args);
+  if (isDebug()) console.log('[StartAppRedirect]', ...args);
+}
+
+function safeGet(fn: () => string | undefined | null): string | null {
+  try {
+    return fn() ?? null;
+  } catch {
+    return null;
   }
 }
 
@@ -62,49 +82,56 @@ function readFromHash(): string | null {
 
 function readFromSdk(): string | null {
   if (typeof window === 'undefined') return null;
-  const fromMax = window.WebApp?.initDataUnsafe?.start_param;
-  const fromTg = window.Telegram?.WebApp?.initDataUnsafe?.start_param;
-  return fromMax || fromTg || null;
+  return (
+    safeGet(() => window.WebApp?.initDataUnsafe?.start_param) ||
+    safeGet(() => window.Telegram?.WebApp?.initDataUnsafe?.start_param)
+  );
 }
 
-function tryRedirect(reason: string): boolean {
-  const fromQuery = readFromQuery();
-  const fromHash = readFromHash();
-  const fromSdk = readFromSdk();
-  const candidate = (fromQuery || fromHash || fromSdk || '').trim();
-
-  log('check', reason, {
-    pathname: window.location.pathname,
-    fromQuery,
-    fromHash,
-    fromSdk,
-    hasMaxSdk: typeof window.WebApp !== 'undefined',
-    hasTelegramSdk: typeof window.Telegram?.WebApp !== 'undefined',
-  });
-
-  if (!candidate) return false;
-  if (!ID_PATTERN.test(candidate)) {
-    log('rejected (bad pattern):', candidate);
+function alreadyResolved(id: string): boolean {
+  try {
+    return window.sessionStorage.getItem(SESSION_KEY) === id;
+  } catch {
     return false;
   }
-  if (window.location.pathname === '/r') return false;
+}
 
-  log('redirecting to /r?id=' + candidate);
+function markResolved(id: string) {
+  try {
+    window.sessionStorage.setItem(SESSION_KEY, id);
+  } catch {
+    /* ignore */
+  }
+}
+
+function tryRedirect(): boolean {
+  const candidate = (readFromQuery() || readFromHash() || readFromSdk() || '').trim();
+
+  if (!candidate || !ID_PATTERN.test(candidate)) return false;
+  if (window.location.pathname === '/r') return false;
+  if (alreadyResolved(candidate)) {
+    log('skip (already resolved)', candidate);
+    return false;
+  }
+
+  log('redirect to', `/r?id=${candidate}`);
+  markResolved(candidate);
   window.location.replace(`/r?id=${encodeURIComponent(candidate)}`);
   return true;
 }
 
 export default function StartAppRedirect() {
   useEffect(() => {
-    if (tryRedirect('mount')) return;
+    if (tryRedirect()) return;
 
     let cancelled = false;
-    const delays = [50, 200, 500, 1000, 2000, 4000, 7000, 10000];
+    // SDK мини-приложения иногда инициализируется заметно позже React.
+    const delays = [50, 200, 500, 1000, 2000, 4000, 7000];
     const timers: number[] = [];
 
     for (const delay of delays) {
       const id = window.setTimeout(() => {
-        if (!cancelled) tryRedirect(`retry@${delay}ms`);
+        if (!cancelled) tryRedirect();
       }, delay);
       timers.push(id);
     }
