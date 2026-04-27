@@ -22,7 +22,13 @@ jobs:
           git clean -fd
 
           docker rm -f kraski-travel 2>/dev/null || true
-          docker build --no-cache --network=host -t kraski-travel .
+
+          for i in 1 2 3; do
+            docker build --network=host -t kraski-travel . && break
+            echo "Docker build failed, retry $i/3..."
+            sleep 30
+          done
+
           docker run -d --name kraski-travel \
             --restart unless-stopped \
             -p 3000:3000 \
