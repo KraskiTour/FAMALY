@@ -47,6 +47,9 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
+        {/* Mini-app SDKs — нужны, чтобы прочитать start_param из MAX/Telegram */}
+        <script src="https://st.max.ru/js/max-web-app.js" async />
+        <script src="https://telegram.org/js/telegram-web-app.js" async />
       </head>
       <body className="font-sans antialiased bg-white text-gray-900">
         <StartAppRedirect />
