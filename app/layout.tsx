@@ -3,6 +3,7 @@ import './globals.css';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import AnalyticsScripts from '@/components/analytics/analytics-scripts';
+import StartAppRedirect from '@/components/miniapp/start-app-redirect';
 import { COMPANY, SITE } from '@/lib/config';
 
 export const metadata: Metadata = {
@@ -48,6 +49,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased bg-white text-gray-900">
+        <StartAppRedirect />
         <AnalyticsScripts />
         <Header />
         <main className="min-h-screen">{children}</main>
