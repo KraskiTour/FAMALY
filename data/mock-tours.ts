@@ -6221,6 +6221,10 @@ export function getTourBySlug(slug: string): Tour | undefined {
   return getPublishedTours().find((tour) => tour.slug === slug);
 }
 
+export function getTourById(id: string): Tour | undefined {
+  return getPublishedTours().find((tour) => tour.id === id);
+}
+
 export function getCityBySlug(slug: string): City | undefined {
   return cities.find((city) => city.slug === slug);
 }

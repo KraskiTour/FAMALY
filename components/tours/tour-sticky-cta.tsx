@@ -49,7 +49,9 @@ export default function TourStickyCta({ tour }: TourStickyCtaProps) {
   const primaryHref = tour.atomsTourId
     ? `/booking?tour=${tour.atomsTourId}`
     : whatsappHref;
-  const primaryLabel = tour.atomsTourId ? 'Забронировать' : 'Написать';
+  const primaryLabel = tour.atomsTourId
+    ? 'Забронировать'
+    : (tour.nextDates.length > 0 ? 'Написать' : 'Уточнить');
   const primaryExternal = !tour.atomsTourId;
 
   const handlePrimary = () => {

@@ -7,9 +7,10 @@ import HowItWorks from '@/components/sections/how-it-works';
 import Reviews from '@/components/sections/reviews';
 import CTAMessengers from '@/components/sections/cta-messengers';
 import TourGrid from '@/components/tours/tour-grid';
-import { getPublishedTours } from '@/data/mock-tours';
+import { getPublishedTours, getTourById } from '@/data/mock-tours';
 import { Tour } from '@/lib/types';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: 'KRASKI.TRAVEL — туры и поездки по России из Краснодара, Ростова и юга России',
@@ -168,7 +169,26 @@ const TONE_CLS: Record<string, { surface: string; iconWrap: string; icon: string
   },
 };
 
-export default function HomePage() {
+interface HomePageProps {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}
+
+function getSingleParam(value: string | string[] | undefined): string | null {
+  if (Array.isArray(value)) return value[0]?.trim() || null;
+  return value?.trim() || null;
+}
+
+export default async function HomePage({ searchParams }: HomePageProps) {
+  const sp = await searchParams;
+  const startAppTourId = getSingleParam(sp.startapp) ?? getSingleParam(sp.startApp);
+
+  if (startAppTourId) {
+    const targetTour = getTourById(startAppTourId);
+    if (targetTour) {
+      redirect(`/tours/${targetTour.slug}`);
+    }
+  }
+
   const allTours = getPublishedTours();
   const { trips, weekends } = buildShowcase(allTours);
 

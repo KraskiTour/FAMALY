@@ -39,8 +39,8 @@ export const CONTACTS = {
 
   /** Ссылка на мини-апп MAX-бота */
   max: {
-    url: 'https://max.ru/id230814735866_bot',
-    botUrl: 'https://max.ru/id230814735866_bot',
+    url: 'https://max.ru/id230814735866_2_bot',
+    botUrl: 'https://max.ru/id230814735866_2_bot',
     label: 'MAX',
   },
 
