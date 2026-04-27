@@ -5,22 +5,33 @@ import { getTourById } from '@/data/mock-tours';
 // Используется и middleware (для query-параметра startapp от MAX/Telegram),
 // и клиентским fallback'ом (когда параметр приходит через SDK мини-приложения,
 // см. components/miniapp/start-app-redirect.tsx).
+//
+// Используем относительный Location — за reverse-proxy `request.nextUrl`
+// может указывать на внутренний docker-host (0.0.0.0:3000); относительный
+// путь браузер раскроет от текущего origin (kraski.travel).
 export const dynamic = 'force-dynamic';
+
+function relativeRedirect(path: string) {
+  return new NextResponse(null, {
+    status: 307,
+    headers: {
+      Location: path,
+      'Cache-Control': 'no-store',
+    },
+  });
+}
 
 export function GET(request: NextRequest) {
   const id = request.nextUrl.searchParams.get('id')?.trim();
-  const base = request.nextUrl;
 
   if (!id) {
-    return NextResponse.redirect(new URL('/tours', base));
+    return relativeRedirect('/tours');
   }
 
   const tour = getTourById(id);
   if (!tour) {
-    const fallback = new URL('/tours', base);
-    fallback.searchParams.set('notFoundId', id);
-    return NextResponse.redirect(fallback);
+    return relativeRedirect(`/tours?notFoundId=${encodeURIComponent(id)}`);
   }
 
-  return NextResponse.redirect(new URL(`/tours/${tour.slug}`, base));
+  return relativeRedirect(`/tours/${tour.slug}`);
 }

@@ -9,6 +9,10 @@ import { NextRequest, NextResponse } from 'next/server';
 // Middleware срабатывает ДО SSR и кэша Next, поэтому корректно ловит параметр
 // на любой странице (включая статически кэшированную главную) и сразу
 // перенаправляет на /r — там уже резолвится id → slug тура.
+//
+// Используем относительный Location: за reverse-proxy (Docker → nginx)
+// `request.nextUrl` иногда указывает на внутренний bind-host (0.0.0.0:3000).
+// Относительный путь браузер раскроет относительно текущего origin.
 // ---------------------------------------------------------------------------
 export function middleware(request: NextRequest) {
   const { searchParams, pathname } = request.nextUrl;
@@ -23,10 +27,13 @@ export function middleware(request: NextRequest) {
 
   if (!startApp) return NextResponse.next();
 
-  const target = request.nextUrl.clone();
-  target.pathname = '/r';
-  target.search = `?id=${encodeURIComponent(startApp)}`;
-  return NextResponse.redirect(target, 307);
+  return new NextResponse(null, {
+    status: 307,
+    headers: {
+      Location: `/r?id=${encodeURIComponent(startApp)}`,
+      'Cache-Control': 'no-store',
+    },
+  });
 }
 
 export const config = {

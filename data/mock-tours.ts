@@ -434,7 +434,7 @@ export const tours: Tour[] = [
       { day: 1, title: 'Абрау-Дюрсо: винный день', description: 'Экскурсия на винодельню с дегустацией. Прогулка у озера Абрау. Свободное время на набережной. Возвращение вечером.' },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2022/06/ozero-abrau-3.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2022/06/ozero-abrau-3.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2022/06/vkuiip-ndjy.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/0EF8E226-DF7E-4B41-92F7-D7E80636C066.jpeg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/2CE735D5-DEC9-4204-B9D9-5948AF0BC0BB.jpeg',
@@ -546,7 +546,7 @@ export const tours: Tour[] = [
       { day: 2, title: 'Софийские водопады и возвращение', description: 'Завтрак. Софийские водопады. Свободное время. Возвращение.' },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2020/10/maxresdefault.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2020/10/maxresdefault.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2021/11/photo_1670747_588493a13b8f7.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/4B875B11-CC16-45D2-B1C7-C02976018528.jpeg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/4B875B11-CC16-45D2-B1C7-C02976018528-1024x683.jpeg',
@@ -606,7 +606,7 @@ export const tours: Tour[] = [
       { day: 2, title: 'Канатная дорога и возвращение', description: 'Завтрак. Подъём на канатной дороге на 3 200 м. Панорама Кавказского хребта. Спуск, обед. Возвращение вечером.', images: ['https://images.unsplash.com/photo-1464278533981-50106e6176b1?w=800&h=600&fit=crop', 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=600&fit=crop'] },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2021/09/6fd05d0afd30412db47247d5c34977af.max-1200x800-1.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2021/09/6fd05d0afd30412db47247d5c34977af.max-1200x800-1.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2021/09/e96cea.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2020/07/19-42-6.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2020/07/13682_6038f3ac.jpg',
@@ -719,7 +719,7 @@ export const tours: Tour[] = [
       { day: 2, title: 'Цейское ущелье и возвращение', description: 'Завтрак. Поездка в Цей — ущелье, где хвойный лес подступает прямо к подножию ледника. Канатная дорога поднимает на 2 500 м — отсюда видна ледяная стена, языком спускающаяся между вершинами. На обратном пути — осетинские святилища и старинный горный монастырь в ущелье. Одна из самых необычных остановок — монументальная скульптура всадника на отвесной скале. По времени и настроению — горячие термальные бассейны неподалёку. Выезд домой, прибытие поздно вечером.', images: ['https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop', 'https://images.unsplash.com/photo-1445363692815-ebcd0aaa0d8f?w=800&h=600&fit=crop'] },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2023/03/16008993151800540.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2023/03/16008993151800540.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2023/03/1650936868_105-vsegda-pomnim-com-p-gori-osetii-foto-107.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2023/03/1650936868_105-vsegda-pomnim-com-p-gori-osetii-foto-107-1024x682.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2023/03/osetiya.jpg',
@@ -837,7 +837,7 @@ export const tours: Tour[] = [
       { day: 3, title: 'Свободное утро и возвращение', description: 'Свободное утро для пляжа, прогулки по набережной или покупки сувениров. Можно попробовать местную кухню: мамалыга, хачапури, свежая форель, абхазское вино. Выезд домой после обеда, прибытие вечером (в Ростов — к ночи).', images: ['https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop', 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&h=600&fit=crop'] },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2020/02/img_0976.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2020/02/img_0976.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/uep4nVdFh7Y.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/uep4nVdFh7Y-1024x683.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/fhCZJ3T8eQc.jpg',
@@ -935,7 +935,7 @@ export const tours: Tour[] = [
       { day: 1, title: 'Верхняя Балкария и Чегем', description: 'Выезд рано утром. Чегемские водопады. Верхняя Балкария: горное ущелье, Язык тролля, средневековые башни. Возвращение вечером.' },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2019/06/DSC02588.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/06/DSC02588.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2024/10/5ca6a4697f5fbcb44b219a71454d729f378f22a3.0f89f896.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/06/DSC_4827.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/06/DSC_4827-1024x684.jpg',
@@ -1052,7 +1052,7 @@ export const tours: Tour[] = [
       { day: 4, title: 'Махачкала и возвращение', description: 'Спокойное завершение — столица Дагестана без спешки и рынок, где можно увезти с собой вкус Кавказа. Обзорная прогулка по Махачкале: центральная Джума-мечеть — одна из крупнейших в России, вмещает 17 000 человек, внутри — мрамор и хрустальные люстры. Набережная Каспийского моря. Центральный рынок — урбеч из десятков видов орехов и семян, сушёные фрукты, горный мёд, дагестанские сладости. Свободное время для покупок. Выезд домой, прибытие поздно вечером.', images: ['https://images.unsplash.com/photo-1617573543793-1b13d0a3f75c?w=800&h=600&fit=crop', 'https://images.unsplash.com/photo-1634715107433-d9e3403f5bc8?w=800&h=600&fit=crop'] },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2020/03/2r3olpcqlj0.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2020/03/2r3olpcqlj0.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2020/03/xqpbgquvccg.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2020/03/qdzkn6xzkjq.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2020/03/bi2feb4lljc.jpg',
@@ -1113,7 +1113,7 @@ export const tours: Tour[] = [
       { day: 4, title: 'Цейское ущелье и возвращение', description: 'Финальный день — альпийская Осетия: ледники, хвойные леса и священные места аланов. Цейское ущелье — подъём на канатной дороге на 2 500 м, где открывается панорама заснеженного Кавказского хребта; внизу — реликтовые сосновые леса и горные реки. Святилище Реком — одно из самых почитаемых мест осетинской традиции, деревянный храм, к которому нельзя прикасаться руками. Памятник Уастырджи — 28-тонная скульптура всадника, которая буквально «вырастает» из скалы над дорогой. По возможности — термальные источники Бирагзанг для отдыха после дня в горах. Выезд домой, прибытие поздно вечером.', images: ['https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop', 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&h=600&fit=crop'] },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2021/03/ffqtqyal6a8.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2021/03/ffqtqyal6a8.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2023/03/osetiya.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2023/03/osetiya-1024x631.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2023/03/osetiya-1536x947.jpg',
@@ -1173,7 +1173,7 @@ export const tours: Tour[] = [
       { day: 5, title: 'Свободное утро и возвращение', description: 'Утро без спешки — можно добрать то, что не вошло в программу. Свободное время: Массандровский дворец Александра III в окружении виноградников или Воронцовский дворец у подножия Ай-Петри с английским парком и львиной террасой — оба стоят посещения. Набережная, покупка крымских сувениров — лаванда, крымский чай, вино, ялтинский лук. Выезд через Крымский мост, прибытие поздно вечером.', images: ['https://images.unsplash.com/photo-1506377295622-ce39a08781b6?w=1200&h=800&fit=crop&q=85', 'https://images.unsplash.com/photo-1499002238440-d264b596c721?w=1200&h=800&fit=crop&q=85', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=800&fit=crop&q=85'] },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2020/06/scale_1200-1.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2020/06/scale_1200-1.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2020/06/tarkhankut_9.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2020/06/1c53d982169de375bda75f96d7786b52.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2020/06/1c53d982169de375bda75f96d7786b52-1024x689.jpg',
@@ -1227,7 +1227,7 @@ export const tours: Tour[] = [
       { day: 4, title: 'Свободное утро и возвращение', description: 'Свободное утро: купание, прогулка по Центральной набережной Сочи — магнолии, пальмы, Морской вокзал. По желанию — дендрарий (ботаническая коллекция России). Покупка сувениров: чурчхела, горный мёд, чай с Мацесты. Выезд в 14–15:00, прибытие в Ростов ночью.', images: ['https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop', 'https://images.unsplash.com/photo-1484821582734-6c6c9a0e3e42?w=800&h=600&fit=crop'] },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2019/11/QpvtcX_K5vs.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/11/QpvtcX_K5vs.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/uep4nVdFh7Y.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/uep4nVdFh7Y-1024x683.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/fhCZJ3T8eQc.jpg',
@@ -1434,7 +1434,7 @@ export const tours: Tour[] = [
       { day: 2, title: 'Горы и ущелья Чечни', description: 'Завтрак. Дорога в горы через Аргунское ущелье — узкая горная дорога вдоль реки между скальными стенами. Главная остановка — средневековые сторожевые башни, словно вросшие в скалу на высоте десятков метров. Горные водопады в лесном ущелье. Обед в горном кафе: местные специалитеты — галушки с мясным бульоном, творожные лепёшки, горный мёд. Выезд домой, прибытие поздно вечером.', images: ['https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop', 'https://images.unsplash.com/photo-1445363692815-ebcd0aaa0d8f?w=800&h=600&fit=crop'] },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2021/03/ffqtqyal6a8.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2021/03/ffqtqyal6a8.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2021/03/fqwvz6js9ko.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2021/03/fqwvz6js9ko-1024x683.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2021/03/fqwvz6js9ko-1536x1024.jpg',
@@ -1531,7 +1531,7 @@ export const tours: Tour[] = [
       { day: 2, title: 'Красная Поляна', description: 'Подъём на Роза Хутор или Газпром. Горные виды. Возвращение в Ростов.' },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2019/11/QpvtcX_K5vs.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/11/QpvtcX_K5vs.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/uep4nVdFh7Y.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/uep4nVdFh7Y-1024x683.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/fhCZJ3T8eQc.jpg',

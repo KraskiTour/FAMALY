@@ -901,7 +901,7 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2019/07/29B63F98-E585-4B7D-B3B9-FCB642739027.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/29B63F98-E585-4B7D-B3B9-FCB642739027.jpeg',
       'https://amra-turistik.ru/wp-content/uploads/2024/11/scale_1200.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2024/11/scale_1200-1024x684.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5769.jpg',
@@ -1051,7 +1051,7 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2019/07/29B63F98-E585-4B7D-B3B9-FCB642739027.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/29B63F98-E585-4B7D-B3B9-FCB642739027.jpeg',
       'https://amra-turistik.ru/wp-content/uploads/2024/11/scale_1200.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2024/11/scale_1200-1024x684.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5769.jpg',
@@ -1130,7 +1130,7 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2019/07/29B63F98-E585-4B7D-B3B9-FCB642739027.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/29B63F98-E585-4B7D-B3B9-FCB642739027.jpeg',
       'https://amra-turistik.ru/wp-content/uploads/2024/11/scale_1200.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2024/11/scale_1200-1024x684.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5769.jpg',
@@ -1634,7 +1634,7 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2020/07/restoran-chateau-pinot-660x400-1.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2020/07/restoran-chateau-pinot-660x400-1.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2020/06/img_8919.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/0E0AB79B-34F6-4D20-B209-DCE6A050D733.jpeg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/9F08A60E-6575-493A-A6AD-C7B5AA081369.jpeg',
@@ -3676,7 +3676,7 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2019/07/29B63F98-E585-4B7D-B3B9-FCB642739027.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/29B63F98-E585-4B7D-B3B9-FCB642739027.jpeg',
       'https://amra-turistik.ru/wp-content/uploads/2024/11/scale_1200.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2024/11/scale_1200-1024x684.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5769.jpg',
@@ -3899,7 +3899,7 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2019/07/29B63F98-E585-4B7D-B3B9-FCB642739027.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/29B63F98-E585-4B7D-B3B9-FCB642739027.jpeg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/507602DD-FD6B-464E-A937-6F6CC8F02486.jpeg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5769.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/IMG_5769-1024x683.jpg',
@@ -4340,7 +4340,7 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2019/07/E1CBC0BF-37F8-49A4-99DE-C341FB195C60.jpeg',
+      'https://amra-turistik.ru/wp-content/uploads/2019/07/E1CBC0BF-37F8-49A4-99DE-C341FB195C60.jpeg',
       'https://amra-turistik.ru/wp-content/uploads/2020/03/img_3092-1.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/mitridat_pantikapey_l-1.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/mitridat_pantikapey_l-1-1024x682.jpg',
@@ -4734,7 +4734,7 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2022/03/5482672_xlarge.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2022/03/5482672_xlarge.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2022/03/maxresdefault.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2022/03/maxresdefault-1024x576.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2022/03/7de6363d-9501-11e6-9d38-ece89687dc88_original.jpg',
@@ -4900,7 +4900,7 @@ export const amraTours: Tour[] = [
       },
     ],
     gallery: [
-      'http://amra-turistik.ru/wp-content/uploads/2020/03/img_3088.jpg',
+      'https://amra-turistik.ru/wp-content/uploads/2020/03/img_3088.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2020/03/d4_-lvgxkaapej-1-1.jpg-large-1.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2020/03/d4_-lvgxkaapej-1-1.jpg-large-1-1024x576.jpg',
       'https://amra-turistik.ru/wp-content/uploads/2019/07/D11433D5-C282-47B8-90A0-CE26D81A77A2.jpeg',
