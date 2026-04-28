@@ -5,6 +5,7 @@ import { reviews, getPublishedTours, getTourBySlug, getFaqsForTour } from '@/dat
 import { BADGE_LABELS, BADGE_COLORS } from '@/lib/types';
 import type { Tour } from '@/lib/types';
 import { formatPrice, pluralDays } from '@/lib/utils';
+import { CONTACTS } from '@/lib/config';
 import TourGallery from '@/components/tours/tour-gallery';
 import TourItinerary from '@/components/tours/tour-itinerary';
 import TourIncludes from '@/components/tours/tour-includes';
@@ -63,6 +64,8 @@ export default async function TourPage({ params }: TourPageProps) {
     .split(/\n\n+/)
     .map((p) => p.trim())
     .filter(Boolean);
+  const managerMessage = `Здравствуйте! Интересует тур «${tour.title}». Подскажите, пожалуйста, актуальные даты, стоимость и доступность мест.`;
+  const managerHref = `${CONTACTS.whatsapp.url}?text=${encodeURIComponent(managerMessage)}`;
 
   const keyFacts: { label: string; value: string; icon: React.ReactNode }[] = [
     {
@@ -169,6 +172,37 @@ export default async function TourPage({ params }: TourPageProps) {
               </div>
 
               <TourGallery images={tour.gallery} title={tour.title} />
+
+              {tour.onRequestOnly && (
+                <div className="mt-5 lg:mt-6 rounded-2xl border border-amber-200 bg-amber-50/70 p-4 sm:p-5">
+                  <div className="flex items-start gap-3">
+                    <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-amber-100 text-amber-700 shrink-0">
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" aria-hidden>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zM12 16.5h.008v.008H12v-.008z" />
+                      </svg>
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-sm sm:text-base font-bold text-amber-900">
+                        Тур временно доступен по индивидуальному запросу
+                      </p>
+                      <p className="mt-1 text-sm text-amber-900/90 leading-relaxed">
+                        {tour.onRequestReason || 'Поставщик обновляет условия программы и наличие мест. Наш менеджер уточнит актуальные даты, стоимость и подберет удобный вариант поездки.'}
+                      </p>
+                      <a
+                        href={managerHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-3 inline-flex items-center justify-center gap-2 rounded-xl bg-amber-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-amber-700 transition-colors"
+                      >
+                        Связаться с менеджером
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor" aria-hidden>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {hasHighlights && (
                 <div className="mt-5 lg:mt-6 bg-white rounded-2xl border border-brand-100 shadow-card p-4 sm:p-5">

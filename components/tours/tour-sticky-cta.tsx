@@ -46,16 +46,16 @@ export default function TourStickyCta({ tour }: TourStickyCtaProps) {
     `Здравствуйте! Интересует тур «${tour.title}».`,
   )}`;
 
-  const primaryHref = tour.atomsTourId
+  const hasNearestDates = tour.nextDates.length > 0;
+  const canBookOnline = Boolean(tour.atomsTourId) && hasNearestDates && !tour.onRequestOnly;
+  const primaryHref = canBookOnline
     ? `/booking?tour=${tour.atomsTourId}`
     : whatsappHref;
-  const primaryLabel = tour.atomsTourId
-    ? 'Забронировать'
-    : (tour.nextDates.length > 0 ? 'Написать' : 'Уточнить');
-  const primaryExternal = !tour.atomsTourId;
+  const primaryLabel = canBookOnline ? 'Забронировать' : (hasNearestDates ? 'Написать' : 'Уточнить');
+  const primaryExternal = !canBookOnline;
 
   const handlePrimary = () => {
-    if (tour.atomsTourId) {
+    if (canBookOnline) {
       trackEvent('click_booking_atoms', { tour: tour.slug, atomsTourId: tour.atomsTourId!, source: 'mobile_sticky' });
     } else {
       trackEvent('click_whatsapp', { tour: tour.slug, source: 'mobile_sticky' });

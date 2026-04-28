@@ -67,6 +67,8 @@ export interface Tour {
   sourceUrl?: string;
   sourceOperator?: string;
   atomsTourId?: string;
+  onRequestOnly?: boolean;
+  onRequestReason?: string;
 }
 
 export interface City {

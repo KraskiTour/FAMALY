@@ -30,6 +30,7 @@ export default function TourSidebar({ tour }: TourSidebarProps) {
     : tour.nextDates.slice(0, DATES_VISIBLE_BY_DEFAULT);
   const hiddenDatesCount = tour.nextDates.length - DATES_VISIBLE_BY_DEFAULT;
   const hasNearestDates = tour.nextDates.length > 0;
+  const showOnlyByRequestState = tour.onRequestOnly || !hasNearestDates;
   const telegramMiniAppUrl = getTelegramMiniAppUrl(tour.id);
   const maxMiniAppUrl = getMaxMiniAppUrl(tour.id);
 
@@ -193,7 +194,7 @@ export default function TourSidebar({ tour }: TourSidebarProps) {
       <div className="space-y-2.5">
         {!showForm ? (
           <>
-            {hasNearestDates && tour.atomsTourId && (
+            {hasNearestDates && !tour.onRequestOnly && tour.atomsTourId && (
               <a
                 href={`/booking?tour=${tour.atomsTourId}`}
                 onClick={() => trackEvent('click_booking_atoms', { tour: tour.slug, atomsTourId: tour.atomsTourId! })}
@@ -209,12 +210,12 @@ export default function TourSidebar({ tour }: TourSidebarProps) {
               type="button"
               onClick={() => { trackEvent('open_tour_lead_form', { tour: tour.slug }); setShowForm(true); }}
               className={`w-full ${
-                hasNearestDates && tour.atomsTourId
+                hasNearestDates && !tour.onRequestOnly && tour.atomsTourId
                   ? 'bg-white text-brand-700 border-2 border-brand-200 hover:border-brand-400 hover:bg-brand-50'
                   : 'bg-gradient-to-r from-brand-600 to-brand-700 text-white hover:from-brand-700 hover:to-brand-800 shadow-button hover:shadow-elevated'
               } py-3.5 rounded-2xl text-base font-bold transition-all duration-200`}
             >
-              {hasNearestDates ? 'Оставить заявку' : 'Уточнить у менеджера'}
+              {showOnlyByRequestState ? 'Уточнить у менеджера' : 'Оставить заявку'}
             </button>
             <div className="flex items-center gap-2 py-2">
               <span className="h-px flex-1 bg-gray-100" />
@@ -223,9 +224,9 @@ export default function TourSidebar({ tour }: TourSidebarProps) {
             </div>
             <a
               href={`${CONTACTS.whatsapp.url}?text=${encodeURIComponent(
-                hasNearestDates
-                  ? `Здравствуйте! Интересует тур «${tour.title}».`
-                  : `Здравствуйте! По туру «${tour.title}» нет ближайших дат. Подскажите, пожалуйста, когда планируется ближайший выезд.`,
+                showOnlyByRequestState
+                  ? `Здравствуйте! Интересует тур «${tour.title}». Подскажите, пожалуйста, актуальные даты, стоимость и доступность мест.`
+                  : `Здравствуйте! Интересует тур «${tour.title}».`,
               )}`}
               target="_blank"
               rel="noopener noreferrer"
