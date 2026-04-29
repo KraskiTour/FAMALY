@@ -5,7 +5,7 @@ import { reviews, getPublishedTours, getTourBySlug, getFaqsForTour } from '@/dat
 import { BADGE_LABELS, BADGE_COLORS } from '@/lib/types';
 import type { Tour } from '@/lib/types';
 import { formatPrice, pluralDays } from '@/lib/utils';
-import { CONTACTS } from '@/lib/config';
+import { getMaxMiniAppUrl } from '@/lib/miniapp-links';
 import TourGallery from '@/components/tours/tour-gallery';
 import TourItinerary from '@/components/tours/tour-itinerary';
 import TourIncludes from '@/components/tours/tour-includes';
@@ -64,8 +64,7 @@ export default async function TourPage({ params }: TourPageProps) {
     .split(/\n\n+/)
     .map((p) => p.trim())
     .filter(Boolean);
-  const managerMessage = `Здравствуйте! Интересует тур «${tour.title}». Подскажите, пожалуйста, актуальные даты, стоимость и доступность мест.`;
-  const managerHref = `${CONTACTS.whatsapp.url}?text=${encodeURIComponent(managerMessage)}`;
+  const managerHref = getMaxMiniAppUrl(tour.id);
 
   const keyFacts: { label: string; value: string; icon: React.ReactNode }[] = [
     {

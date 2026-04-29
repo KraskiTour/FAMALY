@@ -24,7 +24,7 @@ export default function SeaToursPage() {
       canonicalPath={`/tours/${config.slug}`}
       ctaTitle={config.ctaTitle}
       ctaText={config.ctaText}
-      ctaWhatsApp={config.ctaWhatsApp}
+      ctaMessage={config.ctaMessage}
     />
   );
 }

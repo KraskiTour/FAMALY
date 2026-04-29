@@ -21,7 +21,7 @@ interface SeoLandingProps {
   canonicalPath: string;
   ctaTitle?: string;
   ctaText?: string;
-  ctaWhatsApp?: string;
+  ctaMessage?: string;
 }
 
 export default function SeoLandingTemplate({
@@ -34,7 +34,7 @@ export default function SeoLandingTemplate({
   canonicalPath,
   ctaTitle,
   ctaText,
-  ctaWhatsApp,
+  ctaMessage,
 }: SeoLandingProps) {
   const faqsWithId = faqs.map((f, i) => ({
     ...f,
@@ -86,12 +86,13 @@ export default function SeoLandingTemplate({
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <a
-              href={`${CONTACTS.whatsapp.url}?text=${encodeURIComponent(ctaWhatsApp || 'Здравствуйте! Хочу подобрать тур.')}`}
+              href={CONTACTS.max.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-green-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-green-700 transition-colors"
+              className="inline-flex items-center gap-2 bg-violet-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-violet-700 transition-colors"
+              aria-label={ctaMessage || 'Здравствуйте! Хочу подобрать тур.'}
             >
-              WhatsApp
+              MAX
             </a>
             <a
               href={CONTACTS.telegram.url}

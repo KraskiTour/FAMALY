@@ -13,9 +13,8 @@ const navigation = [
 ];
 
 const messengerLinks = [
-  { label: CONTACTS.whatsapp.label, url: CONTACTS.whatsapp.url },
-  { label: CONTACTS.telegram.label, url: CONTACTS.telegram.url },
   { label: CONTACTS.max.label, url: CONTACTS.max.url },
+  { label: CONTACTS.telegram.label, url: CONTACTS.telegram.url },
 ];
 
 export default function Header() {

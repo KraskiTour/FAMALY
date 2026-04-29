@@ -34,9 +34,8 @@ const footerNav = [
 ];
 
 const messengerButtons = [
-  { label: CONTACTS.whatsapp.label, url: CONTACTS.whatsapp.url, className: 'bg-green-600 hover:bg-green-700' },
-  { label: CONTACTS.telegram.label, url: CONTACTS.telegram.url, className: 'bg-blue-500 hover:bg-blue-600' },
   { label: CONTACTS.max.label, url: CONTACTS.max.url, className: 'bg-violet-600 hover:bg-violet-700' },
+  { label: CONTACTS.telegram.label, url: CONTACTS.telegram.url, className: 'bg-blue-500 hover:bg-blue-600' },
 ];
 
 export default function Footer() {

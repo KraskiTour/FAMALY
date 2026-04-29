@@ -24,7 +24,7 @@ export default function WeekendToursPage() {
       canonicalPath={`/tours/${config.slug}`}
       ctaTitle={config.ctaTitle}
       ctaText={config.ctaText}
-      ctaWhatsApp={config.ctaWhatsApp}
+      ctaMessage={config.ctaMessage}
     />
   );
 }

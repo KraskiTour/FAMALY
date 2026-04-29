@@ -323,12 +323,12 @@ export default function AboutPage() {
                 Подобрать поездку
               </Link>
               <a
-                href={CONTACTS.whatsapp.url}
+                href={CONTACTS.max.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2.5 bg-white text-gray-700 px-8 py-4 rounded-2xl text-base font-semibold border border-gray-200 hover:border-brand-200 hover:text-brand-700 transition-all"
               >
-                Написать в WhatsApp
+                Написать в MAX
               </a>
             </div>
             <p className="mt-5 text-xs text-gray-400">

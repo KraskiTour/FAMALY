@@ -157,12 +157,12 @@ export default async function CityPage({ params }: CityPageProps) {
             </p>
             <div className="mt-5 flex flex-col sm:flex-row gap-3">
               <a
-                href={CONTACTS.whatsapp.url}
+                href={CONTACTS.max.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-brand-600 to-brand-700 text-white px-6 py-3 rounded-xl text-sm font-bold hover:from-brand-700 hover:to-brand-800 transition-all shadow-sm"
               >
-                Написать в WhatsApp
+                Написать в MAX
               </a>
               <Link
                 href={`/tours?city=${city.slug}`}
