@@ -3,12 +3,13 @@ import Script from 'next/script';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Каталог стран и отелей',
-  description: 'Каталог стран и направлений для отдыха на KRASKI.TRAVEL.',
-  alternates: { canonical: '/hotels-turvizor-catalog' },
+  title: 'Поиск туров и отелей',
+  description:
+    'Подберите поездку и размещение через партнёрский виджет на KRASKI.TRAVEL.',
+  alternates: { canonical: '/hotels_1' },
 };
 
-export default function HotelsTurvizorCatalogPage() {
+export default function HotelsOnePage() {
   return (
     <div className="bg-gray-50/50 min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
@@ -17,27 +18,29 @@ export default function HotelsTurvizorCatalogPage() {
             Главная
           </Link>
           <span className="text-gray-300">/</span>
-          <span className="text-gray-600 font-medium">
-            Каталог стран и отелей
-          </span>
+          <span className="text-gray-600 font-medium">Поиск туров</span>
         </nav>
 
         <header className="mb-6 lg:mb-8">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-            Каталог стран и отелей
+            Поиск туров
           </h1>
           <p className="mt-3 text-base sm:text-lg text-gray-500 max-w-3xl leading-relaxed">
-            Выберите страну и направление размещения.
+            Подбор направлений и вариантов поездки. Цены и доступность уточняйте
+            в форме.
           </p>
         </header>
 
         <div className="max-w-[980px] mx-auto">
           <div className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-card min-h-[520px]">
-            <div className="tv-country tv-moduleid-9991212" />
             <Script
-              src="https://tourvisor.ru/module/init.js"
+              src="https://stells.info/assets/js/partner.fire.js"
               strategy="afterInteractive"
+              charSet="utf-8"
             />
+            <div className="s-partnership" style={{ display: 'none' }}>
+              JXPmI45taJ%2FfkhYAH6FqNPmR%2FmlQiTi%2F6XQKbDs%2FonE%3D
+            </div>
           </div>
         </div>
       </div>
