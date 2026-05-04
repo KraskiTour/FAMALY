@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function HotelsPage() {
   return (
     <div className="bg-gray-50/50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
           <Link href="/" className="hover:text-brand-600 transition-colors">
             Главная
@@ -29,15 +29,16 @@ export default function HotelsPage() {
             Укажите направление и даты — сравните варианты размещения.
           </p>
         </header>
-      </div>
 
-      <div className="w-full px-3 sm:px-4 lg:px-6 pb-10 lg:pb-12">
-        <div className="w-full max-w-none min-h-[520px] sm:min-h-[600px] bg-white border border-gray-200 rounded-xl sm:rounded-2xl p-3 sm:p-5 lg:p-8 shadow-card">
-          <div className="tv-search-form tv-moduleid-9977208 w-full" />
-          <Script
-            src="https://tourvisor.ru/module/init.js"
-            strategy="afterInteractive"
-          />
+        <div className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-card min-h-[480px]">
+          {/* Виджет визуально удобнее в «колонке» ~960px, без растягивания на весь экран */}
+          <div className="mx-auto w-full max-w-[960px]">
+            <div className="tv-search-form tv-moduleid-9977208 w-full" />
+            <Script
+              src="https://tourvisor.ru/module/init.js"
+              strategy="afterInteractive"
+            />
+          </div>
         </div>
       </div>
     </div>
