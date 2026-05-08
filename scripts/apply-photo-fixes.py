@@ -24,6 +24,13 @@ def parse_actions(comment: str):
     if re.search(r"все\s+фото[^\n\r]*не\s+подход", c) or re.search(r"все\s+фотки[^\n\r]*не\s+те", c):
         all_bad = True
 
+    # "все фото, кроме 2 и 3" => удаляем все, кроме перечисленных.
+    keep_only = None
+    m_except = re.search(r"все\s+фото[^,\n\r]*кроме\s+([0-9,\sи]+)", c)
+    if m_except:
+        keep_only = sorted({int(n) - 1 for n in re.findall(r"\d{1,2}", m_except.group(1)) if int(n) > 0})
+        all_bad = False
+
     for a, b in re.findall(r"с\s*(\d{1,2})\s*по\s*(\d{1,2})", c):
         a, b = int(a), int(b)
         if a <= b:
@@ -39,11 +46,7 @@ def parse_actions(comment: str):
 
     remove_last = ("последнее фото" in c) or ("последняя фото" in c)
 
-    # "все фото, кроме X" не разбираем автоматически по индексам.
-    if "кроме" in c and "все фото" in c:
-        remove_idx.clear()
-
-    return all_bad, remove_idx, remove_last
+    return all_bad, remove_idx, remove_last, keep_only
 
 
 photo_notes = {}
@@ -61,6 +64,7 @@ by_slug = {t.get("slug"): t for t in tours}
 removed = []
 on_request_all_bad = []
 on_request_empty = []
+report_rows = []
 
 for slug, notes in photo_notes.items():
     t = by_slug.get(slug)
@@ -70,7 +74,7 @@ for slug, notes in photo_notes.items():
     if not gallery:
         continue
 
-    all_bad, idxs, remove_last = parse_actions(notes)
+    all_bad, idxs, remove_last, keep_only = parse_actions(notes)
 
     if all_bad:
         t["onRequestOnly"] = True
@@ -81,16 +85,21 @@ for slug, notes in photo_notes.items():
             "Менеджер уточнит актуальные детали и пришлет свежие материалы."
         )
         on_request_all_bad.append(slug)
+        report_rows.append([slug, "on_request_all_bad", str(len(gallery)), str(len(gallery)), notes])
         continue
 
     before = len(gallery)
-    keep = [u for i, u in enumerate(gallery) if i not in idxs]
+    if keep_only is not None:
+        keep = [u for i, u in enumerate(gallery) if i in keep_only]
+    else:
+        keep = [u for i, u in enumerate(gallery) if i not in idxs]
     if remove_last and keep:
         keep = keep[:-1]
 
     if len(keep) != before:
         t["gallery"] = keep
         removed.append((slug, before, len(keep)))
+        report_rows.append([slug, "gallery_trimmed", str(before), str(len(keep)), notes])
 
     if len(keep) == 0:
         t["onRequestOnly"] = True
@@ -101,13 +110,21 @@ for slug, notes in photo_notes.items():
             "Менеджер уточнит актуальные детали и пришлет свежие материалы."
         )
         on_request_empty.append(slug)
+        report_rows.append([slug, "on_request_empty_after_trim", str(before), "0", notes])
 
 json_path.write_text(json.dumps(tours, ensure_ascii=False, indent=2), encoding="utf-8")
+
+report_path = pathlib.Path(r"c:\Users\pavel\Documents\GitHub\FAMALY23\docs\photo-fixes-report.csv")
+with report_path.open("w", encoding="utf-8", newline="") as f:
+    w = csv.writer(f)
+    w.writerow(["slug", "action", "gallery_before", "gallery_after", "comment"])
+    w.writerows(report_rows)
 
 print("photo_note_slugs", len(photo_notes))
 print("galleries_changed", len(removed))
 print("on_request_all_bad", len(on_request_all_bad))
 print("on_request_empty_gallery", len(on_request_empty))
+print("report", str(report_path))
 for s, b, a in removed[:60]:
     print(f"GALLERY {s}: {b}->{a}")
 print("ALL_BAD", ",".join(on_request_all_bad[:60]))

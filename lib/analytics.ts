@@ -6,7 +6,7 @@
  *   GA_MEASUREMENT_ID → GA4 measurement ID (G-XXXXXXXXXX)
  */
 
-export const YM_COUNTER_ID = 0; // e.g. 12345678
+export const YM_COUNTER_ID = 109118802;
 export const GA_MEASUREMENT_ID = ''; // e.g. 'G-XXXXXXXXXX'
 
 type EventName =
